@@ -46,12 +46,12 @@ const LuminaLandingPage: React.FC = () => {
 	const { isConnected } = useAccount();
 	const router = useRouter();
 
-	useEffect(
-		function () {
-			if (router && isConnected) router.push("/dashboard");
-		},
-		[isConnected]
-	);
+	// useEffect(
+	// 	function () {
+	// 		if (router && isConnected) router.push("/dashboard");
+	// 	},
+	// 	[isConnected]
+	// );
 
 	return (
 		<div className='font-poppins bg-[#0f172a] w-full relative'>

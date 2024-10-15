@@ -19,7 +19,7 @@ const Header = () => {
 			</div>
 			<button
 				onClick={toggleMenu}
-				className='text-3xl text-gray-400 z-50 p-1 lg:hidden focus-within:ring-1 rounded-md mr-6 cursor-pointer border-none'>
+				className='text-3xl text-gray-400 z-50 p-1 md:hidden focus-within:ring-1 rounded-md mr-6 cursor-pointer border-none'>
 				{isMenuOpen ? <FaTimes /> : <FaBars />}
 			</button>
 			<nav className={`${styles.nav} ${isMenuOpen ? styles.active : ""}`}>
