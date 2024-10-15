@@ -36,21 +36,21 @@ function SideBar() {
 		useState<boolean>(false);
 
 	return (
-		<aside className='flex flex-col items-center h-full p-2 md:p-4 rounded-r-lg shadow-md border-r border-gray-600 bg-[#1e1e1e] pt-4'>
+		<aside className='flex flex-col items-center w-full md:h-full p-2 md:p-4 rounded-r-lg shadow-md border-r border-gray-600 bg-[#1e1e1e] pt-4'>
 			<div className='w-full mb-8 hidden md:flex items-center justify-center'>
 				<Logo />
 			</div>
-			<ul className='flex items-start w-full flex-col gap-4 mb-auto'>
+			<ul className='h-full pb-4 flex items-center md:items-start w-full md:flex-col gap-4 mb-auto justify-center md:justify-start'>
 				{sidebarLinks.map((link) => (
 					<SideBarLink
-						className='w-full block py-4 md:pl-4'
+						className='md:w-full block p-4 md:pl-4'
 						key={link.href}
 						{...link}
 					/>
 				))}
 
 				<Collapsible
-					className='w-full'
+					className='md:w-full p-4'
 					open={isSettingsCollapsed}>
 					<CollapsibleTrigger
 						className={`flex items-center justify-center md:justify-start hover:bg-[#4f4f4f] transition-all duration-300 hover:-translate-y-[2px] shadow-xl transform rounded-xl border border-gray-600 w-full py-4 mb-3 md:pl-4 ${isSettingsCollapsed ? "bg-[#4f4f4f] -translate-y-[2px]" : "bg-[#2e2e2e] -translate-y-none"}`}
@@ -111,7 +111,7 @@ function SideBarLink({ label, icon, href, className }: SideBarLinkProps) {
 	return (
 		<NavLink
 			to={href}
-			className={`flex items-center justify-center md:justify-start bg-[#2e2e2e] hover:bg-[#4f4f4f] transition-all sidebar-link duration-300 hover:-translate-y-[2px] shadow-xl transform rounded-xl border border-gray-600 w-full ${className}`}>
+			className={`flex items-center justify-center md:justify-start bg-[#2e2e2e] hover:bg-[#4f4f4f] transition-all sidebar-link duration-300 hover:-translate-y-[2px] shadow-xl transform rounded-xl border border-gray-600 md:w-full ${className}`}>
 			<span className='text-2xl md:text-xl'>{icon}</span>
 			<span className='ml-4 text-md font-semibold hidden md:block'>
 				{label}

@@ -1,5 +1,5 @@
 function Page() {
-	return <div>password settings</div>;
+	return <div>courses</div>;
 }
 
 export default Page;

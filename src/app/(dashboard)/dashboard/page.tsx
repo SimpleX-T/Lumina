@@ -125,6 +125,9 @@ const Dashboard = () => {
 										tickFormatter={(value) => `${value}h`}
 									/>
 									<Tooltip
+										wrapperStyle={{
+											background: "red",
+										}}
 										contentStyle={{
 											backgroundColor: "#1e1e1e",
 											color: "white",
@@ -143,7 +146,7 @@ const Dashboard = () => {
 					</CardContent>
 				</Card>
 
-				<div className='lg:col-span-3 md:col-span-1 grid grid-cols-2 gap-4'>
+				<div className='lg:col-span-3 md:col-span-full grid grid-cols-2 gap-4'>
 					<Card className='bg-[#000814] shadow-lg border-gray-800 col-span-full md:col-span-1'>
 						<CardHeader>
 							<CardTitle className='flex items-center text-white font-semibold'>
@@ -208,7 +211,7 @@ const Dashboard = () => {
 									{upcomingAssignments.map((assignment) => (
 										<li
 											key={assignment.id}
-											className='flex justify-between items-center bg-[#2f3e46] p-3 rounded'>
+											className='flex justify-between items-center bg-[#1D201F] text-white p-3 rounded'>
 											<div>
 												<p className='font-semibold'>
 													{assignment.title}
@@ -236,7 +239,7 @@ const Dashboard = () => {
 				{/* Notifications */}
 
 				{/* Quick Actions */}
-				<Card className='lg:col-span-2'>
+				<Card className='md:col-span-full lg:col-span-2 bg-[#000814] shadow-lg border-gray-800'>
 					<CardHeader>
 						<CardTitle>Quick Actions</CardTitle>
 					</CardHeader>
