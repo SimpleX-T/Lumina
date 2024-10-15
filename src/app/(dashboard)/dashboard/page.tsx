@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+
 import {
 	BarChart,
 	Bar,
@@ -21,6 +22,7 @@ import {
 	FaCog,
 	FaGraduationCap,
 } from "react-icons/fa";
+import { ProductivityChart } from "../_components/ProductivityChart";
 
 interface CourseProgress {
 	name: string;
@@ -98,7 +100,7 @@ const Dashboard = () => {
 			<h1 className='text-3xl font-bold mb-8'>Dashboard</h1>
 
 			<div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6'>
-				<Card className='md:col-span-4 lg:col-span-3 bg-[#000814] shadow-lg border-gray-800 overflow-x-scroll md:overflow-hidden'>
+				{/* <Card className='md:col-span-4 lg:col-span-3 bg-[#000814] shadow-lg border-gray-800 overflow-x-scroll md:overflow-hidden'>
 					<CardHeader>
 						<CardTitle className='flex items-center text-white font-semibold'>
 							<FaBook className='mr-2' />
@@ -144,7 +146,11 @@ const Dashboard = () => {
 							</ResponsiveContainer>
 						)}
 					</CardContent>
-				</Card>
+				</Card> */}
+
+				<div className='md:col-span-4 lg:col-span-3 rounded-lg overflow-hidden shadow-lg border-gray-800 overflow-x-scroll'>
+					<ProductivityChart />
+				</div>
 
 				<div className='lg:col-span-3 md:col-span-full grid grid-cols-2 gap-4'>
 					<Card className='bg-[#000814] shadow-lg border-gray-800 col-span-full md:col-span-1'>

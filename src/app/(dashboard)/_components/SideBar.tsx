@@ -36,24 +36,24 @@ function SideBar() {
 		useState<boolean>(false);
 
 	return (
-		<aside className='flex flex-col items-center w-full md:h-full p-2 md:p-4 rounded-r-lg shadow-md border-r border-gray-600 bg-[#1e1e1e] pt-4'>
+		<aside className='flex md:flex-col items-center justify-start w-full h-full py-2 md:p-4 rounded-r-lg shadow-md border-r border-gray-600 bg-[#1e1e1e] pt-4 sticky top-0 left-0'>
 			<div className='w-full mb-8 hidden md:flex items-center justify-center'>
 				<Logo />
 			</div>
-			<ul className='h-full pb-4 flex items-center md:items-start w-full md:flex-col gap-4 mb-auto justify-center md:justify-start'>
+			<ul className='h-full pb-4 flex items-center md:items-start w-full md:flex-col gap-4 md:mb-auto pl-4 md:pl-0 justify-start'>
 				{sidebarLinks.map((link) => (
 					<SideBarLink
-						className='md:w-full block p-4 md:pl-4'
+						className='md:w-full block py-4 px-6 md:pl-4'
 						key={link.href}
 						{...link}
 					/>
 				))}
 
 				<Collapsible
-					className='md:w-full p-4'
+					className='md:w-full relative'
 					open={isSettingsCollapsed}>
 					<CollapsibleTrigger
-						className={`flex items-center justify-center md:justify-start hover:bg-[#4f4f4f] transition-all duration-300 hover:-translate-y-[2px] shadow-xl transform rounded-xl border border-gray-600 w-full py-4 mb-3 md:pl-4 ${isSettingsCollapsed ? "bg-[#4f4f4f] -translate-y-[2px]" : "bg-[#2e2e2e] -translate-y-none"}`}
+						className={`flex items-center justify-center md:justify-start hover:bg-[#4f4f4f] transition-all duration-300 hover:-translate-y-[2px] shadow-xl transform rounded-xl border border-gray-600 w-full py-4 px-6 md:mb-3 md:pl-4 ${isSettingsCollapsed ? "bg-[#4f4f4f] -translate-y-[2px]" : "bg-[#2e2e2e] -translate-y-none"}`}
 						onClick={() => setIsSettingsCollapsed((prev) => !prev)}>
 						<span className='text-2xl md:text-xl'>
 							<FaCog />
@@ -62,7 +62,7 @@ function SideBar() {
 							Settings
 						</span>
 					</CollapsibleTrigger>
-					<CollapsibleContent className='md:pl-6 flex items-start w-full flex-col gap-2'>
+					<CollapsibleContent className='md:pl-6 flex items-start w-full absolute top-1/2 left-[120%] transform -translate-y-1/2 md:translate-y-0 md:relative md:top-0 md:flex-col gap-2'>
 						{[
 							{
 								label: "Profile",
@@ -81,7 +81,7 @@ function SideBar() {
 							},
 						].map((link) => (
 							<SideBarLink
-								className='block w-4/5 mx-auto md:w-[calc(100%_-_6px)] py-2 md:pl-4'
+								className='block w-4/5 mx-auto md:w-[calc(100%_-_6px)] p-2 md:pl-4'
 								key={link.href}
 								{...link}
 							/>
