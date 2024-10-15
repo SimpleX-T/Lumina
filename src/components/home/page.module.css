@@ -1,0 +1,284 @@
+.page {
+	font-family: "Poppins", sans-serif;
+	background-color: #0f172a;
+	color: #ffffff;
+	line-height: 1.6;
+	scroll-behavior: smooth;
+}
+
+.mainContent {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 1rem;
+}
+
+.hero {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 50%;
+	padding: 3rem 1rem;
+	text-align: center;
+}
+
+.heroContent {
+	margin-bottom: 2rem;
+}
+
+.heroTitle {
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+	color: #60a5fa;
+	font-weight: 600;
+}
+
+.getStartedBtnContainer {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.getStartedBtn {
+	background-color: #fdc10d;
+	color: #0f172a;
+	border-radius: 9999px;
+	font-weight: bold;
+	padding: 10px 20px;
+}
+
+.getStartedBtn svg {
+	margin-left: 0.5rem;
+}
+
+.heroImageContainer {
+	width: 100%;
+	border-radius: 0.5rem;
+}
+
+.heroImage {
+	width: 100%;
+	height: 100%;
+	/* object-fit: cover; */
+}
+
+.videoSection {
+	padding: 3rem 0;
+	text-align: center;
+}
+
+.videoTitle {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	font-weight: 600;
+	color: #60a5fa;
+}
+
+.responsiveVideoWrapper {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	max-width: 750px;
+	margin: 0 auto;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 12px;
+	box-shadow: 0px 0px 8px 12px #0e0b1e5d;
+
+	/* iframe {
+		width: 100%;
+		height: 100%;
+	} */
+}
+
+.courses {
+	padding: 3rem 0;
+}
+
+.coursesTitle {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	font-weight: 600;
+	color: #60a5fa;
+}
+
+.courseGrid {
+	display: grid;
+	gap: 2rem;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.features {
+	display: grid;
+	gap: 2rem;
+	padding: 3rem 0;
+}
+
+.featureCard {
+	background-color: #1e293b;
+	padding: 1.5rem;
+	border-radius: 0.5rem;
+}
+
+.featureImage {
+	height: 10rem;
+	border-radius: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.blueBg {
+	background-color: #fdc10d;
+}
+.purpleBg {
+	background-color: #f6b33b;
+}
+.indigoBg {
+	background-color: #f1a509;
+}
+
+.featureTitle {
+	font-size: 1.5rem;
+	margin-bottom: 0.5rem;
+	color: #fdc10d;
+}
+
+.featureBtn {
+	background-color: #334155;
+	color: #ffffff;
+	border: none;
+	padding: 0.5rem 1rem;
+	border-radius: 9999px;
+	margin-top: 1rem;
+	cursor: pointer;
+}
+
+.community {
+	padding: 3rem 0;
+	text-align: center;
+}
+
+.communityLinks {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.communityLink {
+	background-color: #334155;
+	color: #ffffff;
+	text-decoration: none;
+	padding: 0.5rem 1rem;
+	border-radius: 9999px;
+}
+
+.about {
+	padding: 3rem 0;
+}
+
+.newsletter {
+	padding: 3rem 0;
+	text-align: center;
+	background-color: #1e293b;
+	border-radius: 0.5rem;
+	margin-top: 3rem;
+}
+
+.subscribeForm {
+	display: flex;
+	max-width: 400px;
+	margin: 1rem auto 0;
+	padding-inline: 20px;
+}
+
+.subscribeInput {
+	flex-grow: 1;
+	padding: 0.5rem 1rem;
+	border: none;
+	border-radius: 9999px 0 0 9999px;
+	background-color: #334155;
+	color: #ffffff;
+}
+
+.subscribeBtn {
+	background-color: #fdc10d;
+	color: #0f172a;
+	border: none;
+	padding: 0.5rem 1rem;
+	border-radius: 0 9999px 9999px 0;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.footer {
+	text-align: center;
+	padding: 2rem 1rem;
+	background-color: #1e293b;
+	margin-top: 3rem;
+}
+
+.partners {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin: 1rem 0;
+}
+
+.partner {
+	background-color: #334155;
+	color: #ffffff;
+	padding: 0.5rem 1rem;
+	border-radius: 0.25rem;
+}
+
+.footerLinks {
+	margin-top: 1rem;
+}
+
+.footerLink {
+	color: #fdc10d;
+	text-decoration: none;
+	margin: 0 0.5rem;
+}
+
+@media (min-width: 768px) {
+	.getStartedBtnContainer {
+		justify-content: flex-start;
+	}
+	.hero {
+		flex-direction: row;
+		justify-content: space-between;
+		text-align: left;
+	}
+
+	.heroContent {
+		width: 50%;
+		margin-bottom: 0;
+	}
+
+	.heroImageContainer {
+		width: 50%;
+	}
+
+	.features {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.fullWidth {
+		grid-column: span 2;
+	}
+
+	.heroTitle {
+		font-size: 3rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	.heroTitle {
+		font-size: 3.5rem;
+	}
+}
