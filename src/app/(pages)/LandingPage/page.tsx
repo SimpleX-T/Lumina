@@ -54,7 +54,7 @@ const LuminaLandingPage: React.FC = () => {
 	// );
 
 	return (
-		<div className='font-poppins bg-[#0f172a] w-full relative'>
+		<div className='font-poppins bg-[#0f172a] text-[#e2e8f0] w-full relative'>
 			<Header />
 
 			<main className='max-w-[1200px] mx-auto p-4 w-full'>
