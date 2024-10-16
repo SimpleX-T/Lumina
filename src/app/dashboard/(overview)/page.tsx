@@ -97,76 +97,12 @@ const Dashboard = () => {
 
 	return (
 		<div className="w-full px-4 md:px-8 py-8">
-			<h1 className="text-3xl font-bold mb-8">Dashboard</h1>
-
 			<div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6">
-				{/* <Card className='md:col-span-4 lg:col-span-3 bg-[#000814] shadow-lg border-gray-800 overflow-x-scroll md:overflow-hidden'>
-					<CardHeader>
-						<CardTitle className='flex items-center text-white font-semibold'>
-							<FaBook className='mr-2' />
-							Course Progress
-						</CardTitle>
-					</CardHeader>
-
-					<CardContent className='min-w-[600px]'>
-						{isLoading ? (
-							<Skeleton className='w-full h-64 bg-gray-700' />
-						) : (
-							<ResponsiveContainer
-								width='100%'
-								height={300}
-								className='-mr-8 min-w-full'>
-								<BarChart data={courseProgress}>
-									<CartesianGrid
-										horizontal={true}
-										vertical={false}
-										strokeDasharray='3 3'
-									/>
-									<XAxis dataKey='name' />
-									<YAxis
-										tickFormatter={(value) => `${value}h`}
-									/>
-									<Tooltip
-										wrapperStyle={{
-											background: "red",
-										}}
-										contentStyle={{
-											backgroundColor: "#1e1e1e",
-											color: "white",
-											border: "1px solid #333",
-										}}
-									/>
-									<Bar
-										dataKey='progress'
-										fill='#118ab2'
-										barSize={40}
-										radius={[20, 20, 0, 0]}
-									/>
-								</BarChart>
-							</ResponsiveContainer>
-						)}
-					</CardContent>
-				</Card> */}
-
 				<div className="md:col-span-4 lg:col-span-3 rounded-lg overflow-hidden shadow-lg border-gray-800 overflow-x-scroll">
 					<ProductivityChart />
 				</div>
 
-				<div className="lg:col-span-3 md:col-span-full grid grid-cols-2 gap-4">
-					<Card className="bg-[#000814] shadow-lg border-gray-800 col-span-full md:col-span-1">
-						<CardHeader>
-							<CardTitle className="flex items-center text-white font-semibold">
-								<FaBell className="mr-2" />
-								Notifications
-							</CardTitle>
-						</CardHeader>
-						<CardContent>
-							<p className="text-white">
-								You have no new notifications.
-							</p>
-						</CardContent>
-					</Card>
-
+				{/* <div className="lg:col-span-3 md:col-span-full grid grid-cols-2 gap-4">
 					<Card className="bg-[#000814] shadow-lg border-gray-800 col-span-full md:col-span-1 text-white">
 						<CardHeader>
 							<CardTitle className="flex items-center">
@@ -240,14 +176,14 @@ const Dashboard = () => {
 							)}
 						</CardContent>
 					</Card>
-				</div>
+				</div> */}
 
 				{/* Grades */}
 
 				{/* Notifications */}
 
 				{/* Quick Actions */}
-				<Card className="md:col-span-full lg:col-span-2 bg-[#000814] shadow-lg border-gray-800">
+				{/* <Card className="md:col-span-full lg:col-span-2 bg-[#000814] shadow-lg border-gray-800">
 					<CardHeader>
 						<CardTitle>Quick Actions</CardTitle>
 					</CardHeader>
@@ -256,7 +192,7 @@ const Dashboard = () => {
 						<Button variant="outline">Submit Assignment</Button>
 						<Button variant="outline">Schedule Tutoring</Button>
 					</CardContent>
-				</Card>
+				</Card> */}
 			</div>
 		</div>
 	);
