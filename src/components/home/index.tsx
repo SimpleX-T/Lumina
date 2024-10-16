@@ -72,7 +72,7 @@ const LuminaLandingPage: React.FC = () => {
 						<div className="w-full flex items-center justify-center md:justify-start mt-5">
 							{isConnected ? (
 								<Link href="/dashboard">
-									<button className="bg-[#fdc10d] text-[#0f172a] rounded-full font-bold py-3 px-6  flex gap-3 items-center">
+									<button className="bg-primary text-[#0f172a] rounded-full font-bold py-3 px-6  flex gap-3 items-center">
 										<span>Continue Learning</span>
 										<span>
 											<FaArrowRight />
