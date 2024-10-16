@@ -42,7 +42,6 @@ const Header = () => {
 				<SignupButton />
 				{!address && <LoginButton />}
 			</div>
-			{/* <Auth /> */}
 		</header>
 	);
 };
