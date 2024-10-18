@@ -8,8 +8,12 @@
 		"start": "next start",
 		"lint": "next lint"
 	},
+	"prisma": {
+		"seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+	},
 	"dependencies": {
 		"@coinbase/onchainkit": "^0.33.6",
+		"@prisma/client": "^5.21.1",
 		"@radix-ui/react-avatar": "^1.1.1",
 		"@radix-ui/react-collapsible": "^1.1.1",
 		"@radix-ui/react-dialog": "^1.1.2",
@@ -42,7 +46,7 @@
 		"zod": "^3.23.8"
 	},
 	"devDependencies": {
-		"@types/node": "^20.12.10",
+		"@types/node": "^20.16.12",
 		"@types/react": "^18.3.1",
 		"@types/react-dom": "^18.3.0",
 		"@wagmi/cli": "latest",
@@ -50,8 +54,10 @@
 		"encoding": "^0.1.13",
 		"lokijs": "^1.5.12",
 		"pino-pretty": "^10.3.1",
+		"prisma": "^5.21.1",
 		"supports-color": "^9.4.0",
-		"typescript": "^5.4.5",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.6.3",
 		"utf-8-validate": "^5.0.2"
 	}
 }
