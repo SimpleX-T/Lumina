@@ -83,7 +83,10 @@ const Courses = () => {
   const course = id ? courseData.find((c) => c.id === id) : null;
   return (
     <div>
-      {ids.map((id) => (
+        {
+            
+        }
+      {/* {ids.map((id) => (
         <button
           className="bg-purple-700 px-3 py-2 rounded-md"
           onClick={() => handleClick(id)}
@@ -92,7 +95,7 @@ const Courses = () => {
           Open Course {id}
         </button>
       ))}
-      {course && <CourseDetails {...course} />}
+      {course && <CourseDetails {...course} />} */}
     </div>
   );
 };
