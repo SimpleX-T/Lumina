@@ -1,12 +1,11 @@
-export interface Lesson {
-  name: string;
-  duration: string;
-}
-
 export interface Instructor {
   name: string;
   bio: string;
   image: string;
+}
+export interface Lesson {
+  name: string;
+  duration: string;
 }
 export interface Resource {
   audio?: boolean;
@@ -25,4 +24,21 @@ export interface CourseProps {
   watched: number;
   lessons: Lesson[];
   resources: Resource;
+}
+export interface CourseContentProps {
+  id: number;
+  lessons: LessonProp[];
+}
+export interface LessonProp {
+  id: number;
+  name: string;
+  content: React.FC;
+  duration: string;
+  quiz?: QuestionProps[];
+}
+export interface QuestionProps {
+  question: string;
+  options: String[];
+  answerIndex: number;
+  score: number;
 }

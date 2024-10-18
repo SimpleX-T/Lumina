@@ -9,6 +9,6 @@ import {MdOutlineQuestionAnswer} from "react-icons/md";
 
 export const navs = [
 	{title: "Dashboard", icon: IoGridOutline, route: "/dashboard"},
-	{title: "Learn", icon: RequestIcon, route: "/learn"},
+	{title: "Learn", icon: RequestIcon, route: "/dashboard/learn"},
 	{title: "Leadership Board", icon: RequestIcon, route: "/board"},
 ];
