@@ -24,6 +24,8 @@ import {
 } from "react-icons/fa";
 import { ProductivityChart } from "@/components/dashboard/ProductivityChart";
 import Carousel from "@/components/dashboard/Carousel";
+import Link from "next/link";
+
 interface CourseProgress {
 	name: string;
 	progress: number;
