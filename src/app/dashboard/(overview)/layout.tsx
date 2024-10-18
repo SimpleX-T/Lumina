@@ -29,10 +29,10 @@ const DashboardLayout = ({
 	return (
 		<>
 			<NavigatingLoading />
-			<div className="w-full bg-slate-800 flex flex-row">
+			<div className='w-full bg-slate-800 flex flex-row'>
 				<Navigation />
 
-				<main className="w-full relative z-0 pl-0 lg:pl-[260px] sm:pl-[250px]">
+				<main className='w-full relative z-0 pl-0 lg:pl-[260px] sm:pl-[250px]'>
 					<Header />
 					{children}
 				</main>
