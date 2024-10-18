@@ -23,6 +23,7 @@ import {
 	FaGraduationCap,
 } from "react-icons/fa";
 import {ProductivityChart} from "@/components/dashboard/ProductivityChart";
+import Link from "next/link";
 
 interface CourseProgress {
 	name: string;
@@ -97,12 +98,12 @@ const Dashboard = () => {
 
 	return (
 		<div className="w-full px-4 md:px-8 py-8">
-			<div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6">
+			{/* <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6">
 				<div className="md:col-span-4 lg:col-span-3 rounded-lg overflow-hidden shadow-lg border-gray-800 overflow-x-scroll">
 					<ProductivityChart />
 				</div>
 
-				{/* <div className="lg:col-span-3 md:col-span-full grid grid-cols-2 gap-4">
+				<div className="lg:col-span-3 md:col-span-full grid grid-cols-2 gap-4">
 					<Card className="bg-[#000814] shadow-lg border-gray-800 col-span-full md:col-span-1 text-white">
 						<CardHeader>
 							<CardTitle className="flex items-center">
@@ -176,14 +177,8 @@ const Dashboard = () => {
 							)}
 						</CardContent>
 					</Card>
-				</div> */}
-
-				{/* Grades */}
-
-				{/* Notifications */}
-
-				{/* Quick Actions */}
-				{/* <Card className="md:col-span-full lg:col-span-2 bg-[#000814] shadow-lg border-gray-800">
+				</div>
+				<Card className="md:col-span-full lg:col-span-2 bg-[#000814] shadow-lg border-gray-800">
 					<CardHeader>
 						<CardTitle>Quick Actions</CardTitle>
 					</CardHeader>
@@ -192,7 +187,21 @@ const Dashboard = () => {
 						<Button variant="outline">Submit Assignment</Button>
 						<Button variant="outline">Schedule Tutoring</Button>
 					</CardContent>
-				</Card> */}
+				</Card>
+			</div> */}
+			<div className="grid md:grid-cols-2 gap-8 *:bg-secondary-100 *:h-16 *:rounded-xl">
+				<Link
+					href="/learn/onchain"
+					className="font-semibold flex p-2 items-center justify-center text-slate-800 text-xl transform transition duration-300 ease-out hover:scale-[1.02]"
+				>
+					Onchain Ecomomics
+				</Link>
+				<Link
+					href="/learn/blockchain"
+					className="font-semibold flex p-2 items-center justify-center text-slate-800 text-xl transform transition duration-300 ease-out hover:scale-[1.02]"
+				>
+					Blockchain Ecosystem
+				</Link>
 			</div>
 		</div>
 	);

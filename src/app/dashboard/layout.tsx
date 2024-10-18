@@ -20,6 +20,7 @@
 import Navigation from "@/components/layout/Navigation";
 import Header from "@/components/layout/Header";
 import NavigatingLoading from "@/components/layout/loading";
+import MobileNavigation from "@/components/layout/MobileNavigation";
 
 const DashboardLayout = ({
 	children,
@@ -29,7 +30,7 @@ const DashboardLayout = ({
 	return (
 		<>
 			<NavigatingLoading />
-			<div className="w-full bg-slate-800 flex flex-row">
+			<div className="w-full bg-slate-800 min-h-screen flex flex-row">
 				<Navigation />
 
 				<main className="w-full relative z-0 pl-0 lg:pl-[260px] sm:pl-[250px]">
@@ -37,6 +38,7 @@ const DashboardLayout = ({
 					{children}
 				</main>
 			</div>
+			<MobileNavigation />
 		</>
 	);
 };
