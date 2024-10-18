@@ -1,5 +1,4 @@
 import "./globals.css";
-import "@rainbow-me/rainbowkit/styles.css";
 import type { Metadata } from "next";
 import { type ReactNode } from "react";
 import OnchainProviders from "@/components/OnchainProviders";
