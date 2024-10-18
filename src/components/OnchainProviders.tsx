@@ -28,7 +28,7 @@ function OnchainProviders({ children }: Props) {
 	const wagmiConfig = getConfig();
 
 	return (
-		<WagmiProvider config={config}>
+		<WagmiProvider config={wagmiConfig}>
 			<QueryClientProvider client={queryClient}>
 				<RainbowKitProvider
 					modalSize='compact'
