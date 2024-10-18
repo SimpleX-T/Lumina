@@ -6,34 +6,7 @@ import { MdOutlineAudiotrack } from "react-icons/md";
 import { FaVideo } from "react-icons/fa";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { ImFilePicture } from "react-icons/im";
-interface Lesson {
-  name: string;
-  duration: string;
-}
-
-interface Instructor {
-  name: string;
-  bio: string;
-  image: string;
-}
-interface Resource {
-  audio?: boolean;
-  video?: boolean;
-  text?: boolean;
-  visuals?: boolean;
-}
-
-interface CourseProps {
-  title: string;
-  description: string;
-  image: string;
-  duration: string;
-  rating: number;
-  watched: number;
-  lessons: Lesson[];
-  instructor: Instructor;
-  resources: Resource;
-}
+import { CourseProps } from "@/app/types";
 
 const CourseDetails: React.FC<CourseProps> = ({
   title,
@@ -43,7 +16,6 @@ const CourseDetails: React.FC<CourseProps> = ({
   rating,
   watched,
   lessons,
-  instructor,
   resources,
 }) => {
   const [isDarkMode, setIsDarkMode] = useState(true);
