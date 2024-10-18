@@ -197,19 +197,19 @@ const LuminaLandingPage: React.FC = () => {
 					</p>
 				</section>
 
-				<section className='py-12 bg-[#1e293b] rounded-lg text-center mt-12'>
+				<section className='py-12 bg-[#1e293b] rounded-lg text-center mt-12 w-full'>
 					<h2>Stay Illuminated</h2>
 					<p>
 						Subscribe to our newsletter for the latest updates,
 						course releases, and Web3 insights.
 					</p>
-					<div className='flex max-w-xs mx-auto mt-4'>
+					<div className='flex w-full mx-auto mt-4 px-2'>
 						<input
 							type='email'
 							placeholder='Enter your email'
-							className='flex-grow py-2 px-4 rounded-l-full bg-[#334155] text-white border-none'
+							className='w-3/4 py-2 px-4 rounded-l-full bg-[#334155] text-white border-none'
 						/>
-						<button className='bg-[#fdc10d] text-[#0f172a] rounded-r-full py-2 px-4 font-bold'>
+						<button className='w-1/4 bg-[#fdc10d] text-[#0f172a] rounded-r-full p-2 font-semibold'>
 							Subscribe
 						</button>
 					</div>
