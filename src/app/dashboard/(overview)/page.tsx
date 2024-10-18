@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 import {
 	BarChart,
@@ -25,6 +26,7 @@ import {
 import { ProductivityChart } from "@/components/dashboard/ProductivityChart";
 import Carousel from "@/components/dashboard/Carousel";
 import Link from "next/link";
+import { useAccount } from "wagmi";
 
 interface CourseProgress {
 	name: string;
@@ -91,13 +93,26 @@ const onchainBasics = [
 	{ id: 3, content: "Jesse Polak's visit to Africa" },
 ];
 
-const Dashboard = () => {
+function Dashboard() {
+	const router = useRouter();
+
+	const { isConnected } = useAccount();
 	const [isLoading, setIsLoading] = useState(true);
 	const [courseProgress, setCourseProgress] = useState<CourseProgress[]>([]);
 	const [upcomingAssignments, setUpcomingAssignments] = useState<
 		UpcomingAssignment[]
 	>([]);
 	const [grades, setGrades] = useState<Grade[]>([]);
+
+	useEffect(() => {
+		if (!isConnected) {
+			// Attempt to reconnect the wallet
+			// reconnect().catch(() => {
+			// If reconnection fails, redirect to the landing page
+			// });
+			router.push("/");
+		}
+	}, [isConnected, router]);
 
 	useEffect(() => {
 		// Simulate API calls
@@ -108,6 +123,11 @@ const Dashboard = () => {
 			setIsLoading(false);
 		}, 1500);
 	}, []);
+
+	if (!isConnected) {
+		// Show a loading state or message while checking the wallet connection
+		return <div>Checking wallet connection...</div>;
+	}
 
 	return (
 		<div className='w-full px-4 md:px-8 py-8'>
@@ -216,6 +236,6 @@ const Dashboard = () => {
 			</div>
 		</div>
 	);
-};
+}
 
 export default Dashboard;
