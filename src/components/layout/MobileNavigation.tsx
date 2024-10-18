@@ -1,41 +1,51 @@
-'use client'
+"use client";
 
-import { RiMenuUnfoldFill } from "react-icons/ri";
+import {RiMenuUnfoldFill} from "react-icons/ri";
 import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerTrigger,
+	Drawer,
+	DrawerClose,
+	DrawerContent,
+	DrawerTrigger,
 } from "@/components/UI/drawer";
 import ApplicationLogo from "@/components/ApplicationLogo";
 import Link from "next/link";
 import NavigationItem from "@/components/layout/NavItem";
-import { navs } from "@/lib/navs";
+import {GoHomeFill} from "react-icons/go";
+import {FaBookOpenReader} from "react-icons/fa6";
+import {MdLeaderboard} from "react-icons/md";
+
+export const navs = [
+	{
+		title: "Home",
+		route: "/dashboard",
+		icon: <GoHomeFill className="text-3xl" />,
+	},
+	{
+		title: "Learn",
+		route: "/learn",
+		icon: <FaBookOpenReader className="text-3xl" />,
+	},
+	{
+		title: "Leadership",
+		route: "/board",
+		icon: <MdLeaderboard className="text-3xl" />,
+	},
+];
 
 export default function MobileNavigation() {
-  return (
-    <div className="block sm:hidden mr-3">
-      <Drawer direction="left">
-        <DrawerTrigger asChild>
-          <RiMenuUnfoldFill className="text-custom-black size-6 cursor-pointer" />
-        </DrawerTrigger>
-        <DrawerContent className="rounded-none border-r border-custom-black/15">
-          <nav className="bg-white overflow-y-auto pr-4">
-            {/* Brand Logo */}
-            <div className="py-4 pl-4 mb-10 sticky top-0 bg-white">
-              <Link href="/dashboard">
-                <ApplicationLogo />
-              </Link>
-            </div>
-
-            <div className="">
-              {navs.map((nav, index) => (
-                <NavigationItem key={index} nav={nav} />
-              ))}
-            </div>
-          </nav>
-        </DrawerContent>
-      </Drawer>
-    </div>
-  );
+	return (
+		<div className="block sm:hidden mr-3 w-full fixed bottom-0 z-50 bg-slate-900">
+			<div className="grid grid-cols-3 items-center">
+				{navs.map((nav, index) => (
+					<Link
+						href={nav.route}
+						className="text-center text-xs p-3 flex gap-2 flex-col items-center"
+					>
+						{nav.icon}
+						{nav.title}
+					</Link>
+				))}
+			</div>
+		</div>
+	);
 }

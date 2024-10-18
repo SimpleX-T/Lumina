@@ -25,6 +25,9 @@ const Header = () => {
 				onClick={toggleMenu}
 				className='text-3xl text-gray-400 z-50 p-1 md:hidden focus-within:ring-1 rounded-md mr-6 cursor-pointer border-none'>
 				{isMenuOpen ? <FaTimes /> : <FaBars />}
+				<span className='sr-only'>
+					{isMenuOpen ? "Close menu" : "Open menu"}
+				</span>
 			</button>
 			<nav className={`${styles.nav} ${isMenuOpen ? styles.active : ""}`}>
 				<Link
@@ -42,6 +45,10 @@ const Header = () => {
 					className={styles.navLink}>
 					About
 				</Link>
+				<div className='md:hidden flex flex-col items-start gap-3'>
+					<SignupButton />
+					{!address && <LoginButton />}
+				</div>
 			</nav>
 			<div className='hidden md:flex items-center gap-3'>
 				<SignupButton />

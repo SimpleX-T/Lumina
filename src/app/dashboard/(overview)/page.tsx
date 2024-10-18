@@ -24,6 +24,8 @@ import {
 } from "react-icons/fa";
 import { ProductivityChart } from "@/components/dashboard/ProductivityChart";
 import Carousel from "@/components/dashboard/Carousel";
+import Link from "next/link";
+
 interface CourseProgress {
 	name: string;
 	progress: number;
@@ -109,18 +111,18 @@ const Dashboard = () => {
 
 	return (
 		<div className='w-full px-4 md:px-8 py-8'>
-			<div className='w-full border grid grid-cols-1 md:grid-cols-2 lg:w-1/2'>
+			<div className='w-full grid grid-cols-1 lg:grid-cols-2 h-[300px] rounded-lg overflow-hidden mb-6 shadow-md'>
 				<Carousel items={blockchainBasics} />
 				<Carousel items={onchainBasics} />
 			</div>
 
-			{/* <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6'>
+			<div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6'>
 				<div className='md:col-span-4 lg:col-span-3 rounded-lg overflow-hidden shadow-lg border-gray-800 overflow-x-scroll'>
 					<ProductivityChart />
 				</div>
 
 				<div className='lg:col-span-3 md:col-span-full grid grid-cols-2 gap-4'>
-					<Card className='bg-[#000814] shadow-lg border-gray-800 col-span-full md:col-span-1 text-white'>
+					<Card className='bg-[#001123] shadow-lg border-gray-800 col-span-full md:col-span-1 text-white'>
 						<CardHeader>
 							<CardTitle className='flex items-center'>
 								<FaGraduationCap className='mr-2' />
@@ -151,7 +153,26 @@ const Dashboard = () => {
 						</CardContent>
 					</Card>
 
-					<Card className='col-span-full bg-[#000814] shadow-lg border-gray-800'>
+					<Card className='bg-[#001123] shadow-lg border-gray-800 col-span-full md:col-span-1 text-white'>
+						<CardHeader>
+							<CardTitle>Quick Actions</CardTitle>
+						</CardHeader>
+						<CardContent className='flex flex-wrap gap-2'>
+							<Button>Join Live Session</Button>
+							<Button
+								variant='outline'
+								className='text-black'>
+								Submit Assignment
+							</Button>
+							<Button
+								variant='outline'
+								className='text-black'>
+								Schedule Tutoring
+							</Button>
+						</CardContent>
+					</Card>
+
+					<Card className='col-span-full bg-[#001123] shadow-lg border-gray-800'>
 						<CardHeader>
 							<CardTitle className='flex items-center text-white font-semibold'>
 								<FaCalendar className='mr-2' />
@@ -192,18 +213,7 @@ const Dashboard = () => {
 						</CardContent>
 					</Card>
 				</div>
-
-				<Card className='md:col-span-full lg:col-span-2 bg-[#000814] shadow-lg border-gray-800'>
-					<CardHeader>
-						<CardTitle>Quick Actions</CardTitle>
-					</CardHeader>
-					<CardContent className='flex flex-wrap gap-2'>
-						<Button>Join Live Session</Button>
-						<Button variant='outline'>Submit Assignment</Button>
-						<Button variant='outline'>Schedule Tutoring</Button>
-					</CardContent>
-				</Card>
-			</div> */}
+			</div>
 		</div>
 	);
 };
