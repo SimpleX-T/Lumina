@@ -29,7 +29,7 @@ const DashboardLayout = ({
   return (
     <>
       <NavigatingLoading />
-      <div className="w-full h-screen bg-slate-800 flex flex-row">
+      <div className="w-full min-h-screen bg-slate-800 flex flex-row">
         <Navigation />
 
         <main className="w-full h-full relative z-0 pl-0 lg:pl-[260px] sm:pl-[250px]">
