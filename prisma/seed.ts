@@ -16,8 +16,24 @@ const videos = [
 		title: "Why Onchain",
 	},
 	{
-		url: "https://www.youtube.com/embed/7YgG18LJ1Zw?si=h8JHaLGT09eLM_Uk",
-		title: "Base Journey",
+		url: "https://www.youtube.com/embed/Ffus9EDw5y8?si=vYqKC49E50H4Aysg",
+		title: "Base Year 2 Vision",
+	},
+];
+
+const courses = [
+	{
+		img: "",
+		title: "Introduction to Programming",
+		description:
+			"Learn the basics of programming with this introductory course.",
+		lessons: [
+			{
+				title: "Lesson 1: What is Programming?",
+				content: "Introduction to basic programming concepts.",
+				order: 1,
+			},
+		],
 	},
 ];
 
@@ -29,6 +45,8 @@ async function main() {
 			create: {...video},
 		});
 	});
+
+	
 }
 main()
 	.then(() => prisma.$disconnect())

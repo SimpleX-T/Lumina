@@ -13,40 +13,60 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// model Post {
-//   id       String    @id @default(auto()) @map("_id") @db.ObjectId
-//   slug     String    @unique
-//   title    String
-//   body     String
-//   author   User      @relation(fields: [authorId], references: [id])
-//   authorId String    @db.ObjectId
-//   comments Comment[]
-// }
-
 model User {
   id             String  @id @default(auto()) @map("_id") @db.ObjectId
   email          String? @unique
   wallet_address String  @unique
   name           String?
+
+  enrollments    Enrollment[]
+  lessonProgress LessonProgress[]
+}
+
+model Course {
+  id          String       @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String
+  enrollments Enrollment[]
+  lessons     Lesson[]
+}
+
+model Lesson {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  title    String
+  content  String // Could be a video URL, text, or any lesson material
+  courseId String @db.ObjectId
+
+  course         Course           @relation(fields: [courseId], references: [id])
+  order          Int // To track the order of lessons within the course
+  LessonProgress LessonProgress[]
+}
+
+model Enrollment {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId     String   @db.ObjectId
+  courseId   String   @db.ObjectId
+  user       User     @relation(fields: [userId], references: [id])
+  course     Course   @relation(fields: [courseId], references: [id])
+  enrolledAt DateTime @default(now())
+
+  // Progress tracking fields
+  progress       Float    @default(0) // e.g., 0 to 100, representing completion percentage
+  completed      Boolean  @default(false) // Indicates if the user has completed the course
+  lastAccessedAt DateTime @default(now()) // Tracks when the user last accessed the course
+}
+
+model LessonProgress {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String    @db.ObjectId
+  lessonId    String    @db.ObjectId
+  user        User      @relation(fields: [userId], references: [id])
+  lesson      Lesson    @relation(fields: [lessonId], references: [id])
+  completedAt DateTime? // Optional: Track when the lesson was completed
 }
 
 model BaseVideo {
   id    String @id @default(auto()) @map("_id") @db.ObjectId
   title String @unique
   url   String
-}
-
-// model Comment {
-//   id      String @id @default(auto()) @map("_id") @db.ObjectId
-//   comment String
-//   post    Post   @relation(fields: [postId], references: [id])
-//   postId  String @db.ObjectId
-// }
-
-// Address is an embedded document
-type Address {
-  street String
-  city   String
-  state  String
-  zip    String
 }
