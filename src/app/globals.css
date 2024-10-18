@@ -1,42 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("/fonts/styles.css");
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-	font-family: "Coinbase Display", sans-serif;
+  font-family: "Poppins", sans-serif;
+  scrollbar-width: none;
 }
 
 :root {
-	background-color: #181818;
-	color: rgba(255, 255, 255, 0.87);
-	color-scheme: light dark;
-	font-family: "Poppins", sans-serif;
-	font-synthesis: none;
-	font-weight: 400;
-	line-height: 1.5;
-	text-rendering: optimizeLegibility;
+  background-color: #181818;
+  color: rgba(255, 255, 255, 0.87);
+  color-scheme: light dark;
+  font-family: "Poppins", sans-serif;
+  font-synthesis: none;
+  font-weight: 400;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
 
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 
 @media (prefers-color-scheme: light) {
-	:root {
-		background-color: #f8f8f8;
-		color: #181818;
-	}
+  :root {
+    background-color: #f8f8f8;
+    color: #181818;
+  }
 }
 
 @layer base {
-	:root {
-		--radius: 0.5rem;
-	}
+  :root {
+    --radius: 0.5rem;
+  }
 }
 
 .sidebar-link.active {
-	background: #4f4f4f;
+  background: #4f4f4f;
+}
+article p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
 }

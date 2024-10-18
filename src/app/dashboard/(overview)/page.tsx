@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 
 import {
 	BarChart,
@@ -11,9 +11,9 @@ import {
 	Tooltip,
 	ResponsiveContainer,
 } from "recharts";
-import {Card, CardContent, CardHeader, CardTitle} from "@/components/UI/card";
-import {Button} from "@/components/UI/button";
-import {Skeleton} from "@/components/UI/skeleton";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/UI/card";
+import { Button } from "@/components/UI/button";
+import { Skeleton } from "@/components/UI/skeleton";
 import {
 	FaBell,
 	FaBook,
@@ -22,8 +22,8 @@ import {
 	FaCog,
 	FaGraduationCap,
 } from "react-icons/fa";
-import {ProductivityChart} from "@/components/dashboard/ProductivityChart";
-import Link from "next/link";
+import { ProductivityChart } from "@/components/dashboard/ProductivityChart";
+import Carousel from "@/components/dashboard/Carousel";import Link from "next/link";
 
 interface CourseProgress {
 	name: string;
@@ -43,12 +43,12 @@ interface Grade {
 }
 
 const mockCourseProgress: CourseProgress[] = [
-	{name: "Week 1", progress: 1},
-	{name: "Week 2", progress: 5},
-	{name: "Week 3", progress: 6},
-	{name: "Week 4", progress: 0},
-	{name: "Week 5", progress: 2},
-	{name: "Week 6", progress: 3},
+	{ name: "Week 1", progress: 1 },
+	{ name: "Week 2", progress: 5 },
+	{ name: "Week 3", progress: 6 },
+	{ name: "Week 4", progress: 0 },
+	{ name: "Week 5", progress: 2 },
+	{ name: "Week 6", progress: 3 },
 ];
 
 const mockUpcomingAssignments: UpcomingAssignment[] = [
@@ -73,9 +73,21 @@ const mockUpcomingAssignments: UpcomingAssignment[] = [
 ];
 
 const mockGrades: Grade[] = [
-	{course: "Blockchain Fundamentals", grade: "A"},
-	{course: "Web3 Development", grade: "B+"},
-	{course: "Crypto Economics", grade: "A-"},
+	{ course: "Blockchain Fundamentals", grade: "A" },
+	{ course: "Web3 Development", grade: "B+" },
+	{ course: "Crypto Economics", grade: "A-" },
+];
+
+const blockchainBasics = [
+	{ id: 1, content: "Breaking News" },
+	{ id: 2, content: "Crypto Prices Surge" },
+	{ id: 3, content: "New Blockchain Course Available" },
+];
+
+const onchainBasics = [
+	{ id: 1, content: "Breaking News" },
+	{ id: 2, content: "Onchain Buildathon" },
+	{ id: 3, content: "Jesse Polak's visit to Africa" },
 ];
 
 const Dashboard = () => {
@@ -97,36 +109,40 @@ const Dashboard = () => {
 	}, []);
 
 	return (
-		<div className="w-full px-4 md:px-8 py-8">
-			{/* <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6">
-				<div className="md:col-span-4 lg:col-span-3 rounded-lg overflow-hidden shadow-lg border-gray-800 overflow-x-scroll">
+		<div className='w-full px-4 md:px-8 py-8'>
+			{/* <div className='w-full border grid grid-cols-1 md:grid-cols-2 lg:w-1/2'>
+				<Carousel items={blockchainBasics} />
+				<Carousel items={onchainBasics} />
+			</div>
+
+			{/* <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6'>
+				<div className='md:col-span-4 lg:col-span-3 rounded-lg overflow-hidden shadow-lg border-gray-800 overflow-x-scroll'>
 					<ProductivityChart />
 				</div>
 
-				<div className="lg:col-span-3 md:col-span-full grid grid-cols-2 gap-4">
+				{/* <div className="lg:col-span-3 md:col-span-full grid grid-cols-2 gap-4">
 					<Card className="bg-[#000814] shadow-lg border-gray-800 col-span-full md:col-span-1 text-white">
 						<CardHeader>
-							<CardTitle className="flex items-center">
-								<FaGraduationCap className="mr-2" />
+							<CardTitle className='flex items-center'>
+								<FaGraduationCap className='mr-2' />
 								Grades
 							</CardTitle>
 						</CardHeader>
 						<CardContent>
 							{isLoading ? (
-								<div className="space-y-2">
-									<Skeleton className="w-full h-8" />
-									<Skeleton className="w-full h-8" />
-									<Skeleton className="w-full h-8" />
+								<div className='space-y-2'>
+									<Skeleton className='w-full h-8' />
+									<Skeleton className='w-full h-8' />
+									<Skeleton className='w-full h-8' />
 								</div>
 							) : (
-								<ul className="space-y-2">
+								<ul className='space-y-2'>
 									{grades.map((grade, index) => (
 										<li
 											key={index}
-											className="flex justify-between items-center"
-										>
+											className='flex justify-between items-center'>
 											<span>{grade.course}</span>
-											<span className="font-bold">
+											<span className='font-bold'>
 												{grade.grade}
 											</span>
 										</li>
@@ -136,38 +152,37 @@ const Dashboard = () => {
 						</CardContent>
 					</Card>
 
-					<Card className="col-span-full bg-[#000814] shadow-lg border-gray-800">
+					<Card className='col-span-full bg-[#000814] shadow-lg border-gray-800'>
 						<CardHeader>
-							<CardTitle className="flex items-center text-white font-semibold">
-								<FaCalendar className="mr-2" />
+							<CardTitle className='flex items-center text-white font-semibold'>
+								<FaCalendar className='mr-2' />
 								Upcoming Assignments
 							</CardTitle>
 						</CardHeader>
 						<CardContent>
 							{isLoading ? (
-								<div className="space-y-2">
-									<Skeleton className="w-full h-12" />
-									<Skeleton className="w-full h-12" />
-									<Skeleton className="w-full h-12" />
+								<div className='space-y-2'>
+									<Skeleton className='w-full h-12' />
+									<Skeleton className='w-full h-12' />
+									<Skeleton className='w-full h-12' />
 								</div>
 							) : (
-								<ul className="space-y-2">
+								<ul className='space-y-2'>
 									{upcomingAssignments.map((assignment) => (
 										<li
 											key={assignment.id}
-											className="flex justify-between items-center bg-[#1D201F] text-white p-3 rounded"
-										>
+											className='flex justify-between items-center bg-[#1D201F] text-white p-3 rounded'>
 											<div>
-												<p className="font-semibold">
+												<p className='font-semibold'>
 													{assignment.title}
 												</p>
-												<p className="text-sm text-white">
+												<p className='text-sm text-white'>
 													{assignment.course}
 												</p>
 											</div>
-											<div className="flex items-center">
-												<FaClock className="mr-1 w-4 h-4" />
-												<span className="text-sm">
+											<div className='flex items-center'>
+												<FaClock className='mr-1 w-4 h-4' />
+												<span className='text-sm'>
 													{assignment.dueDate}
 												</span>
 											</div>
@@ -177,18 +192,24 @@ const Dashboard = () => {
 							)}
 						</CardContent>
 					</Card>
-				</div>
-				<Card className="md:col-span-full lg:col-span-2 bg-[#000814] shadow-lg border-gray-800">
+				</div> */}
+
+				{/* Grades */}
+
+				{/* Notifications */}
+
+				{/* Quick Actions */}
+				{/* <Card className="md:col-span-full lg:col-span-2 bg-[#000814] shadow-lg border-gray-800">
 					<CardHeader>
 						<CardTitle>Quick Actions</CardTitle>
 					</CardHeader>
-					<CardContent className="flex flex-wrap gap-2">
+					<CardContent className='flex flex-wrap gap-2'>
 						<Button>Join Live Session</Button>
-						<Button variant="outline">Submit Assignment</Button>
-						<Button variant="outline">Schedule Tutoring</Button>
+						<Button variant='outline'>Submit Assignment</Button>
+						<Button variant='outline'>Schedule Tutoring</Button>
 					</CardContent>
 				</Card>
-			</div> */}
+			</div>
 			<div className="grid md:grid-cols-2 gap-8 *:bg-secondary-100 *:h-16 *:rounded-xl">
 				<Link
 					href="/learn/onchain"
@@ -202,7 +223,7 @@ const Dashboard = () => {
 				>
 					Blockchain Ecosystem
 				</Link>
-			</div>
+			</div> */}
 		</div>
 	);
 };

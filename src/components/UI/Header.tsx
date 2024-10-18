@@ -1,16 +1,16 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styles from "./Header.module.css";
 import Link from "next/link";
-import {FaTimes, FaBars} from "react-icons/fa";
+import { FaTimes, FaBars } from "react-icons/fa";
 import WalletWrapper from "../WalletWrapper";
 import Logo from "./Logo";
 import SignupButton from "../SignupButton";
 import LoginButton from "../LoginButton";
-import {useAccount} from "wagmi";
+import { useAccount } from "wagmi";
 
 const Header = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-	const {address} = useAccount();
+	const { address } = useAccount();
 
 	const toggleMenu = () => {
 		setIsMenuOpen((prev) => !prev);
@@ -23,22 +23,27 @@ const Header = () => {
 			</div>
 			<button
 				onClick={toggleMenu}
-				className="text-3xl text-gray-400 z-50 p-1 md:hidden focus-within:ring-1 rounded-md mr-6 cursor-pointer border-none"
-			>
+				className='text-3xl text-gray-400 z-50 p-1 md:hidden focus-within:ring-1 rounded-md mr-6 cursor-pointer border-none'>
 				{isMenuOpen ? <FaTimes /> : <FaBars />}
 			</button>
 			<nav className={`${styles.nav} ${isMenuOpen ? styles.active : ""}`}>
-				<Link href="#courses" className={styles.navLink}>
+				<Link
+					href='#courses'
+					className={styles.navLink}>
 					Courses
 				</Link>
-				<Link href="#community" className={styles.navLink}>
+				<Link
+					href='#community'
+					className={styles.navLink}>
 					Community
 				</Link>
-				<Link href="#about" className={styles.navLink}>
+				<Link
+					href='#about'
+					className={styles.navLink}>
 					About
 				</Link>
 			</nav>
-			<div className="flex items-center gap-3">
+			<div className='hidden md:flex items-center gap-3'>
 				<SignupButton />
 				{!address && <LoginButton />}
 			</div>

@@ -50,15 +50,9 @@ const chartConfig = {
 	},
 } satisfies ChartConfig;
 
-// interface ChartProps {
-//   title: string;
-//   description?: string;
-
-// }
-
 export function ProductivityChart() {
 	return (
-		<Card className='bg-[#1e293b] shadow-lg border-gray-800 overflow-x-scroll md:overflow-hidden'>
+		<Card className='bg-[#001123] shadow-lg border-gray-800 overflow-x-scroll md:overflow-hidden'>
 			<CardHeader>
 				<CardTitle className='text-[#e2e8f0]'>Progress Chart</CardTitle>
 				<CardDescription className='text-[#e2e8f0]'>
@@ -76,6 +70,7 @@ export function ProductivityChart() {
 							tickLine={false}
 							tickMargin={10}
 							axisLine={false}
+							stroke='#e2e8f0'
 						/>
 						<ChartTooltip
 							cursor={false}
@@ -89,7 +84,7 @@ export function ProductivityChart() {
 					</BarChart>
 				</ChartContainer>
 			</CardContent>
-			<CardFooter className='flex-col items-start gap-2 text-sm bg-[#1e293b]'>
+			<CardFooter className='flex-col items-start gap-2 text-sm bg-[#001123] text-white'>
 				<div className='flex gap-2 font-medium leading-none'>
 					Trending up by 5.2% this month{" "}
 					<TrendingUp className='h-4 w-4' />

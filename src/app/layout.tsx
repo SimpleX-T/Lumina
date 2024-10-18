@@ -1,7 +1,6 @@
 import "./globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 import { type ReactNode } from "react";
 import OnchainProviders from "@/components/OnchainProviders";
 
