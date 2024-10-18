@@ -22,23 +22,23 @@ import Header from "@/components/layout/Header";
 import NavigatingLoading from "@/components/layout/loading";
 
 const DashboardLayout = ({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) => {
-	return (
-		<>
-			<NavigatingLoading />
-			<div className='w-full bg-slate-800 flex flex-row'>
-				<Navigation />
+  return (
+    <>
+      <NavigatingLoading />
+      <div className="w-full h-screen bg-slate-800 flex flex-row">
+        <Navigation />
 
-				<main className='w-full relative z-0 pl-0 lg:pl-[260px] sm:pl-[250px]'>
-					<Header />
-					{children}
-				</main>
-			</div>
-		</>
-	);
+        <main className="w-full h-full relative z-0 pl-0 lg:pl-[260px] sm:pl-[250px]">
+          <Header />
+          {children}
+        </main>
+      </div>
+    </>
+  );
 };
 
 export default DashboardLayout;
