@@ -8,6 +8,7 @@ import { IoDocumentTextOutline } from "react-icons/io5";
 import { ImFilePicture } from "react-icons/im";
 import { CourseProps } from "@/app/types";
 import { formatDuration } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 interface CourseDetailProps extends CourseProps {
 	onclose: () => void;
@@ -21,10 +22,11 @@ const CourseDetails: React.FC<CourseDetailProps> = ({
 	lessons,
 	resources,
 	onclose,
+	id,
 }) => {
 	const [isDarkMode, setIsDarkMode] = useState(true);
-
-	const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
+	const router = useRouter();
+	// const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
 
 	return (
 		<div
@@ -34,7 +36,6 @@ const CourseDetails: React.FC<CourseDetailProps> = ({
 				className='absolute top-4 right-4 text-white'>
 				<FaTimes size={20} />
 			</button>
-
 			<div className='bg-gray-100 dark:bg-gray-900 min-h-screen'>
 				<main className='container mx-auto p-4'>
 					<h1 className='text-2xl font-bold mb-4 dark:text-white capitalize'>
@@ -65,9 +66,19 @@ const CourseDetails: React.FC<CourseDetailProps> = ({
 											{formatDuration(duration)}
 										</span>
 									</div>
-								</div>
 
-								<button className='bg-purple-600 text-white px-6 py-2 rounded w-full'>
+									<div className='flex items-center'>
+										<IoIosStarOutline
+											size={20}
+											className='text-yellow-500 mr-1'
+										/>
+									</div>
+								</div>
+								<button
+									className='bg-purple-600 text-white px-6 py-2 rounded w-full'
+									onClick={() =>
+										router.push(`/dashboard/learn/${id}/1`)
+									}>
 									START COURSE
 								</button>
 							</div>
