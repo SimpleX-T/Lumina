@@ -23,22 +23,22 @@ const courses: Course[] = [
 		title: "Blockchain Fundamentals",
 		description:
 			"Master the core concepts of blockchain technology and cryptocurrencies.",
-		imageUrl: "/Images/courses_image.png",
-		courseUrl: "/courses/blockchain-fundamentals",
+		imageUrl: "/Images/fundamentals.jpg",
+		courseUrl: "/courses/fundamentals",
 	},
 	{
-		title: "Smart Contract Development",
+		title: "Wallets",
 		description:
-			"Learn to create and deploy smart contracts on popular blockchain platforms.",
-		imageUrl: "/Images/courses_image.png",
-		courseUrl: "/courses/smart-contract-development",
+			"Understand what cryptocurrency wallets are and how they work",
+		imageUrl: "/Images/wallet.jpg",
+		courseUrl: "/courses/wallets",
 	},
 	{
-		title: "DeFi Mastery",
+		title: "Cryptocurrencies",
 		description:
-			"Explore the world of decentralized finance and its applications.",
-		imageUrl: "/Images/courses_image.png",
-		courseUrl: "/courses/defi-mastery",
+			"Explore the world of cryptocurrencies and their various applications in finance.",
+		imageUrl: "/Images/crypto.jpg",
+		courseUrl: "/courses/crypto",
 	},
 ];
 
@@ -60,11 +60,11 @@ const LuminaLandingPage: React.FC = () => {
 			<main className='max-w-[1200px] mx-auto p-4 w-full'>
 				<section className='flex flex-col md:flex-row items-center p-12 text-center min-h-[70vh] w-full'>
 					<div className='mb-8 w-full md:w-1/2 pr-4'>
-						<h1 className='text-5xl mb-4 text-[#60a5fa] leading-snug font-bold text-center md:text-left'>
-							Illuminate Your Future with Blockchain: Empowering
-							Knowledge, Igniting Innovation
+						<h1 className='text-4xl md:text-5xl mb-4 text-[#60a5fa] leading-snug font-bold text-center md:text-left'>
+							Illuminate the Path to Blockchain Mastery: Learn,
+							Explore, Innovate.
 						</h1>
-						<p className='text-sm md:text-base text-center md:text-left'>
+						<p className='text-md md:text-base text-center md:text-left'>
 							Join Lumina and embark on a journey to master Web3
 							technologies, earn crypto, and shape the future of
 							the internet.
