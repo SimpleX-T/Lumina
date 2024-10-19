@@ -18,8 +18,6 @@ const CourseDetails: React.FC<CourseDetailProps> = ({
 	description,
 	image,
 	duration,
-	rating,
-	watched,
 	lessons,
 	resources,
 	onclose,
@@ -36,6 +34,7 @@ const CourseDetails: React.FC<CourseDetailProps> = ({
 				className='absolute top-4 right-4 text-white'>
 				<FaTimes size={20} />
 			</button>
+
 			<div className='bg-gray-100 dark:bg-gray-900 min-h-screen'>
 				<main className='container mx-auto p-4'>
 					<h1 className='text-2xl font-bold mb-4 dark:text-white capitalize'>
@@ -66,21 +65,8 @@ const CourseDetails: React.FC<CourseDetailProps> = ({
 											{formatDuration(duration)}
 										</span>
 									</div>
-
-									<div className='flex items-center'>
-										<IoIosStarOutline
-											size={20}
-											className='text-yellow-500 mr-1'
-										/>
-										<span className='dark:text-white'>
-											{rating}
-										</span>
-									</div>
 								</div>
 
-								<div className='text-purple-600 mb-4'>
-									TAKEN BY {watched} USERS
-								</div>
 								<button className='bg-purple-600 text-white px-6 py-2 rounded w-full'>
 									START COURSE
 								</button>
@@ -98,7 +84,7 @@ const CourseDetails: React.FC<CourseDetailProps> = ({
 									key={index}
 									className='flex justify-between items-center py-2 border-b dark:border-gray-700'>
 									<span className='dark:text-white'>
-										{lesson.name}
+										{lesson.title}
 									</span>
 									<div className='flex items-center'>
 										<CiClock2
