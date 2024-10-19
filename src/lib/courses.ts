@@ -3,6 +3,7 @@ import introA from "@/components/courses/[123]/intro1";
 import introB from "@/components/courses/[123]/intro1";
 import introC from "@/components/courses/[123]/intro1";
 import introD from "@/components/courses/[123]/intro1";
+
 const blockchainMidQuestions: QuestionProps[] = [
 	{
 		question:
