@@ -3,3 +3,4 @@ import CourseHeader from "@/components/courses/CourseHeader";
 const Courses = () => {
   return <div>Hello</div>;
 };
+export default Courses
