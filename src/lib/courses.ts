@@ -1,8 +1,8 @@
 import { CourseProps, QuestionProps } from "@/app/types";
-import introA from "@/components/courses/(123)/intro1";
-import introB from "@/components/courses/(123)/intro1";
-import introC from "@/components/courses/(123)/intro1";
-import introD from "@/components/courses/(123)/intro1";
+import introA from "@/components/courses/[123]/intro1";
+import introB from "@/components/courses/[123]/intro1";
+import introC from "@/components/courses/[123]/intro1";
+import introD from "@/components/courses/[123]/intro1";
 const blockchainMidQuestions: QuestionProps[] = [
   {
     question: "What is a blockchain primarily compared to in our explanation?",
