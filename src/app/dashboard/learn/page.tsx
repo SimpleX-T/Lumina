@@ -93,7 +93,7 @@ function Courses() {
 	const course = id ? courseData.find((c) => c.id === id) : null;
 	return (
 		<div className='w-full relative'>
-			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8'>
+			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 p-6'>
 				{courseData.map((course) => (
 					<MiniCourseCard
 						key={course.id}

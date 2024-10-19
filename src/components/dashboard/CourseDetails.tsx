@@ -32,7 +32,7 @@ const CourseDetails: React.FC<CourseDetailProps> = ({
 		<div
 			className={`font-sans ${isDarkMode ? "dark" : ""} mb-12 absolute w-full h-screen top-0 left-0`}>
 			<button
-				onClick={() => onclose}
+				onClick={onclose}
 				className='absolute top-4 right-4 text-white'>
 				<FaTimes size={20} />
 			</button>
@@ -105,7 +105,7 @@ const CourseDetails: React.FC<CourseDetailProps> = ({
 											size={16}
 											className='text-gray-500 mr-1'
 										/>
-										<span className='text-gray-500 text-sm'>
+										<span className='text-gray-500 text-xs'>
 											{formatDuration(lesson.duration)}
 										</span>
 									</div>
