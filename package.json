@@ -13,8 +13,8 @@
 	},
 	"dependencies": {
 		"@coinbase/onchainkit": "^0.33.6",
-		"@prisma/client": "^5.21.1",
 		"@coinbase/wallet-sdk": "^4.1.0",
+		"@prisma/client": "^5.21.1",
 		"@radix-ui/react-avatar": "^1.1.1",
 		"@radix-ui/react-collapsible": "^1.1.1",
 		"@radix-ui/react-dialog": "^1.1.2",

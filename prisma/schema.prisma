@@ -27,8 +27,19 @@ model Course {
   id          String       @id @default(auto()) @map("_id") @db.ObjectId
   title       String
   description String
-  enrollments Enrollment[]
+  image       String
+  duration    Int
   lessons     Lesson[]
+  resource    Resource?
+  enrollments Enrollment[]
+  resourceId  String       @db.ObjectId
+}
+
+model Resource {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  courseId String @unique @db.ObjectId
+  course   Course @relation(fields: [courseId], references: [id])
 }
 
 model Lesson {
