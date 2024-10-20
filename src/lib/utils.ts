@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatDuration(duration: number) {
-	const hours = Math.floor(duration / 3600000);
-	const minutes = Math.floor(duration / 60000);
+	const hours = Math.floor(duration / 360_000_000);
+	const minutes = Math.floor(duration / 6_000_000);
 	return `${hours}h ${minutes}m`;
 }

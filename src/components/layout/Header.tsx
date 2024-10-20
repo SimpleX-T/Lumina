@@ -5,24 +5,90 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/UI/avatar";
 import MobileNavigation from "./MobileNavigation";
 import { WalletDropdownDisconnect } from "@coinbase/onchainkit/wallet";
 import Link from "next/link";
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuLabel,
+	DropdownMenuSeparator,
+	DropdownMenuTrigger,
+} from "@/components/UI/dropdown-menu";
+
 import WalletWrapper from "../WalletWrapper";
+
+interface Notification {
+	title: string;
+	date: Date;
+}
+
+const mockNotifications: Notification[] = [
+	{
+		title: "New course available",
+		date: new Date("2023-06-15"),
+	},
+	{
+		title: "Reminder: Complete your profile",
+		date: new Date("2023-06-12"),
+	},
+	{
+		title: "You have a new message",
+		date: new Date("2023-06-10"),
+	},
+];
 
 const Header = () => {
 	return (
-		<header className="sticky top-0 z-30 w-full py-4 px-4 sm:px-6 lg:px-8 bg-slate-900 border-b border-slate-600">
-			<div className="flex items-center justify-between">
-				<div className="flex items-center">
+		<header className='sticky top-0 z-30 w-full py-4 px-4 sm:px-6 lg:px-8 bg-slate-900 border-b border-slate-600'>
+			<div className='flex items-center justify-between'>
+				<div className='flex items-center'>
 					<div>
 						<p className='text-xl font-semibold text-custom-black'>
-							Welcome Bassi👋
+							Welcome Jesse👋
 						</p>
 						<p className='text-xs text-custom-black/75'>
-							23rd Nov, 2023
+							{new Date().toLocaleDateString("en-US", {
+								month: "long",
+								day: "numeric",
+								year: "numeric",
+							})}
 						</p>
 					</div>
 				</div>
 				<div className='flex items-center gap-6'>
-					<Link href='/notifications'>
+					<DropdownMenu>
+						<DropdownMenuTrigger className='relative z-0 cursor-pointer'>
+							<GoDotFill
+								className='text-custom-red absolute z-1 -top-1.5 right-0 text-red-600'
+								size={18}
+							/>
+							<FaRegBell
+								className='text-custom-black/75'
+								size={24}
+							/>
+						</DropdownMenuTrigger>
+						<DropdownMenuContent className='bg-slate-800 text-white right-0 border-0'>
+							<DropdownMenuLabel>Notifications</DropdownMenuLabel>
+							<DropdownMenuSeparator />
+							{mockNotifications.map((item, index) => (
+								<DropdownMenuItem
+									className='flex items-center py-2 text-md cursor-pointer'
+									key={index}>
+									<span className='mr-auto'>
+										{item.title}
+									</span>
+									<span className='text-xs mr-2'>
+										{item.date.toLocaleDateString("en-US", {
+											month: "long",
+											day: "numeric",
+											year: "numeric",
+										})}
+									</span>
+								</DropdownMenuItem>
+							))}
+						</DropdownMenuContent>
+					</DropdownMenu>
+
+					{/* <Link href='/notifications'>
 						<div className='relative z-0 cursor-pointer'>
 							<GoDotFill
 								className='text-custom-red absolute z-1 -top-1.5 right-0 text-red-600'
@@ -33,7 +99,7 @@ const Header = () => {
 								size={24}
 							/>
 						</div>
-					</Link>
+					</Link> */}
 					<WalletWrapper className='hidden sm:block mr-1 rounded-lg bg-primary cursor-pointer' />
 					{/* <WalletDropdownDisconnect
 						text='Disconnect'
