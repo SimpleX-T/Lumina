@@ -206,11 +206,9 @@ const lesson1232: React.FC = () => {
               Imagine you're building a tower with Lego blocks, but each block
               represents a group of transactions or data. In blockchain, these
               groups are called "blocks".{" "}
-              <i className="font-extralight text-[#8ea9e9]">
                 When new information needs to be added, it's put into a new
                 block. Once this block is filled with data, it's connected to
                 the previous block, creating a timeline of information
-              </i>
               . This process continues, forming a chain of blocks - hence the
               name "blockchain".
             </p>
@@ -235,11 +233,9 @@ const lesson1232: React.FC = () => {
               Each block contains a special code called a hash, which is like a
               digital fingerprint. This hash is partly based on the information
               in the previous block.{" "}
-              <i className="font-extralight text-[#8ea9e9]">
                 This structure, combined with complex mathematics and computer
                 science principles, makes it very difficult to alter information
                 once it's been recorded
-              </i>
               . If someone tries to change data in one block, it would change
               that block's hash, breaking the chain and making the tampering
               obvious.
@@ -265,12 +261,9 @@ const lesson1232: React.FC = () => {
               verify transactions. Blockchain works differently. Instead of one
               central authority, many computers (called nodes) on the network
               work together to verify new information.{" "}
-              <i className="font-extralight text-[#8ea9e9]">
                 When a new block is created, it's sent to all the nodes in the
                 network. These nodes check the block to make sure it's valid
-                before adding it to their copy of the blockchain
-              </i>
-              . This decentralized verification process ensures the integrity
+                before adding it to their copy of the blockchain. This decentralized verification process ensures the integrity
               and security of the data without relying on a single point of
               control.
             </p>
@@ -416,13 +409,12 @@ const lesson1233: React.FC = () => {
             </h2>
             <p>
               Unlike public blockchains, private blockchains are restricted.
-              Only specific users have access to the system, making them ideal
-              for businesses that require more control.{" "}
-              <i className="font-extralight text-[#8ea9e9]">
-                A private blockchain ensures higher transaction speed but lacks
-                the open, decentralized nature of public blockchains
-              </i>
-              .
+              Only{" "}
+              <i className="font-extralight text-[#8ea9e9]">specific users</i>
+              have access to the system, making them ideal for businesses that
+              require more control. A private blockchain ensures higher
+              transaction speed but lacks the open, decentralized nature of
+              public blockchains.
             </p>
           </div>
 
@@ -442,12 +434,9 @@ const lesson1233: React.FC = () => {
               A hybrid blockchain combines elements of both public and private
               blockchains. For instance, a company might use a private
               blockchain for internal tasks while interacting with a public
-              blockchain for verification.{" "}
-              <i className="font-extralight text-[#8ea9e9]">
-                This approach offers flexibility and can protect sensitive
-                information while benefiting from decentralized verification
-              </i>
-              .
+              blockchain for verification. This approach offers flexibility and
+              can protect sensitive information while benefiting from
+              decentralized verification .
             </p>
           </div>
 
@@ -465,12 +454,9 @@ const lesson1233: React.FC = () => {
             <h2 className="text-xl font-semibold mb-4">Summary 🗒️</h2>
             <p>
               Public blockchains are open to all, private blockchains restrict
-              access, and hybrid blockchains combine elements of both.{" "}
-              <i className="font-extralight text-[#8ea9e9]">
-                Each type serves different purposes depending on the need for
-                transparency, control, and security
-              </i>
-              .
+              access, and hybrid blockchains combine elements of both. Each type
+              serves different purposes depending on the need for transparency,
+              control, and security .
             </p>
           </div>
         </div>
