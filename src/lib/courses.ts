@@ -230,6 +230,7 @@ export const courseData: CourseProps[] = [
 			"This course introduces you to the core concepts behind blockchain technology. You'll learn how blockchains work, what makes them secure, and why decentralization is a key feature of this revolutionary technology. By the end, you'll understand how blockchains power cryptocurrencies and many other applications.",
 		image: "/Images/fundamentals.jpg",
 		duration: 180000000,
+		isAvailable: true,
 		lessons: [
 			{
 				id: 1,
@@ -268,11 +269,11 @@ export const courseData: CourseProps[] = [
 	{
 		id: 124,
 		title: "WALLETS",
-
 		description:
 			"In this course, you'll explore the essential role of crypto wallets in managing and securing digital assets. You'll learn how to set up and use both hot (online) and cold (offline) wallets, understand the importance of private keys, and practice sending and receiving cryptocurrency. This course equips you with the skills to protect your assets and engage with blockchain networks safely.",
 		image: "/Images/wallet.jpg",
 		duration: 180000000,
+		isAvailable: false,
 		lessons: [
 			{
 				id: 1,
@@ -318,9 +319,10 @@ export const courseData: CourseProps[] = [
 		id: 125,
 		title: "CRYPTOCURRENCIES",
 		description:
-			"This course dives into the world of digital currencies, starting with an introduction to Bitcoin and Ethereum. You’ll learn how cryptocurrency transactions work, how new coins are created through mining or staking, and the risks involved in the space. The course helps you navigate the growing world of crypto, providing insights into the opportunities and challenges it presents",
+			"This course dives into the world of digital currencies, starting with an introduction to Bitcoin and Ethereum. You'll learn how cryptocurrency transactions work, how new coins are created through mining or staking, and the risks involved in the space. The course helps you navigate the growing world of crypto, providing insights into the opportunities and challenges it presents",
 		image: "/Images/crypto.jpg",
 		duration: 180000000,
+		isAvailable: false,
 		lessons: [
 			{
 				id: 1,

@@ -311,7 +311,7 @@ function TeamCard({ teamMember }: TeamCardProps) {
 						href={`https://twitter.com/${teamMember.twitter}`}
 						target='_blank'
 						rel='noopener noreferrer'
-						className='flex items-center text-white hover:text-blue-200 rounded-full bg-gray-900 w-1/2 gap-4 shadow-md p-1'>
+						className='flex items-center text-white hover:text-blue-200 rounded-full bg-gray-900 gap-4 shadow-md p-1'>
 						<span className='rounded-full bg-gray-700 p-4 flex items-center justify-center'>
 							<FaXTwitter size={18} />
 						</span>
