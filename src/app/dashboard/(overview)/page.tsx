@@ -28,9 +28,10 @@ import {
 import { ProductivityChart } from "@/components/dashboard/ProductivityChart";
 import Carousel from "@/components/dashboard/Carousel";
 import Link from "next/link";
-import { useAccount } from "wagmi";
+import { useAccount , useWriteContract} from "wagmi";
 import { Progress } from "@/components/UI/progress";
 import Loader from "@/components/loader";
+import nftABI from "@/smart_contract/ContractABI.json";
 
 interface CourseProgress {
 	name: string;
@@ -99,7 +100,7 @@ const onchainBasics = [
 		image: "",
 		url: "/learn",
 	},
-	{ id: 2, content: "Onchain Buildathon", image: "", url: "/learn" },
+	{id: 2, content: "Onchain Buildathon", image: "", url: "/learn"},
 	{
 		id: 3,
 		content: "Jesse Polak's visit to Africa",
@@ -122,9 +123,9 @@ const mockAchievements = [
 
 function Dashboard() {
 	const router = useRouter();
-	const [refresh, setRefresh] = useState(true);
+	const {writeContract: claim} = useWriteContract();
 
-	const { isConnected, isDisconnected } = useAccount();
+	const { isConnected, address, isDisconnected } = useAccount();
 	const [isLoading, setIsLoading] = useState(true);
 	const [courseProgress, setCourseProgress] = useState<CourseProgress[]>([]);
 	const [upcomingAssignments, setUpcomingAssignments] = useState<
@@ -149,7 +150,18 @@ function Dashboard() {
 		}, 1500);
 	}, []);
 
-	if (!isConnected || isDisconnected) {
+	useEffect(() => {
+		if (isConnected) {
+			claim({
+				abi: nftABI,
+				address: process.env
+					.NEXT_PUBLIC_CONTRACT_ADDRESS as `0x${string}`,
+				functionName: "login",
+			});
+		}
+	}, []);
+
+	if (!isConnected) {
 		return (
 			<div>
 				Checking wallet connection... Please, kindly reconnect your
@@ -159,33 +171,34 @@ function Dashboard() {
 	}
 
 	return (
-		<div className='w-full px-4 md:px-8 py-8'>
-			<div className='w-full grid grid-cols-1 lg:grid-cols-2 rounded-lg overflow-hidden mb-6 shadow-md gap-8'>
+		<div className="w-full px-4 md:px-8 py-8">
+			<div className="w-full grid grid-cols-1 lg:grid-cols-2 rounded-lg overflow-hidden mb-6 shadow-md gap-8">
 				<Carousel items={blockchainBasics} />
 				<Carousel items={onchainBasics} />
 			</div>
 
-			<div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6'>
-				<div className='md:col-span-4 lg:col-span-3 grid grid-cols-1 rounded-lg overflow-hidden shadow-lg border-gray-800 overflow-x-scroll gap-4'>
+			<div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6">
+				<div className="md:col-span-4 lg:col-span-3 grid grid-cols-1 rounded-lg overflow-hidden shadow-lg border-gray-800 overflow-x-scroll gap-4">
 					<ProductivityChart />
 
-					<Card className='col-span-full bg-[#001123] shadow-lg border-gray-800'>
+					<Card className="col-span-full bg-[#001123] shadow-lg border-gray-800">
 						<CardHeader>
-							<CardTitle className='flex items-center text-white font-semibold'>
-								<FaGraduationCap className='mr-2' />
+							<CardTitle className="flex items-center text-white font-semibold">
+								<FaGraduationCap className="mr-2" />
 								Achievements
 							</CardTitle>
 						</CardHeader>
 						<CardContent>
-							<ul className='space-y-2'>
+							<ul className="space-y-2">
 								{mockAchievements.map((achievement, index) => (
 									<li
 										key={index}
-										className='flex justify-between text-white hover:bg-[#0d1f31] transition-colors duration-300 p-1 cursor-pointer'>
-										<span className='text-sm'>
+										className="flex justify-between text-white hover:bg-[#0d1f31] transition-colors duration-300 p-1 cursor-pointer"
+									>
+										<span className="text-sm">
 											{achievement.title}
 										</span>
-										<span className='text-gray-400 text-xs'>
+										<span className="text-gray-400 text-xs">
 											{achievement.date}
 										</span>
 									</li>
@@ -231,7 +244,7 @@ function Dashboard() {
 						</CardContent>
 					</Card>
 
-					<Card className='col-span-full bg-[#001123] shadow-lg md:col-span-1 border-gray-800'>
+					<Card className="col-span-full bg-[#001123] shadow-lg md:col-span-1 border-gray-800">
 						<CardHeader>
 							<CardTitle className='flex items-center text-white font-semibold'>
 								<FaCalendar className='mr-2' />
