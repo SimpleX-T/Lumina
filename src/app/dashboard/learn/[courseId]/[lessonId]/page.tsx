@@ -1,7 +1,8 @@
 "use client";
 import { useParams, useRouter } from "next/navigation";
 import { courseData } from "@/lib/courses";
-import { contents } from "@/lib/contents";
+import { contents } from "../../../../../lib/contents";
+import PrevNextButton from "@/components/dashboard/PrevNextButton";
 
 const LessonPage = () => {
   const router = useRouter();
@@ -41,18 +42,27 @@ const LessonPage = () => {
       Content = contents[9];
       break;
   }
+  const prev = course?.lessons.find((l) => l.id === Number(lessonId) - 1);
   const nextLesson = lesson.quiz
     ? `/dashboard/learn/${courseId}/quiz?from=${lessonId}`
     : `/dashboard/learn/${courseId}/${Number(lessonId) + 1}`;
+  const prevLesson = `dashboard/learn/${courseId}/${Number(lessonId) - 1}`;
   return (
     <div>
       {Content && <Content />}
-      <button
+      {(!prev?.quiz || Number(lessonId) === 1) && (
+        <PrevNextButton
+          text="Previous"
+          onclick={() => router.replace(prevLesson)}
+        />
+      )}
+      <PrevNextButton text="Next" onclick={() => router.replace(nextLesson)} />
+      {/* <button
         className="py-3 px-4 bg-[#fdc10d]"
         onClick={() => router.replace(nextLesson)}
       >
         Next
-      </button>
+      </button> */}
     </div>
   );
 };

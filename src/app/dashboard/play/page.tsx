@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Play, Pause, Download, Image as ImageIcon } from "lucide-react";
-import PrevNextButton from "@/components/dashboard/PrevNextButton";
+
 
 const CourseContentLayout = () => {
 	const [isPlaying, setIsPlaying] = useState(false);
