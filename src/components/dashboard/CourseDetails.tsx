@@ -30,7 +30,7 @@ const CourseDetails: React.FC<CourseDetailProps> = ({
 
 	return (
 		<div
-			className={`font-sans ${isDarkMode ? "dark" : ""} mb-12 absolute w-full h-screen top-0 left-0`}>
+			className={`font-sans ${isDarkMode ? "dark" : ""} mb-12 absolute w-full h-screen top-0 left-0 z-50`}>
 			<button
 				onClick={onclose}
 				className='absolute top-4 right-4 text-white'>

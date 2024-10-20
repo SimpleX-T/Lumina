@@ -15,7 +15,7 @@ function MiniCourseCard({
 	isComingSoon,
 }: MiniCourseCardProps) {
 	return (
-		<div className='h-[300px] rounded-md overflow-hidden relative'>
+		<div className=' rounded-md overflow-hidden relative'>
 			<div
 				className={`bg-[#081627] text-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 h-full relative`}>
 				{isComingSoon && (
@@ -36,7 +36,7 @@ function MiniCourseCard({
 				</div>
 
 				<div className='p-4 flex flex-col gap-8'>
-					<div className='mb-12'>
+					<div className='mb-8'>
 						<h3 className='text-xl font-semibold mb-2'>
 							{course.title}
 						</h3>
