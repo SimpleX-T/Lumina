@@ -122,7 +122,7 @@ const mockAchievements = [
 function Dashboard() {
 	const router = useRouter();
 
-	const { isConnected } = useAccount();
+	const { isConnected, isDisconnected } = useAccount();
 	const [isLoading, setIsLoading] = useState(true);
 	const [courseProgress, setCourseProgress] = useState<CourseProgress[]>([]);
 	const [upcomingAssignments, setUpcomingAssignments] = useState<
@@ -131,14 +131,11 @@ function Dashboard() {
 	const [grades, setGrades] = useState<Grade[]>([]);
 
 	useEffect(() => {
-		if (!isConnected) {
-			// Attempt to reconnect the wallet
-			// reconnect().catch(() => {
-			// If reconnection fails, redirect to the landing page
-			// });
+		if (!isConnected || isDisconnected) {
+			console.log(isConnected, isDisconnected);
 			router.push("/");
 		}
-	}, [isConnected, router]);
+	}, [isConnected, isDisconnected, router]);
 
 	useEffect(() => {
 		// Simulate API calls
@@ -150,7 +147,7 @@ function Dashboard() {
 		}, 1500);
 	}, []);
 
-	if (!isConnected) {
+	if (!isConnected || isDisconnected) {
 		return (
 			<div>
 				Checking wallet connection... Please, kindly reconnect your
