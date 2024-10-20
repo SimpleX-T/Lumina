@@ -563,6 +563,7 @@ export const courseData: CourseProps[] = [
 		description:
 			"This course introduces you to the core concepts behind blockchain technology. You'll learn how blockchains work, what makes them secure, and why decentralization is a key feature of this revolutionary technology. By the end, you'll understand how blockchains power cryptocurrencies and many other applications.",
 		image: "/Images/fundamentals.jpg",
+		isAvailable: true,
 		duration: 180000000,
 		lessons: [
 			{
