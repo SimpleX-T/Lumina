@@ -10,7 +10,6 @@ function Courses() {
 	const [id, setID] = useState<number | null>(null);
 	//   const ids = [123, 124, 125];
 	function handleClick(id: number) {
-		console.log(id);
 		setID(id);
 	}
 	const course = id ? courseData.find((c) => c.id === id) : null;

@@ -33,7 +33,7 @@ const lesson1231: React.FC = () => {
           {/* Image 1 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
             <img
-              src="/api/placeholder/400/320"
+              src="/Image/Notebook.gif"
               alt="Digital ledger concept"
               className="w-full h-full md:object-cover object-contain"
             />
@@ -59,7 +59,7 @@ const lesson1231: React.FC = () => {
           {/* Image 2 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
             <img
-              src="/api/placeholder/400/320"
+              src="/Image/Notebook.gif"
               alt="Blockchain concept"
               className="w-full h-full object-cover"
             />
@@ -89,7 +89,7 @@ const lesson1231: React.FC = () => {
           {/* Image 3 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
             <img
-              src="/api/placeholder/400/320"
+              src="/Image/token.svg"
               alt="Blockchain applications"
               className="w-full h-full object-cover"
             />
@@ -205,14 +205,11 @@ const lesson1232: React.FC = () => {
             <p>
               Imagine you're building a tower with Lego blocks, but each block
               represents a group of transactions or data. In blockchain, these
-              groups are called "blocks".{" "}
-              <i className="font-extralight text-[#8ea9e9]">
-                When new information needs to be added, it's put into a new
-                block. Once this block is filled with data, it's connected to
-                the previous block, creating a timeline of information
-              </i>
-              . This process continues, forming a chain of blocks - hence the
-              name "blockchain".
+              groups are called "blocks". When new information needs to be
+              added, it's put into a new block. Once this block is filled with
+              data, it's connected to the previous block, creating a timeline of
+              information . This process continues, forming a chain of blocks -
+              hence the name "blockchain".
             </p>
           </div>
 
@@ -234,15 +231,11 @@ const lesson1232: React.FC = () => {
               What makes blockchain unique is how these blocks are connected.
               Each block contains a special code called a hash, which is like a
               digital fingerprint. This hash is partly based on the information
-              in the previous block.{" "}
-              <i className="font-extralight text-[#8ea9e9]">
-                This structure, combined with complex mathematics and computer
-                science principles, makes it very difficult to alter information
-                once it's been recorded
-              </i>
-              . If someone tries to change data in one block, it would change
-              that block's hash, breaking the chain and making the tampering
-              obvious.
+              in the previous block. This structure, combined with complex
+              mathematics and computer science principles, makes it very
+              difficult to alter information once it's been recorded . If
+              someone tries to change data in one block, it would change that
+              block's hash, breaking the chain and making the tampering obvious.
             </p>
           </div>
 
@@ -264,20 +257,17 @@ const lesson1232: React.FC = () => {
               In a traditional system, a central authority (like a bank) would
               verify transactions. Blockchain works differently. Instead of one
               central authority, many computers (called nodes) on the network
-              work together to verify new information.{" "}
-              <i className="font-extralight text-[#8ea9e9]">
-                When a new block is created, it's sent to all the nodes in the
-                network. These nodes check the block to make sure it's valid
-                before adding it to their copy of the blockchain
-              </i>
-              . This decentralized verification process ensures the integrity
-              and security of the data without relying on a single point of
-              control.
+              work together to verify new information. When a new block is
+              created, it's sent to all the nodes in the network. These nodes
+              check the block to make sure it's valid before adding it to their
+              copy of the blockchain. This decentralized verification process
+              ensures the integrity and security of the data without relying on
+              a single point of control.
             </p>
           </div>
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
             <img
-              src="/Images/decent.svg"
+              src="/Images/password.svg"
               alt="Course visual 1"
               className="w-full h-full object-cover"
             />
@@ -403,7 +393,7 @@ const lesson1233: React.FC = () => {
           {/* Image 1 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64">
             <img
-              src="/api/placeholder/400/320"
+              src="/Images/publicblk.png"
               alt="Public blockchain concept"
               className="w-full h-full object-cover"
             />
@@ -416,20 +406,19 @@ const lesson1233: React.FC = () => {
             </h2>
             <p>
               Unlike public blockchains, private blockchains are restricted.
-              Only specific users have access to the system, making them ideal
-              for businesses that require more control.{" "}
-              <i className="font-extralight text-[#8ea9e9]">
-                A private blockchain ensures higher transaction speed but lacks
-                the open, decentralized nature of public blockchains
-              </i>
-              .
+              Only{" "}
+              <i className="font-extralight text-[#8ea9e9]">specific users</i>
+              have access to the system, making them ideal for businesses that
+              require more control. A private blockchain ensures higher
+              transaction speed but lacks the open, decentralized nature of
+              public blockchains.
             </p>
           </div>
 
           {/* Image 2 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64">
             <img
-              src="/api/placeholder/400/320"
+              src="/Images/privateblk.png"
               alt="Private blockchain concept"
               className="w-full h-full object-cover"
             />
@@ -442,35 +431,58 @@ const lesson1233: React.FC = () => {
               A hybrid blockchain combines elements of both public and private
               blockchains. For instance, a company might use a private
               blockchain for internal tasks while interacting with a public
-              blockchain for verification.{" "}
-              <i className="font-extralight text-[#8ea9e9]">
-                This approach offers flexibility and can protect sensitive
-                information while benefiting from decentralized verification
-              </i>
-              .
+              blockchain for verification. This approach offers flexibility and
+              can protect sensitive information while benefiting from
+              decentralized verification .
             </p>
           </div>
 
           {/* Image 3 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64">
             <img
-              src="/api/placeholder/400/320"
+              src="/Images/hybrid.png"
               alt="Hybrid blockchain concept"
               className="w-full h-full object-cover"
             />
           </div>
+          <div className="bg-[#001123] shadow-lg rounded-lg p-6">
+            <h2 className="text-xl font-semibold mb-4">Hybrid Blockchain ⚙️</h2>
+            <p>
+              <div className="bg-[#001123] shadow-lg rounded-lg p-6">
+                <h2 className="text-xl font-semibold mb-4">
+                  Consortium Blockchain 🏢
+                </h2>
+                <p>
+                  A consortium blockchain is a type of blockchain that is
+                  controlled by a group of organizations rather than a single
+                  entity. Unlike public blockchains (where anyone can
+                  participate) or private blockchains (restricted to one
+                  organization), a consortium blockchain allows multiple
+                  organizations to collaborate on a shared network. It combines
+                  the benefits of both public and private blockchains, offering
+                  more control than a public blockchain while still allowing
+                  collaboration among trusted parties.
+                </p>
+              </div>
 
+              {/* Image 3 */}
+              <div className="bg-gray-200 rounded-lg overflow-hidden h-64">
+                <img
+                  src="/Images/consblk.png"
+                  alt="Consortium blockchain concept"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </p>
+          </div>
           {/* Summary */}
           <div className="bg-[#001123] shadow-lg rounded-lg p-6">
             <h2 className="text-xl font-semibold mb-4">Summary 🗒️</h2>
             <p>
               Public blockchains are open to all, private blockchains restrict
-              access, and hybrid blockchains combine elements of both.{" "}
-              <i className="font-extralight text-[#8ea9e9]">
-                Each type serves different purposes depending on the need for
-                transparency, control, and security
-              </i>
-              .
+              access, and hybrid blockchains combine elements of both. Each type
+              serves different purposes depending on the need for transparency,
+              control, and security .
             </p>
           </div>
         </div>
@@ -583,7 +595,7 @@ const lesson1234: React.FC = () => {
           {/* Image 1 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64">
             <img
-              src="/api/placeholder/400/320"
+              src="/Images/trust.svg"
               alt="Proof of Work concept"
               className="w-full h-full object-cover"
             />
@@ -625,7 +637,7 @@ const lesson1234: React.FC = () => {
           {/* Image 1 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64">
             <img
-              src="/api/placeholder/400/320"
+              src="/Images/pow.png"
               alt="Proof of Work concept"
               className="w-full h-full object-cover"
             />
@@ -650,7 +662,7 @@ const lesson1234: React.FC = () => {
           {/* Image 2 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64">
             <img
-              src="/api/placeholder/400/320"
+              src="/Images/pos.jpg"
               alt="Proof of Stake concept"
               className="w-full h-full object-cover"
             />
@@ -782,7 +794,7 @@ const lesson1235: React.FC = () => {
           {/* Image 1 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64">
             <img
-              src="/api/placeholder/400/320"
+              src="/Images/contract.gif"
               alt="Smart Contract concept"
               className="w-full h-full object-cover"
             />
@@ -816,7 +828,7 @@ const lesson1235: React.FC = () => {
           {/* Image 2 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64">
             <img
-              src="/api/placeholder/400/320"
+              src="/Images/contractworkings.jpg"
               alt="Smart Contract use cases"
               className="w-full h-full object-cover"
             />
@@ -934,7 +946,7 @@ const lesson1236: React.FC = () => {
           {/* Image 1 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
             <img
-              src="/api/placeholder/400/320"
+              src="/Images/tokens.png"
               alt="Digital tokens reLesson"
               className="w-full h-full md:object-cover object-contain"
             />
@@ -958,7 +970,7 @@ const lesson1236: React.FC = () => {
           {/* Image 2 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
             <img
-              src="/api/placeholder/400/320"
+              src="/Images/"
               alt="Utility vs. security tokens"
               className="w-full h-full object-cover"
             />
@@ -1081,19 +1093,16 @@ const lesson1237: React.FC = () => {
             <p>
               DeFi stands for Decentralized Finance. It's a financial system
               built on blockchain technology that allows people to borrow, lend,
-              and trade without needing traditional banks.
-              <i className="font-extralight text-[#8ea9e9]">
-                {" "}
-                Imagine being able to lend your money to others directly and
-                earn interest, just like a bank does, but without all the fees!
-              </i>
+              and trade without needing traditional banks. Imagine being able to
+              lend your money to others directly and earn interest, just like a
+              bank does, but without all the fees!
             </p>
           </div>
 
           {/* Image 1 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
             <img
-              src="/api/placeholder/400/320"
+              src="/Images/finance.svg"
               alt="DeFi concept"
               className="w-full h-full md:object-cover object-contain"
             />
@@ -1120,7 +1129,7 @@ const lesson1237: React.FC = () => {
           {/* Image 2 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
             <img
-              src="/api/placeholder/400/320"
+              src="/Images/earning.svg"
               alt="Liquidity pools in DeFi"
               className="w-full h-full object-cover"
             />
@@ -1141,7 +1150,13 @@ const lesson1237: React.FC = () => {
               </i>
             </p>
           </div>
-
+          <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
+            <img
+              src="/Images/aave.png"
+              alt="Liquidity pools in DeFi"
+              className="w-full h-full object-cover"
+            />
+          </div>
           {/* Summary */}
           <div className="bg-[#001123] shadow-lg rounded-lg p-6 flex flex-col justify-between">
             <h2 className="text-xl font-semibold mb-4">Summary 📝</h2>
@@ -1257,7 +1272,7 @@ const lesson1238: React.FC = () => {
           {/* Image 1 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
             <img
-              src="/api/placeholder/400/320"
+              src="/Images/delivery.svg"
               alt="Supply chain tracking concept"
               className="w-full h-full md:object-cover object-contain"
             />
@@ -1279,7 +1294,7 @@ const lesson1238: React.FC = () => {
           {/* Image 1 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
             <img
-              src="/api/placeholder/400/320"
+              src="/Images/transfer.svg"
               alt="Supply chain tracking concept"
               className="w-full h-full md:object-cover object-contain"
             />
@@ -1303,7 +1318,7 @@ const lesson1238: React.FC = () => {
           {/* Image 2 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
             <img
-              src="/api/placeholder/400/320"
+              src="/Images/medical.svg"
               alt="Healthcare on blockchain"
               className="w-full h-full object-cover"
             />
@@ -1323,7 +1338,13 @@ const lesson1238: React.FC = () => {
               election outcomes.
             </p>
           </div>
-
+          <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
+            <img
+              src="/Images/voting.svg"
+              alt="Security and transparency"
+              className="w-full h-full object-cover"
+            />
+          </div>
           {/* Summary */}
           <div className="bg-[#001123] shadow-lg rounded-lg p-6 flex flex-col justify-between">
             <h2 className="text-xl font-semibold mb-4">Summary 📝</h2>
@@ -1442,7 +1463,7 @@ const lesson1239: React.FC = () => {
           {/* Image 1 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
             <img
-              src="/api/placeholder/400/320"
+              src="/Images/trust.svg"
               alt="Decentralized trust concept"
               className="w-full h-full md:object-cover object-contain"
             />
@@ -1466,7 +1487,7 @@ const lesson1239: React.FC = () => {
           {/* Image 2 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
             <img
-              src="/api/placeholder/400/320"
+              src="/Images/Security.gif"
               alt="Security and transparency"
               className="w-full h-full object-cover"
             />
@@ -1488,7 +1509,13 @@ const lesson1239: React.FC = () => {
               high fees of traditional systems.
             </p>
           </div>
-
+          <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
+            <img
+              src="/Images/boundaries.svg"
+              alt="Security and transparency"
+              className="w-full h-full object-cover"
+            />
+          </div>
           {/* Summary */}
           <div className="bg-[#001123] shadow-lg rounded-lg p-6 flex flex-col justify-between">
             <h2 className="text-xl font-semibold mb-4">Summary 📝</h2>
