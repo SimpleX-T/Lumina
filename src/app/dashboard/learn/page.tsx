@@ -21,6 +21,7 @@ function Courses() {
 					<MiniCourseCard
 						key={course.id}
 						course={course}
+						isComingSoon={!course.isAvailable}
 						onclick={() => {
 							handleClick(course.id);
 						}}

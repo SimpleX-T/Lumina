@@ -1,67 +1,68 @@
 "use client";
 import React, { useState } from "react";
 import { Play, Pause, Download, Image as ImageIcon } from "lucide-react";
+import PrevNextButton from "@/components/dashboard/PrevNextButton";
 
 const CourseContentLayout = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [videoOn, setVideoOn] = useState<boolean>(false);
+	const [isPlaying, setIsPlaying] = useState(false);
+	const [videoOn, setVideoOn] = useState<boolean>(false);
 
-  return (
-    <div className="max-w-7xl mx-auto p-4 md:p-6 lg:p-8 space-y-4">
-      <h1 className="text-3xl font-bold mb-8">Course Title</h1>
+	return (
+		<div className='mal mx-auto p-4 md:p-6 lg:p-8 space-y-4'>
+			<h1 className='text-3xl font-bold mb-8'>Course Title</h1>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2 space-y-6 overflow-y-scroll md:max-h-[650px]">
-          {/* Text Content 1 */}
-          <div className="bg-[#001123] shadow-lg rounded-lg p-6 flex flex-col justify-between">
-            <h2 className="text-xl font-semibold mb-4">
-              The Magic Notebook 📒🪄
-            </h2>
-            <p>
-              Imagine you and your friends have a special notebook 📒. This
-              notebook is magical🪄 because everyone has an exact copy of it,
-              and whenever someone writes🖋️ something new, all the copies update
-              at the same time. That's kind of what a blockchain ⛓️‍💥 is – it's
-              like a{" "}
-              <i className="font-extralight text-[#8ea9e9]">
-                digital notebook that many people share.
-              </i>
-            </p>
-          </div>
+			<div className='grid grid-cols-1 lg:grid-cols-3 gap-6'>
+				<div className='lg:col-span-2 space-y-6 overflow-y-scroll md:max-h-[650px] xl:max-h-[800px]'>
+					<div className='bg-[#001123] shadow-lg rounded-lg p-6 flex flex-col justify-between'>
+						<h2 className='text-xl font-semibold mb-4'>
+							The Magic Notebook 📒🪄
+						</h2>
+						<p>
+							Imagine you and your friends have a special notebook
+							📒. This notebook is magical🪄 because everyone has
+							an exact copy of it, and whenever someone writes🖋️
+							something new, all the copies update at the same
+							time. That's kind of what a blockchain ⛓️‍💥 is – it's
+							like a{" "}
+							<i className='font-extralight text-[#8ea9e9]'>
+								digital notebook that many people share.
+							</i>
+						</p>
+					</div>
 
-          {/* Image 1 */}
-          <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
-            <img
-              src="/Images/Notebook-pana.svg"
-              alt="Course visual 1"
-              className="w-full h-full md:object-cover object-contain"
-            />
-          </div>
+					<div className='bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto'>
+						<img
+							src='/Images/Notebook-pana.svg'
+							alt='Course visual 1'
+							className='w-full h-full md:object-cover object-contain'
+						/>
+					</div>
 
-          {/* Text Content 2 */}
-          <div className="bg-[#001123] shadow-lg rounded-lg p-6 flex flex-col justify-between">
-            <h2 className="text-xl font-semibold mb-4">Permanent Notes 📝</h2>
-            <p>
-              Now, let's say you use this notebook 📒 to keep track of who owns
-              what pokemon cards 🃏 in your group. Whenever someone trades a
-              card, you write it down: "Jane gave her Pikachu card to Tom." Once
-              it's written down, nobody can erase it or change it without
-              everyone knowing. This is one of the cool things about blockchain
-              ⛓️‍💥 –{" "}
-              <i className="font-extralight text-[#8ea9e9]">
-                it keeps a record that's hard to cheat or change
-              </i>
-            </p>
-          </div>
+					<div className='bg-[#001123] shadow-lg rounded-lg p-6 flex flex-col justify-between'>
+						<h2 className='text-xl font-semibold mb-4'>
+							Permanent Notes 📝
+						</h2>
+						<p>
+							Now, let's say you use this notebook 📒 to keep
+							track of who owns what pokemon cards 🃏 in your
+							group. Whenever someone trades a card, you write it
+							down: "Jane gave her Pikachu card to Tom." Once it's
+							written down, nobody can erase it or change it
+							without everyone knowing. This is one of the cool
+							things about blockchain ⛓️‍💥 –{" "}
+							<i className='font-extralight text-[#8ea9e9]'>
+								it keeps a record that's hard to cheat or change
+							</i>
+						</p>
+					</div>
 
-          {/* Image 2 */}
-          <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
-            <img
-              src="/Images/Safe-bro.svg"
-              alt="Course visual 2"
-              className="w-full h-full object-cover"
-            />
-          </div>
+					<div className='bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto'>
+						<img
+							src='/Images/Safe-bro.svg'
+							alt='Course visual 2'
+							className='w-full h-full object-cover'
+						/>
+					</div>
 
           {/* Text Content 3 */}
           <div className="bg-[#001123] shadow-lg rounded-lg p-6 flex flex-col justify-between">

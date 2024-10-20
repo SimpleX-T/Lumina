@@ -10,6 +10,7 @@ import Image from "next/image";
 import WalletWrapper from "@/components/WalletWrapper";
 import { useAccount } from "wagmi";
 import { FaArrowRight } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 interface Course {
 	title: string;
@@ -39,6 +40,27 @@ const courses: Course[] = [
 			"Explore the world of cryptocurrencies and their various applications in finance.",
 		imageUrl: "/Images/crypto.jpg",
 		courseUrl: "/courses/crypto",
+	},
+];
+
+const teamMembers: TeamMember[] = [
+	{
+		name: "Adzape Solomon",
+		role: "Frontend Developer/Video Animator",
+		imageUrl: "",
+		twitter: "_chiater99",
+	},
+	{
+		name: "Azubike Samie",
+		role: "Backend Developer",
+		imageUrl: "",
+		twitter: "samieazubike",
+	},
+	{
+		name: "Ndubuisi Mark",
+		role: "Frontend Developer",
+		imageUrl: "",
+		twitter: "xcodes_tech",
 	},
 ];
 
@@ -102,7 +124,7 @@ const LuminaLandingPage: React.FC = () => {
 
 				<section className='py-12 w-full text-center mb-6'>
 					<h2 className='text-3xl mb-4 font-bold text-[#60a5fa]'>
-						Discover Lumina
+						Lumina&apos;s Vision
 					</h2>
 					<div className='relative w-full aspect-video max-w-4xl mx-auto overflow-hidden rounded-lg shadow-lg'>
 						<iframe
@@ -190,26 +212,48 @@ const LuminaLandingPage: React.FC = () => {
 				<section
 					id='about'
 					className='py-12'>
-					<h2 className='font-bold text-3xl mb-4'>About Lumina</h2>
+					<h2 className='font-bold text-3xl mb-4 text-[#60a5fa]'>
+						About Lumina
+					</h2>
 					<p>
 						Lumina is on a mission to illuminate the path to Web3
-						mastery in Africa, one lesson at a time.
+						mastery in Africa, one lesson at a time. We are a team
+						of student developer&apos;s whose enthusiasm for the
+						web3 space has birthed this idea.
 					</p>
+
+					<section className='w-full bg-gray-900 py-16'>
+						<div className='container mx-auto px-4'>
+							<h2 className='font-semibold text-3xl mb-8 text-center text-[#60a5fa]'>
+								Meet the minds behind Lumina
+							</h2>
+							<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'>
+								{teamMembers.map((member, index) => (
+									<TeamCard
+										key={index}
+										teamMember={member}
+									/>
+								))}
+							</div>
+						</div>
+					</section>
 				</section>
 
-				<section className='py-12 bg-[#1e293b] rounded-lg text-center mt-12'>
-					<h2>Stay Illuminated</h2>
+				<section className='py-12 bg-[#1e293b] rounded-lg text-center mt-12 w-full max-w-xl mx-auto px-4'>
+					<h2 className='font-semibold text-lg mb-4'>
+						Stay Illuminated
+					</h2>
 					<p>
 						Subscribe to our newsletter for the latest updates,
 						course releases, and Web3 insights.
 					</p>
-					<div className='flex max-w-xs mx-auto mt-4'>
+					<div className='flex w-full mx-auto mt-4 px-2'>
 						<input
 							type='email'
 							placeholder='Enter your email'
-							className='flex-grow py-2 px-4 rounded-l-full bg-[#334155] text-white border-none'
+							className='w-3/4 py-2 px-4 rounded-l-full bg-[#334155] text-white border-none'
 						/>
-						<button className='bg-[#fdc10d] text-[#0f172a] rounded-r-full py-2 px-4 font-bold'>
+						<button className='w-1/4 bg-[#fdc10d] text-[#0f172a] rounded-r-full p-2 font-semibold'>
 							Subscribe
 						</button>
 					</div>
@@ -237,3 +281,44 @@ const LuminaLandingPage: React.FC = () => {
 };
 
 export default LuminaLandingPage;
+
+interface TeamMember {
+	name: string;
+	role: string;
+	twitter?: string;
+	imageUrl: string;
+}
+
+interface TeamCardProps {
+	teamMember: TeamMember;
+}
+
+function TeamCard({ teamMember }: TeamCardProps) {
+	return (
+		<div className='bg-gray-800 rounded-xl overflow-hidden shadow-lg'>
+			<img
+				src={teamMember.imageUrl}
+				alt={teamMember.name}
+				className='w-full h-48 object-cover'
+			/>
+			<div className='p-4'>
+				<h3 className='text-xl font-semibold text-white mb-1'>
+					{teamMember.name}
+				</h3>
+				<p className='text-gray-400 mb-3'>{teamMember.role}</p>
+				{teamMember.twitter && (
+					<Link
+						href={`https://twitter.com/${teamMember.twitter}`}
+						target='_blank'
+						rel='noopener noreferrer'
+						className='flex items-center text-white hover:text-blue-200 rounded-full bg-gray-900 gap-4 shadow-md p-1'>
+						<span className='rounded-full bg-gray-700 p-4 flex items-center justify-center'>
+							<FaXTwitter size={18} />
+						</span>
+						<span className='text-lg'>@{teamMember.twitter}</span>
+					</Link>
+				)}
+			</div>
+		</div>
+	);
+}
