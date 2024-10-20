@@ -510,109 +510,110 @@ const courses = [
 			visuals: true,
 		},
 	},
-	// 	{
-	// 		id: 124,
-	// 		title: "WALLETS",
+	// {
+	// 	id: 124,
+	// 	title: "WALLETS",
 
-	// 		description:
-	// 			"In this course, you'll explore the essential role of crypto wallets in managing and securing digital assets. You'll learn how to set up and use both hot (online) and cold (offline) wallets, understand the importance of private keys, and practice sending and receiving cryptocurrency. This course equips you with the skills to protect your assets and engage with blockchain networks safely.",
-	// 		image: "/Images/wallets.jpg",
-	// 		duration: 30,
-	// 		lessons: [
-	// 			{
-	// 				id: 1,
-	// 				duration: 5,
-	// 				title: "What are Crypto Wallets 🗃️?",
-	// 				content: introA,
-	// 			},
-	// 			{
-	// 				id: 2,
-	// 				duration: 5,
-	// 				title: "Types of Wallets?",
-	// 				content: introA,
-	// 			},
-	// 			{
-	// 				id: 3,
-	// 				duration: 5,
-	// 				title: "How do Wallets Work?",
-	// 				content: introA,
-	// 				quiz: walletsMidQuestions,
-	// 			},
-	// 			{
-	// 				id: 4,
-	// 				duration: 5,
-	// 				title: "Keeping Your Wallet Safe",
-	// 				content: introA,
-	// 			},
-	// 			{
-	// 				id: 5,
-	// 				title: "Choosing the Right Wallet",
-	// 				duration: 5,
-	// 				content: introA,
-	// 				quiz: walletsMidQuestions,
-	// 			},
-	// 		],
-	// 		resources: {
-	// 			audio: true,
-	// 			video: true,
-	// 			text: true,
-	// 			visuals: true,
+	// 	description:
+	// 		"In this course, you'll explore the essential role of crypto wallets in managing and securing digital assets. You'll learn how to set up and use both hot (online) and cold (offline) wallets, understand the importance of private keys, and practice sending and receiving cryptocurrency. This course equips you with the skills to protect your assets and engage with blockchain networks safely.",
+	// 	image: "/Images/wallets.jpg",
+	// 	duration: 30,
+	// 	lessons: [
+	// 		{
+	// 			id: 1,
+	// 			duration: 5,
+	// 			title: "What are Crypto Wallets 🗃️?",
+	// 			content: introA,
 	// 		},
-	// 	},
-	// 	{
-	// 		id: 125,
-	// 		title: "CRYPTOCURRENCIES",
-	// 		description:
-	// 			"This course dives into the world of digital currencies, starting with an introduction to Bitcoin and Ethereum. You’ll learn how cryptocurrency transactions work, how new coins are created through mining or staking, and the risks involved in the space. The course helps you navigate the growing world of crypto, providing insights into the opportunities and challenges it presents",
-	// 		image: "/Images/crypto.jpg",
-	// 		duration: 30,
-	// 		lessons: [
-	// 			{
-	// 				id: 1,
-	// 				duration: 5,
-	// 				title: "What are Cryptocurrencies 🪙?",
-	// 				content: introA,
-	// 			},
-	// 			{
-	// 				id: 2,
-	// 				duration: 5,
-	// 				title: "How Does It Work?",
-	// 				content: introA,
-	// 			},
-	// 			{
-	// 				id: 3,
-	// 				duration: 5,
-	// 				title: "Types of Cryptocurrencies",
-	// 				content: introA,
-	// 				quiz: cryptoMidQuestions,
-	// 			},
-	// 			{
-	// 				id: 4,
-	// 				duration: 5,
-	// 				title: "Why Use Cryptocurrencies?",
-	// 				content: introA,
-	// 			},
-	// 			{
-	// 				id: 5,
-	// 				duration: 5,
-	// 				title: "Risks and Challenges",
-	// 				content: introA,
-	// 			},
-	// 			{
-	// 				id: 6,
-	// 				duration: 5,
-	// 				title: "Getting Started 🚀",
-	// 				content: introA,
-	// 				quiz: cryptoEndQuestions,
-	// 			},
-	// 		],
-	// 		resources: {
-	// 			audio: true,
-	// 			video: true,
-	// 			text: true,
-	// 			visuals: true,
+	// 		{
+	// 			id: 2,
+	// 			duration: 5,
+	// 			title: "Types of Wallets?",
+	// 			content: introA,
 	// 		},
+	// 		{
+	// 			id: 3,
+	// 			duration: 5,
+	// 			title: "How do Wallets Work?",
+	// 			content: introA,
+	// 			quiz: walletsMidQuestions,
+	// 		},
+	// 		{
+	// 			id: 4,
+	// 			duration: 5,
+	// 			title: "Keeping Your Wallet Safe",
+	// 			content: introA,
+	// 		},
+	// 		{
+	// 			id: 5,
+	// 			title: "Choosing the Right Wallet",
+	// 			duration: 5,
+	// 			content: introA,
+	// 			quiz: walletsMidQuestions,
+	// 		},
+	// 	],
+	// 	resources: {
+	// 		audio: true,
+	// 		video: true,
+	// 		text: true,
+	// 		visuals: true,
 	// 	},
+	// },
+	// {
+	// 	id: 125,
+	// 	title: "CRYPTOCURRENCIES",
+	// 	description:
+	// 		"This course dives into the world of digital currencies, starting with an introduction to Bitcoin and Ethereum. You’ll learn how cryptocurrency transactions work, how new coins are created through mining or staking, and the risks involved in the space. The course helps you navigate the growing world of crypto, providing insights into the opportunities and challenges it presents",
+	// 	image: "/Images/crypto.jpg",
+	// 	duration: 30,
+	// 	lessons: [
+	// 		{
+	// 			id: 1,
+	// 			duration: 5,
+	// 			title: "What are Cryptocurrencies 🪙?",
+	// 			content: introA,
+	// 		},
+	// 		{
+	// 			id: 2,
+	// 			duration: 5,
+	// 			title: "How Does It Work?",
+	// 			content: introA,
+	// 		},
+	// 		{
+	// 			id: 3,
+	// 			duration: 5,
+	// 			title: "Types of Cryptocurrencies",
+	// 			content: "lesson",
+	// 			quiz: cryptoMidQuestions,
+	// 		},
+	// 		{
+	// 			id: 4,
+	// 			duration: 5,
+	// 			title: "Why Use Cryptocurrencies?",
+	// 			content:
+	//             "lesson1254",
+	// 		},
+	// 		{
+	// 			id: 5,
+	// 			duration: 5,
+	// 			title: "Risks and Challenges",
+	// 			content: "lesson1255",
+	// 		},
+	// 		{
+	// 			id: 6,
+	// 			duration: 5,
+	// 			title: "Getting Started 🚀",
+	// 			content: "lesson1256",
+	// 			quiz: cryptoEndQuestions,
+	// 		},
+	// 	],
+	// 	resources: {
+	// 		audio: true,
+	// 		video: true,
+	// 		text: true,
+	// 		visuals: true,
+	// 	},
+	// },
 ];
 
 async function main() {
@@ -629,12 +630,12 @@ async function main() {
 			data: {
 				title: course.title,
 				description: course.description,
-				duration: course.duration,
+				duration: course?.duration,
 				image: course.image,
 			},
 		});
 
-		await prisma.resource.create({
+		await prisma.resource?.create({
 			data: {
 				audio: course.resources.audio,
 				video: course.resources.video,

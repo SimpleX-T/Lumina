@@ -1,6 +1,6 @@
-// import DappRewardJSON from "@/contracts/DappReward.json";
-// import Web3 from "web3";
-// var contract = require("@truffle/contract");
+import nftABI from "@/smart_contract/ContractABI.json";
+import Web3 from "web3";
+var contract = require("@truffle/contract");
 
 // declare global {
 // 	interface Window {
@@ -9,16 +9,16 @@
 // 	}
 // }
 
-// export async function load() {
-// 	await loadWeb3();
-// 	const addressAccount = await loadAccount();
-//     loadContract(addressAccount)
-// }
+export async function load() {
+	await loadWeb3();
+	const addressAccount = await loadAccount();
+	loadContract(addressAccount);
+}
 
-// const loadContract = async (addressAccount: string) => {
-// 	const theContract = contract(DappRewardJSON);
-// 	theContract.setProvider(window.web3.eth.currentProvider);
-// 	const reward = await theContract.deployed();
+const loadContract = async (addressAccount: string) => {
+	const theContract = contract(nftABI);
+	theContract.setProvider(window.web3.eth.currentProvider);
+	const reward = await theContract.deployed();
 
 // 	console.log(reward);
 // };

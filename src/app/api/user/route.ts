@@ -19,18 +19,21 @@ export async function POST(req: Request) {
 		);
 	}
 
+	const  {wallet_address} = result.data
+
 	try {
+
 		const user = await prisma.user.upsert({
-			where: {wallet_address: data.wallet_address},
+			where: {wallet_address: wallet_address},
 			update: {},
 			create: {
-				wallet_address: data.walllet_address,
+				wallet_address: wallet_address,
 			},
 		});
 
 		return Response.json({
 			success: true,
-			message: "Course successfully enrolled.",
+			message: "Account created successfully.",
 			data: user,
 		});
 	} catch (err) {
@@ -41,4 +44,9 @@ export async function POST(req: Request) {
 			{status: 500}
 		);
 	}
+}
+
+
+export async function GET() {
+	
 }

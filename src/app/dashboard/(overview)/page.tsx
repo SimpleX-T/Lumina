@@ -31,7 +31,6 @@ import Link from "next/link";
 import { useAccount } from "wagmi";
 import { Progress } from "@/components/UI/progress";
 import Loader from "@/components/loader";
-// import { load } from "@/lib/contracts";
 
 interface CourseProgress {
 	name: string;
@@ -149,12 +148,6 @@ function Dashboard() {
 			setIsLoading(false);
 		}, 1500);
 	}, []);
-
-	// useEffect(() => {
-	// 	if (!refresh) return;
-	// 	setRefresh(false);
-	// 	load();
-	// }, []);
 
 	if (!isConnected || isDisconnected) {
 		return (
