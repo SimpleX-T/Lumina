@@ -320,11 +320,11 @@ function TeamCard({ teamMember }: TeamCardProps) {
 						href={`https://x.com/${teamMember.twitter}`}
 						target='_blank'
 						rel='noopener noreferrer'
-						className='flex items-center text-white w-60 hover:text-blue-200 rounded-full bg-gray-900 gap-2 shadow-md p-1'>
+						className='flex items-center text-white  hover:text-blue-200 rounded-full bg-gray-900 gap-2 shadow-md p-1'>
 						<span className='rounded-full bg-white p-3 text-black flex items-center justify-center'>
 							<FaXTwitter size={18} />
 						</span>
-						<span className='text-lg'>@{teamMember.twitter}</span>
+						<span className='text-sm w-[12ch]'>@{teamMember.twitter}</span>
 					</Link>
 				)}
 			</div>

@@ -50,13 +50,19 @@ const LessonPage = () => {
   return (
     <div>
       {Content && <Content />}
-      {(!prev?.quiz || Number(lessonId) === 1) && (
+      <div className="flex w-full justify-center items-center gap-5">
+        {" "}
+        {(!prev?.quiz || Number(lessonId) > 1) && (
+          <PrevNextButton
+            text="Previous"
+            onclick={() => router.replace(prevLesson)}
+          />
+        )}
         <PrevNextButton
-          text="Previous"
-          onclick={() => router.replace(prevLesson)}
+          text="Next"
+          onclick={() => router.replace(nextLesson)}
         />
-      )}
-      <PrevNextButton text="Next" onclick={() => router.replace(nextLesson)} />
+      </div>
       {/* <button
         className="py-3 px-4 bg-[#fdc10d]"
         onClick={() => router.replace(nextLesson)}

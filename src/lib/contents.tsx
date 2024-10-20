@@ -33,7 +33,7 @@ const lesson1231: React.FC = () => {
           {/* Image 1 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
             <img
-              src="/Image/Notebook.gif"
+              src="/Images/Notebook-pana.svg"
               alt="Digital ledger concept"
               className="w-full h-full md:object-cover object-contain"
             />
@@ -47,21 +47,20 @@ const lesson1231: React.FC = () => {
               Information is grouped into "blocks," and these blocks are linked
               together in a specific order, forming a "chain." Each new block of
               information is added to the end of this chain, creating a timeline
-              of data.{" "}
-              <i className="font-extralight text-[#8ea9e9]">
-                What makes blockchain special is that it's decentralized,
-                meaning no single person or group has control over it
-              </i>
-              . Instead, all users collectively maintain and verify the records.
+              of data. What makes blockchain special is that it's{" "}
+              <i className="font-extralight text-[#8ea9e9]">decentralized,</i>{" "}
+              meaning no single person or group has control over it . Instead,
+              all users collectively maintain and verify the records.
             </p>
           </div>
 
           {/* Image 2 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
             <img
-              src="/Image/Notebook.gif"
+              src="/Images/blocksandchains.png
+              "
               alt="Blockchain concept"
-              className="w-full h-full object-cover"
+              className="w-full h-full md:object-cover object-contain"
             />
           </div>
 
@@ -75,23 +74,20 @@ const lesson1231: React.FC = () => {
               Bitcoin, its potential reaches far beyond digital money. This
               technology has the power to revolutionize many industries and
               processes. From supply chain management to voting systems,
-              healthcare records to digital identity verification,{" "}
-              <i className="font-extralight text-[#8ea9e9]">
-                blockchain's secure and transparent nature opens up a world of
-                possibilities for innovation and improved efficiency
-              </i>
-              . As we continue to explore and develop blockchain technology,
-              we're likely to see even more creative and impactful applications
-              emerge.
+              healthcare records to digital identity verification, blockchain's
+              secure and transparent nature opens up a world of possibilities
+              for innovation and improved efficiency . As we continue to explore
+              and develop blockchain technology, we're likely to see even more
+              creative and impactful applications emerge.
             </p>
           </div>
 
           {/* Image 3 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
             <img
-              src="/Image/token.svg"
+              src="/Images/token.svg"
               alt="Blockchain applications"
-              className="w-full h-full object-cover"
+              className="w-full h-full md:object-cover object-contain"
             />
           </div>
 
@@ -216,7 +212,7 @@ const lesson1232: React.FC = () => {
           {/* Image 1 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
             <img
-              src="/Images/Notebook-pana.svg"
+              src="/Images/blocks.png"
               alt="Course visual 1"
               className="w-full h-full md:object-cover object-contain"
             />
@@ -242,9 +238,9 @@ const lesson1232: React.FC = () => {
           {/* Image 2 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
             <img
-              src="/Images/Safe-bro.svg"
+              src="/Images/blocksandchains.png"
               alt="Course visual 2"
-              className="w-full h-full object-cover"
+              className="w-full h-full md:object-cover object-contain"
             />
           </div>
 
@@ -269,7 +265,7 @@ const lesson1232: React.FC = () => {
             <img
               src="/Images/password.svg"
               alt="Course visual 1"
-              className="w-full h-full object-cover"
+              className="w-full h-full md:object-cover object-contain"
             />
           </div>
           <div className="bg-[#001123] shadow-lg rounded-lg p-6 flex flex-col justify-between">
@@ -285,13 +281,6 @@ const lesson1232: React.FC = () => {
               principles, makes it very difficult to alter information once it's
               been recorded, ensuring the data's integrity and security.
             </p>
-          </div>
-          <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
-            <img
-              src="/Images/decent.svg"
-              alt="Course visual 1"
-              className="w-full h-full object-cover"
-            />
           </div>
         </div>
         <section className="col-span-1 space-y-6 ">
@@ -395,7 +384,7 @@ const lesson1233: React.FC = () => {
             <img
               src="/Images/publicblk.png"
               alt="Public blockchain concept"
-              className="w-full h-full object-cover"
+              className="w-full h-full md:object-cover object-contain"
             />
           </div>
 
@@ -420,7 +409,7 @@ const lesson1233: React.FC = () => {
             <img
               src="/Images/privateblk.png"
               alt="Private blockchain concept"
-              className="w-full h-full object-cover"
+              className="w-full h-full md:object-cover object-contain"
             />
           </div>
 
@@ -442,7 +431,7 @@ const lesson1233: React.FC = () => {
             <img
               src="/Images/hybrid.png"
               alt="Hybrid blockchain concept"
-              className="w-full h-full object-cover"
+              className="w-full h-full md:object-cover object-contain"
             />
           </div>
           <div className="bg-[#001123] shadow-lg rounded-lg p-6">
@@ -470,7 +459,7 @@ const lesson1233: React.FC = () => {
                 <img
                   src="/Images/consblk.png"
                   alt="Consortium blockchain concept"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full md:object-cover object-contain"
                 />
               </div>
             </p>
@@ -597,7 +586,7 @@ const lesson1234: React.FC = () => {
             <img
               src="/Images/trust.svg"
               alt="Proof of Work concept"
-              className="w-full h-full object-cover"
+              className="w-full h-full md:object-cover object-contain"
             />
           </div>
           {/* Proof of Work */}
@@ -639,7 +628,7 @@ const lesson1234: React.FC = () => {
             <img
               src="/Images/pow.png"
               alt="Proof of Work concept"
-              className="w-full h-full object-cover"
+              className="w-full h-full md:object-cover object-contain"
             />
           </div>
           {/* Proof of Stake */}
@@ -664,7 +653,7 @@ const lesson1234: React.FC = () => {
             <img
               src="/Images/pos.jpg"
               alt="Proof of Stake concept"
-              className="w-full h-full object-cover"
+              className="w-full h-full md:object-cover object-contain"
             />
           </div>
           <div className="bg-[#001123] shadow-lg rounded-lg p-6">
@@ -796,7 +785,7 @@ const lesson1235: React.FC = () => {
             <img
               src="/Images/contract.gif"
               alt="Smart Contract concept"
-              className="w-full h-full object-cover"
+              className="w-full h-full md:object-cover object-contain"
             />
           </div>
           <div className="bg-[#001123] shadow-lg rounded-lg p-6">
@@ -830,7 +819,7 @@ const lesson1235: React.FC = () => {
             <img
               src="/Images/contractworkings.jpg"
               alt="Smart Contract use cases"
-              className="w-full h-full object-cover"
+              className="w-full h-full md:object-cover object-contain"
             />
           </div>
 
@@ -972,7 +961,7 @@ const lesson1236: React.FC = () => {
             <img
               src="/Images/"
               alt="Utility vs. security tokens"
-              className="w-full h-full object-cover"
+              className="w-full h-full md:object-cover object-contain"
             />
           </div>
 
@@ -1131,7 +1120,7 @@ const lesson1237: React.FC = () => {
             <img
               src="/Images/earning.svg"
               alt="Liquidity pools in DeFi"
-              className="w-full h-full object-cover"
+              className="w-full h-full md:object-cover object-contain"
             />
           </div>
 
@@ -1154,7 +1143,7 @@ const lesson1237: React.FC = () => {
             <img
               src="/Images/aave.png"
               alt="Liquidity pools in DeFi"
-              className="w-full h-full object-cover"
+              className="w-full h-full md:object-cover object-contain"
             />
           </div>
           {/* Summary */}
@@ -1320,7 +1309,7 @@ const lesson1238: React.FC = () => {
             <img
               src="/Images/medical.svg"
               alt="Healthcare on blockchain"
-              className="w-full h-full object-cover"
+              className="w-full h-full md:object-cover object-contain"
             />
           </div>
 
@@ -1342,7 +1331,7 @@ const lesson1238: React.FC = () => {
             <img
               src="/Images/voting.svg"
               alt="Security and transparency"
-              className="w-full h-full object-cover"
+              className="w-full h-full md:object-cover object-contain"
             />
           </div>
           {/* Summary */}
@@ -1489,7 +1478,7 @@ const lesson1239: React.FC = () => {
             <img
               src="/Images/Security.gif"
               alt="Security and transparency"
-              className="w-full h-full object-cover"
+              className="w-full h-full md:object-cover object-contain"
             />
           </div>
 
@@ -1513,7 +1502,7 @@ const lesson1239: React.FC = () => {
             <img
               src="/Images/boundaries.svg"
               alt="Security and transparency"
-              className="w-full h-full object-cover"
+              className="w-full h-full md:object-cover object-contain"
             />
           </div>
           {/* Summary */}
