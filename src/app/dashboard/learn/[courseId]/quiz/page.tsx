@@ -1,9 +1,11 @@
 "use client";
-import { useParams } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import { ArrowRight, Clock } from "lucide-react";
 import { courseData } from "@/lib/courses";
 import { useSearchParams } from "next/navigation";
+import PreQuizModal from "@/components/courses/QuizPrepModal";
+import QuizResultsModal from "@/components/courses/QuizResultsModal";
 interface Question {
   id: number;
   text: string;
@@ -40,27 +42,34 @@ const QuizPage = () => {
   const [selectedAnswers, setSelectedAnswers] = useState<
     Record<number, number>
   >({});
+  const [isQuizOn, setIsQuizOn] = useState<boolean>(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [timeLeft, setTimeLeft] = useState(30);
   const [totalScore, setTotalScore] = useState(0);
+  const [quizOver, setQuizOver] = useState<boolean>(false);
+  const router = useRouter();
   const routerParams = useParams();
   const params = useSearchParams();
+  const lessonParams = params.get("from");
   const { courseId } = routerParams;
   const course = courseData.find((c) => c.id === Number(courseId));
-  const lesson = course?.lessons.find((l) => l.id === Number(params));
-  //   const quiz = lesson?.quiz;
+  const lesson = course?.lessons.find((l) => l.id === Number(lessonParams));
+  const quiz = lesson?.quiz;
   //   const [score, setScore] = useState(0);
   //   if (!course) return <p>Course not found</p>;
   //   if (!lesson) return <p>Lesson not found</p>;
+  const totalPossible = quiz?.reduce((acc, q) => acc + q.score, 0);
   useEffect(() => {
-    if (timeLeft > 0 && !isSubmitted) {
+    if (isQuizOn && timeLeft > 0 && !isSubmitted) {
       const timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
       return () => clearTimeout(timer);
     } else if (timeLeft === 0 && !isSubmitted) {
       handleSubmit();
     }
-  }, [timeLeft, isSubmitted]);
-
+  }, [timeLeft, isSubmitted, isQuizOn]);
+  const handleStart = () => {
+    setIsQuizOn(true);
+  };
   const handleOptionSelect = (questionId: number, optionIndex: number) => {
     if (!isSubmitted) {
       setSelectedAnswers((prev) => ({ ...prev, [questionId]: optionIndex }));
@@ -70,16 +79,36 @@ const QuizPage = () => {
   const handleSubmit = () => {
     setIsSubmitted(true);
     let score = 0;
-    questions.forEach((question) => {
-      if (selectedAnswers[question.id] === question.correctAnswer) {
-        score += question.score;
+    quiz?.forEach((q, id) => {
+      if (selectedAnswers[id] === q.answerIndex) {
+        score += q.score;
       }
     });
     setTotalScore(score);
   };
-
+  let next = "";
+  const handleResults = () => {
+   
+    setQuizOver(true);
+  };
+  const handleNext = () => {
+     next =
+       totalPossible && (totalScore / totalPossible) * 100 >= 60
+         ? `/dashboard/learn/${courseId}/${Number(lessonParams) + 1}`
+         : `/dashboard/learn/${courseId}/1`;
+    router.push(next);
+  };
   return (
-    <div className="p-6 max-w-2xl mx-auto bg-white/50 rounded-xl shadow-md">
+    <div className="p-6 min-w-2xl mx-auto rounded-xl shadow-md">
+      {!isQuizOn && (
+        <PreQuizModal lessonProgress={60} onStartQuiz={handleStart} />
+      )}
+      {quizOver && (
+        <QuizResultsModal
+          percent={totalPossible ? (totalScore / totalPossible) * 100 : 0}
+          onContinue={handleNext}
+        />
+      )}
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-2xl font-bold">Quiz</h2>
         <div className="flex items-center">
@@ -87,45 +116,45 @@ const QuizPage = () => {
           <span>{timeLeft}s</span>
         </div>
       </div>
-      {questions.map((question) => (
-        <div key={question.id} className="mb-6">
-          <p className="font-semibold mb-2">{question.text}</p>
+      {quiz?.map((q, id) => (
+        <div key={id} className="mb-6">
+          <p className="font-semibold mb-2">
+            {id + 1}. {q.question}
+          </p>
           <div className="grid grid-cols-1 gap-2">
-            {question.options.map((option, index) => (
+            {q.options.map((option, index) => (
               <button
                 key={index}
                 className={`p-2 rounded ${
-                  selectedAnswers[question.id] === index
+                  selectedAnswers[id] === index
                     ? isSubmitted
-                      ? index === question.correctAnswer
+                      ? index === q.answerIndex
                         ? "bg-green-500 text-white"
                         : "bg-red-500 text-white"
                       : "bg-blue-500 text-white"
-                    : isSubmitted && index === question.correctAnswer
+                    : isSubmitted && index === q.answerIndex
                       ? "bg-green-500 text-white"
-                      : "bg-gray-200"
+                      : "bg-blue-900/50"
                 }`}
-                onClick={() => handleOptionSelect(question.id, index)}
+                onClick={() => handleOptionSelect(id, index)}
               >
                 {option}
               </button>
             ))}
           </div>
-          <p className="mt-2 text-sm text-gray-600">Score: {question.score}</p>
+          <p className="mt-2 text-sm text-gray-200">Score: {q.score}</p>
         </div>
       ))}
       <button
         className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 flex items-center"
-        onClick={handleSubmit}
-        disabled={isSubmitted}
+        onClick={isSubmitted ? handleResults : handleSubmit}
       >
         {isSubmitted ? "Next Lesson" : "Submit"}
         <ArrowRight className="ml-2" />
       </button>
       {isSubmitted && (
         <p className="mt-4 font-bold">
-          Total Score: {totalScore}/
-          {questions.reduce((acc, q) => acc + q.score, 0)}
+          Total Score: {totalScore}/{totalPossible}
         </p>
       )}
     </div>
