@@ -30,6 +30,8 @@ import Carousel from "@/components/dashboard/Carousel";
 import Link from "next/link";
 import { useAccount } from "wagmi";
 import { Progress } from "@/components/UI/progress";
+import Loader from "@/components/loader";
+import { load } from "@/lib/contracts";
 
 interface CourseProgress {
 	name: string;
@@ -121,6 +123,7 @@ const mockAchievements = [
 
 function Dashboard() {
 	const router = useRouter();
+	const [refresh, setRefresh] = useState(true);
 
 	const { isConnected, isDisconnected } = useAccount();
 	const [isLoading, setIsLoading] = useState(true);
@@ -145,6 +148,12 @@ function Dashboard() {
 			setGrades(mockGrades);
 			setIsLoading(false);
 		}, 1500);
+	}, []);
+
+	useEffect(() => {
+		if (!refresh) return;
+		setRefresh(false);
+		load();
 	}, []);
 
 	if (!isConnected || isDisconnected) {

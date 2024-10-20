@@ -44,7 +44,7 @@ const QuizPage = () => {
   >({});
   const [isQuizOn, setIsQuizOn] = useState<boolean>(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(30);
+  const [timeLeft, setTimeLeft] = useState(60);
   const [totalScore, setTotalScore] = useState(0);
   const [quizOver, setQuizOver] = useState<boolean>(false);
   const router = useRouter();
@@ -86,29 +86,32 @@ const QuizPage = () => {
     });
     setTotalScore(score);
   };
+
   let next = "";
   const handleResults = () => {
-   
     setQuizOver(true);
   };
   const handleNext = () => {
-     next =
-       totalPossible && (totalScore / totalPossible) * 100 >= 60
-         ? `/dashboard/learn/${courseId}/${Number(lessonParams) + 1}`
-         : `/dashboard/learn/${courseId}/1`;
-    router.push(next);
+    next =
+      totalPossible && (totalScore / totalPossible) * 100 >= 60
+        ? `/dashboard/learn/${courseId}/${Number(lessonParams) + 1}`
+        : `/dashboard/learn/${courseId}/${Number(lessonParams) - 2}`;
+    router.replace(next);
   };
+
   return (
-    <div className="p-6 min-w-2xl mx-auto rounded-xl shadow-md">
+    <div className="p-6 max-w-2xl mx-auto rounded-xl shadow-md">
       {!isQuizOn && (
         <PreQuizModal lessonProgress={60} onStartQuiz={handleStart} />
       )}
+
       {quizOver && (
         <QuizResultsModal
           percent={totalPossible ? (totalScore / totalPossible) * 100 : 0}
           onContinue={handleNext}
         />
       )}
+
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-2xl font-bold">Quiz</h2>
         <div className="flex items-center">
