@@ -1,4 +1,4 @@
-import { CourseProps, QuestionProps } from "@/app/types";
+import {CourseProps, QuestionProps} from "@/app/types";
 import introA from "@/components/courses/[123]/intro1";
 import introB from "@/components/courses/[123]/intro1";
 import introC from "@/components/courses/[123]/intro1";

@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import React, {useState, useEffect} from "react";
+import {useRouter} from "next/navigation";
 
 import {
 	BarChart,
@@ -12,9 +12,9 @@ import {
 	Tooltip,
 	ResponsiveContainer,
 } from "recharts";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/UI/card";
-import { Button } from "@/components/UI/button";
-import { Skeleton } from "@/components/UI/skeleton";
+import {Card, CardContent, CardHeader, CardTitle} from "@/components/UI/card";
+import {Button} from "@/components/UI/button";
+import {Skeleton} from "@/components/UI/skeleton";
 import {
 	FaBell,
 	FaBook,
@@ -25,11 +25,13 @@ import {
 	FaCheckCircle,
 	FaExclamationCircle,
 } from "react-icons/fa";
-import { ProductivityChart } from "@/components/dashboard/ProductivityChart";
+import {ProductivityChart} from "@/components/dashboard/ProductivityChart";
 import Carousel from "@/components/dashboard/Carousel";
 import Link from "next/link";
-import { useAccount } from "wagmi";
-import { Progress } from "@/components/UI/progress";
+import {useAccount} from "wagmi";
+import {Progress} from "@/components/UI/progress";
+import Loader from "@/components/loader";
+import {load} from "@/lib/contracts";
 
 interface CourseProgress {
 	name: string;
@@ -49,10 +51,10 @@ interface Grade {
 }
 
 const mockCourseProgress: CourseProgress[] = [
-	{ name: "Blockchain Fundamentals", progress: 80 },
-	{ name: "Web3 Development", progress: 60 },
-	{ name: "Crypto Economics", progress: 75 },
-	{ name: "Smart Contract Security", progress: 90 },
+	{name: "Blockchain Fundamentals", progress: 80},
+	{name: "Web3 Development", progress: 60},
+	{name: "Crypto Economics", progress: 75},
+	{name: "Smart Contract Security", progress: 90},
 ];
 
 const mockUpcomingAssignments: UpcomingAssignment[] = [
@@ -77,9 +79,9 @@ const mockUpcomingAssignments: UpcomingAssignment[] = [
 ];
 
 const mockGrades: Grade[] = [
-	{ course: "Blockchain Fundamentals", grade: "A" },
-	{ course: "Web3 Development", grade: "B+" },
-	{ course: "Crypto Economics", grade: "A-" },
+	{course: "Blockchain Fundamentals", grade: "A"},
+	{course: "Web3 Development", grade: "B+"},
+	{course: "Crypto Economics", grade: "A-"},
 ];
 
 const blockchainBasics = [
@@ -108,21 +110,22 @@ const onchainBasics = [
 ];
 
 const mockUpcomingEvents = [
-	{ date: "2024-10-15", title: "Guest Lecture: Vitalik Buterin" },
-	{ date: "2024-10-22", title: "Hackathon: DeFi Dapps" },
-	{ date: "2024-10-29", title: "Workshop: Solidity Best Practices" },
+	{date: "2024-10-15", title: "Guest Lecture: Vitalik Buterin"},
+	{date: "2024-10-22", title: "Hackathon: DeFi Dapps"},
+	{date: "2024-10-29", title: "Workshop: Solidity Best Practices"},
 ];
 
 const mockAchievements = [
-	{ title: "Completed Blockchain Basics Quiz", date: "2024-09-10" },
-	{ title: "Submitted DApp Project", date: "2024-09-25" },
-	{ title: "Participated in Crypto Trading Competition", date: "2024-10-05" },
+	{title: "Completed Blockchain Basics Quiz", date: "2024-09-10"},
+	{title: "Submitted DApp Project", date: "2024-09-25"},
+	{title: "Participated in Crypto Trading Competition", date: "2024-10-05"},
 ];
 
 function Dashboard() {
 	const router = useRouter();
+	const [refresh, setRefresh] = useState(true);
 
-	const { isConnected } = useAccount();
+	const {isConnected} = useAccount();
 	const [isLoading, setIsLoading] = useState(true);
 	const [courseProgress, setCourseProgress] = useState<CourseProgress[]>([]);
 	const [upcomingAssignments, setUpcomingAssignments] = useState<
@@ -136,7 +139,11 @@ function Dashboard() {
 			// reconnect().catch(() => {
 			// If reconnection fails, redirect to the landing page
 			// });
-			router.push("/");
+			setTimeout(() => {
+				if (!isConnected) {
+					router.push("/");
+				}
+			}, 5000);
 		}
 	}, [isConnected, router]);
 
@@ -148,6 +155,12 @@ function Dashboard() {
 			setGrades(mockGrades);
 			setIsLoading(false);
 		}, 1500);
+	}, []);
+
+	useEffect(() => {
+		if (!refresh) return;
+		setRefresh(false)
+		load();
 	}, []);
 
 	if (!isConnected) {
@@ -196,34 +209,34 @@ function Dashboard() {
 					</Card>
 				</div>
 
-				<div className='lg:col-span-3 md:col-span-full grid grid-cols-2 gap-4'>
-					<Card className='bg-[#001123] shadow-lg border-gray-800 col-span-full md:col-span-1 text-white'>
+				<div className="lg:col-span-3 md:col-span-full grid grid-cols-2 gap-4">
+					<Card className="bg-[#001123] shadow-lg border-gray-800 col-span-full md:col-span-1 text-white">
 						<CardHeader>
-							<CardTitle className='flex items-center'>
-								<FaBook className='mr-2' />
+							<CardTitle className="flex items-center">
+								<FaBook className="mr-2" />
 								Course Progress
 							</CardTitle>
 						</CardHeader>
 						<CardContent>
 							{isLoading ? (
-								<div className='space-y-2'>
-									<Skeleton className='w-full h-8' />
-									<Skeleton className='w-full h-8' />
-									<Skeleton className='w-full h-8' />
+								<div className="space-y-2">
+									<Skeleton className="w-full h-8" />
+									<Skeleton className="w-full h-8" />
+									<Skeleton className="w-full h-8" />
 								</div>
 							) : (
-								<ul className='space-y-4'>
+								<ul className="space-y-4">
 									{courseProgress.map((course, index) => (
 										<li key={index}>
-											<div className='flex justify-between mb-2'>
+											<div className="flex justify-between mb-2">
 												<span>{course.name}</span>
-												<span className='font-bold'>
+												<span className="font-bold">
 													{course.progress}%
 												</span>
 											</div>
 											<Progress
 												value={course.progress}
-												className='w-full h-2 bg-gray-700 rounded'
+												className="w-full h-2 bg-gray-700 rounded"
 											/>
 										</li>
 									))}
@@ -234,21 +247,22 @@ function Dashboard() {
 
 					<Card className='col-span-full bg-[#001123] shadow-lg md:col-span-1 border-gray-800'>
 						<CardHeader>
-							<CardTitle className='flex items-center text-white font-semibold'>
-								<FaCalendar className='mr-2' />
+							<CardTitle className="flex items-center text-white font-semibold">
+								<FaCalendar className="mr-2" />
 								Upcoming Events
 							</CardTitle>
 						</CardHeader>
 						<CardContent>
-							<ul className='space-y-4'>
+							<ul className="space-y-4">
 								{mockUpcomingEvents.map((event, index) => (
 									<li
 										key={index}
-										className='flex justify-between text-white'>
-										<span className='text-sm'>
+										className="flex justify-between text-white"
+									>
+										<span className="text-sm">
 											{event.title}
 										</span>
-										<span className='text-gray-400 text-xs'>
+										<span className="text-gray-400 text-xs">
 											{event.date}
 										</span>
 									</li>
