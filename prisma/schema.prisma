@@ -32,11 +32,14 @@ model Course {
   lessons     Lesson[]
   resource    Resource?
   enrollments Enrollment[]
-  resourceId  String       @db.ObjectId
 }
 
 model Resource {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  audio   Boolean
+  video   Boolean
+  text    Boolean
+  visuals Boolean
 
   courseId String @unique @db.ObjectId
   course   Course @relation(fields: [courseId], references: [id])
@@ -45,11 +48,11 @@ model Resource {
 model Lesson {
   id       String @id @default(auto()) @map("_id") @db.ObjectId
   title    String
-  content  String // Could be a video URL, text, or any lesson material
+  content String  // Could be a video URL, text, or any lesson material
   courseId String @db.ObjectId
 
   course         Course           @relation(fields: [courseId], references: [id])
-  order          Int // To track the order of lessons within the course
+
   LessonProgress LessonProgress[]
 }
 

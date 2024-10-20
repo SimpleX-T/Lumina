@@ -23,6 +23,7 @@
 		"@radix-ui/react-slot": "^1.1.0",
 		"@rainbow-me/rainbowkit": "^2.2.0",
 		"@tanstack/react-query": "^5.45.1",
+		"@truffle/contract": "^4.6.31",
 		"@walletconnect/ethereum-provider": "^2.17.1",
 		"autoprefixer": "^10.4.20",
 		"class-variance-authority": "^0.7.0",
@@ -47,6 +48,7 @@
 		"vaul": "^1.1.0",
 		"viem": "^2.21.29",
 		"wagmi": "^2.12.19",
+		"web3": "^4.13.0",
 		"zod": "^3.23.8"
 	},
 	"devDependencies": {
