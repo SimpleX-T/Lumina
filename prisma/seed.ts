@@ -623,12 +623,12 @@ async function main() {
       data: {
         title: course.title,
         description: course.description,
-        duration: course.duration,
+        duration: course?.duration,
         image: course.image,
       },
     });
 
-    await prisma.resource.create({
+    await prisma.resource?.create({
       data: {
         audio: course.resources.audio,
         video: course.resources.video,
