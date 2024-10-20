@@ -9,25 +9,34 @@ declare global {
 	}
 }
 
-export async function load() {
+const contractAddress = "0x09aa30b2014b7ed813c18564159919de06670867";
+const NFTContract = contract(nftABI);
+
+export async function nftContract() {
 	await loadWeb3();
-	const addressAccount = await loadAccount();
-	loadContract(addressAccount);
+	NFTContract.setProvider(window.web3.eth.currentProvider);
+
+	return NFTContract;
 }
-
-const loadContract = async (addressAccount: string) => {
-	const theContract = contract(nftABI);
-	theContract.setProvider(window.web3.eth.currentProvider);
-	const reward = await theContract.deployed();
-
-	console.log(reward);
-};
 
 const loadAccount = async () => {
 	const addressAccount = await window.web3.eth.getCoinbase();
 	console.log(addressAccount);
 	return addressAccount;
 };
+
+export async function loginNFT(wallet_address: string) {
+	await loadWeb3();
+	NFTContract.setProvider(window.web3.eth.currentProvider);
+
+	try {
+		const instance = await NFTContract.at(contractAddress);
+		const receipt = await instance.login({from: wallet_address});
+		console.log("Login successful, NFT minted:", receipt);
+	} catch (err) {
+		console.error("Error during login:", err);
+	}
+}
 
 const loadWeb3 = async () => {
 	// Modern dapp browsers...
