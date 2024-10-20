@@ -11,8 +11,8 @@ const QuizResultsModal = ({
   const passed = percent >= 60;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg p-6 max-w-md w-full  text-stone-800">
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4">
+      <div className="bg-white transform md:translate-x-[30%] rounded-lg p-3 md:p-6 max-w-md w-full text-stone-800">
         <h2 className="text-2xl font-bold mb-4">Quiz Results</h2>
 
         <Alert className={`mb-4 ${passed ? "bg-green-100" : "bg-red-100"}`}>

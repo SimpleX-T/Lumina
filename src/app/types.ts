@@ -23,7 +23,7 @@ export interface Lesson {
   id: number;
   title: string;
   duration: number;
-  content: React.FC;
+  content: string;
   quiz?: QuestionProps[];
 }
 export interface QuestionProps {

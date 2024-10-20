@@ -87,9 +87,7 @@ const CourseContentLayout = () => {
             />
           </div>
           <div className="bg-[#001123] shadow-lg rounded-lg p-6 flex flex-col justify-between">
-            <h2 className="text-xl font-semibold mb-4">
-              Summary 🗒️
-            </h2>
+            <h2 className="text-xl font-semibold mb-4">Summary 🗒️</h2>
             <p>
               Blockchain is a digital system for recording information in a way
               that makes it difficult or impossible to change, hack, or cheat
@@ -110,7 +108,6 @@ const CourseContentLayout = () => {
           </div>
         </div>
         <section className="col-span-1 space-y-6 ">
-
           <div>
             {!videoOn && (
               <div
@@ -165,11 +162,11 @@ const CourseContentLayout = () => {
           </div>
           <div className="bg-yellow-100 rounded-lg p-6">
             <h3 className="text-lg font-semibold mb-4 text-yellow-800">
-              Presentation Slides
+              Lesson Slides
             </h3>
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center flex-col xl:flex-row">
               <ImageIcon size={40} className="text-yellow-600" />
-              <button className="flex items-center bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 transition-colors">
+              <button className="flex items-center bg-yellow-500 text-white xl:px-4 xl:py-2 py-1 px-3 rounded hover:bg-yellow-600 transition-colors">
                 <Download size={20} className="mr-2" />
                 Download PDF
               </button>
