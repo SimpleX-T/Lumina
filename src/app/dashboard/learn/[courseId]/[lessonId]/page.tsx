@@ -10,9 +10,8 @@ const LessonPage = () => {
   const lesson = course?.lessons.find((l) => l.id === Number(lessonId));
   if (!lesson) return <p>Lesson not found</p>;
   if (!course) return <p>Course not found</p>;
-  const nextLesson =
-    Number(lessonId) < course.lessons?.length && lesson.quiz
-      ? `/dashboard/learn/${courseId}/quiz`
+  const nextLesson = lesson.quiz
+      ? `/dashboard/learn/${courseId}/quiz?from=${lessonId}`
       : `/dashboard/learn/${courseId}/${Number(lessonId) + 1}`;
   return (
     <div>

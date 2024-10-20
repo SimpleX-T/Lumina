@@ -38,6 +38,7 @@ export default function MobileNavigation() {
 			<div className='grid grid-cols-3 items-center'>
 				{navs.map((nav, index) => (
 					<Link
+						key={index}
 						href={nav.route}
 						className='text-center text-xs p-3 flex gap-2 flex-col items-center'>
 						{nav.icon}

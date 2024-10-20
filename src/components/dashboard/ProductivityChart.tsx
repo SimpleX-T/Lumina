@@ -84,6 +84,7 @@ export function ProductivityChart() {
 					</BarChart>
 				</ChartContainer>
 			</CardContent>
+			{/* 			
 			<CardFooter className='flex-col items-start gap-2 text-sm bg-[#001123] text-white'>
 				<div className='flex gap-2 font-medium leading-none'>
 					Trending up by 5.2% this month{" "}
@@ -92,7 +93,7 @@ export function ProductivityChart() {
 				<div className='leading-none text-muted-foreground'>
 					Showing total visitors for the last 6 months
 				</div>
-			</CardFooter>
+			</CardFooter> */}
 		</Card>
 	);
 }

@@ -85,15 +85,28 @@ const mockGrades: Grade[] = [
 ];
 
 const blockchainBasics = [
-	{id: 1, content: "Breaking News"},
-	{id: 2, content: "Crypto Prices Surge"},
-	{id: 3, content: "New Blockchain Course Available"},
+	{
+		id: 3,
+		content: "New Blockchain Course Available",
+		image: "/Images/fundamentals.jpg",
+		url: "/dashboard/learn",
+	},
 ];
 
 const onchainBasics = [
-	{id: 1, content: "Breaking News"},
-	{id: 2, content: "Onchain Buildathon"},
-	{id: 3, content: "Jesse Polak's visit to Africa"},
+	{
+		id: 1,
+		content: "Breaking News",
+		image: "",
+		url: "/learn",
+	},
+	{ id: 2, content: "Onchain Buildathon", image: "", url: "/learn" },
+	{
+		id: 3,
+		content: "Jesse Polak's visit to Africa",
+		image: "",
+		url: "/learn",
+	},
 ];
 
 const mockUpcomingEvents = [
@@ -152,22 +165,48 @@ function Dashboard() {
 
 	if (!isConnected) {
 		return (
-			<div className="min-h-screen flex justify-center items-center">
-				Checking wallet connection...
+			<div>
+				Checking wallet connection... Please, kindly reconnect your
+				wallet
 			</div>
 		);
 	}
 
 	return (
-		<div className="w-full px-4 md:px-8 py-8">
-			<div className="w-full grid grid-cols-1 lg:grid-cols-2 min-h-[300px] rounded-lg overflow-hidden mb-6 shadow-md">
+		<div className='w-full px-4 md:px-8 py-8'>
+			<div className='w-full grid grid-cols-1 lg:grid-cols-2 rounded-lg overflow-hidden mb-6 shadow-md gap-8'>
 				<Carousel items={blockchainBasics} />
 				<Carousel items={onchainBasics} />
 			</div>
 
-			<div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6">
-				<div className="md:col-span-4 lg:col-span-3 rounded-lg overflow-hidden shadow-lg border-gray-800 overflow-x-scroll">
+			<div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6'>
+				<div className='md:col-span-4 lg:col-span-3 grid grid-cols-1 rounded-lg overflow-hidden shadow-lg border-gray-800 overflow-x-scroll gap-4'>
 					<ProductivityChart />
+
+					<Card className='col-span-full bg-[#001123] shadow-lg border-gray-800'>
+						<CardHeader>
+							<CardTitle className='flex items-center text-white font-semibold'>
+								<FaGraduationCap className='mr-2' />
+								Achievements
+							</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<ul className='space-y-2'>
+								{mockAchievements.map((achievement, index) => (
+									<li
+										key={index}
+										className='flex justify-between text-white hover:bg-[#0d1f31] transition-colors duration-300 p-1 cursor-pointer'>
+										<span className='text-sm'>
+											{achievement.title}
+										</span>
+										<span className='text-gray-400 text-xs'>
+											{achievement.date}
+										</span>
+									</li>
+								))}
+							</ul>
+						</CardContent>
+					</Card>
 				</div>
 
 				<div className="lg:col-span-3 md:col-span-full grid grid-cols-2 gap-4">
@@ -206,30 +245,7 @@ function Dashboard() {
 						</CardContent>
 					</Card>
 
-					<Card className="col-span-full bg-[#001123] shadow-lg border-gray-800">
-						<CardHeader>
-							<CardTitle className="flex items-center text-white font-semibold">
-								<FaBell className="mr-2" />
-								Notifications
-							</CardTitle>
-						</CardHeader>
-						<CardContent>
-							<ul className="space-y-4">
-								<li className="flex items-center text-green-500">
-									<FaCheckCircle className="mr-2" />
-									<span>
-										Assignment submitted successfully
-									</span>
-								</li>
-								<li className="flex items-center text-red-500">
-									<FaExclamationCircle className="mr-2" />
-									<span>New course material available</span>
-								</li>
-							</ul>
-						</CardContent>
-					</Card>
-
-					<Card className="col-span-full bg-[#001123] shadow-lg border-gray-800">
+					<Card className='col-span-full bg-[#001123] shadow-lg md:col-span-1 border-gray-800'>
 						<CardHeader>
 							<CardTitle className="flex items-center text-white font-semibold">
 								<FaCalendar className="mr-2" />
@@ -248,32 +264,6 @@ function Dashboard() {
 										</span>
 										<span className="text-gray-400 text-xs">
 											{event.date}
-										</span>
-									</li>
-								))}
-							</ul>
-						</CardContent>
-					</Card>
-
-					<Card className="col-span-full bg-[#001123] shadow-lg border-gray-800">
-						<CardHeader>
-							<CardTitle className="flex items-center text-white font-semibold">
-								<FaGraduationCap className="mr-2" />
-								Achievements
-							</CardTitle>
-						</CardHeader>
-						<CardContent>
-							<ul className="space-y-4">
-								{mockAchievements.map((achievement, index) => (
-									<li
-										key={index}
-										className="flex justify-between text-white"
-									>
-										<span className="text-sm">
-											{achievement.title}
-										</span>
-										<span className="text-gray-400 text-xs">
-											{achievement.date}
 										</span>
 									</li>
 								))}
