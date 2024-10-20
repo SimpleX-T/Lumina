@@ -768,13 +768,14 @@ const lesson1235: React.FC = () => {
               What Are Smart Contracts? 📜
             </h2>
             <p>
-              Smart contracts are like regular contracts but written in code.{" "}
-              <i className="font-extralight text-[#8ea9e9]">
-                They automatically execute when the terms of the contract are
-                met
-              </i>
-              . Imagine renting a car: you pay the required amount, and the car
-              unlocks automatically—no paperwork needed!
+              Smart contracts are self-executing programs on a blockchain that
+              automatically carry out tasks when specific conditions are met.
+              Think of them as digital "if-then" agreements that run without
+              needing a middleman, like a lawyer or bank. They help automate
+              processes, save time, and reduce the need for third-party services
+              Smart contracts are like regular contracts but written in code.
+              Imagine renting a car: you pay the required amount, and the car
+              unlocks automatically—no paperwork needed!.
             </p>
           </div>
 
@@ -786,7 +787,17 @@ const lesson1235: React.FC = () => {
               className="w-full h-full object-cover"
             />
           </div>
-
+          <div className="bg-[#001123] shadow-lg rounded-lg p-6">
+            <h2 className="text-xl font-semibold mb-4">How do they work?⚙️</h2>
+            <p>
+              Smart contracts are like vending machines. If you put in the right
+              amount of money (condition), the machine automatically gives you
+              the snack (result). There’s no need for a shopkeeper to intervene.
+              Similarly, on a blockchain, if the terms set in a smart contract
+              are met, it will automatically execute the agreed actions, such as
+              transferring ownership or releasing payment.
+            </p>
+          </div>
           {/* Use Cases */}
           <div className="bg-[#001123] shadow-lg rounded-lg p-6">
             <h2 className="text-xl font-semibold mb-4">
@@ -816,11 +827,10 @@ const lesson1235: React.FC = () => {
             <h2 className="text-xl font-semibold mb-4">Summary 🗒️</h2>
             <p>
               Smart contracts are self-executing contracts with the terms
-              written directly into code.{" "}
-              <i className="font-extralight text-[#8ea9e9]">
-                They simplify processes and remove the need for intermediaries
-              </i>
-              .
+              written directly into code. They simplify processes and remove the
+              need for intermediaries .While offering benefits like efficiency
+              and lower costs, they must be coded carefully to avoid potential
+              risks.
             </p>
           </div>
         </div>
@@ -937,12 +947,9 @@ const lesson1236: React.FC = () => {
             </h2>
             <p>
               There are different types of tokens, but two common ones are
-              utility tokens and security tokens.{" "}
-              <i className="font-extralight text-[#8ea9e9]">
-                Utility tokens give you access to products or services, like
-                using arcade tokens for games
-              </i>
-              . Security tokens, on the other hand, are more like investments,
+              utility tokens and security tokens. Utility tokens give you access
+              to products or services, like using arcade tokens for games .
+              Security tokens, on the other hand, are more like investments,
               where their value is tied to an asset or the performance of a
               company.
             </p>
@@ -1004,7 +1011,7 @@ const lesson1236: React.FC = () => {
             {videoOn && (
               <div className="relative bg-gray-800 rounded-lg overflow-hidden h-64">
                 <iframe
-                  src="https://www.youtube.com/embed/playlist"
+                  src="https://www.youtube.com/embed/422HORNUfkU?si=AwCr_T7KhvO9mIQO"
                   title="Tokens Video"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -1166,7 +1173,7 @@ const lesson1237: React.FC = () => {
             {videoOn && (
               <div className="relative bg-gray-800 rounded-lg overflow-hidden h-64">
                 <iframe
-                  src="https://www.youtube.com/embed/playlist"
+                  src="https://www.youtube.com/embed/17QRFlml4pA?si=sQrNkoh-2kMYefnu"
                   title="DeFi Video"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -1255,7 +1262,28 @@ const lesson1238: React.FC = () => {
               className="w-full h-full md:object-cover object-contain"
             />
           </div>
+          <div className="bg-[#001123] shadow-lg rounded-lg p-6 flex flex-col justify-between">
+            <h2 className="text-xl font-semibold mb-4">
+              Digital Payments and Money Transfers 💸
+            </h2>
+            <p>
+              Blockchain can be used to send money directly between people
+              without needing a bank or payment service like PayPal. Imagine
+              paying a friend for lunch by simply transferring digital coins to
+              them, like handing over cash, but digitally. Transactions happen
+              quickly, often within minutes, and can be done internationally
+              without paying high fees.
+            </p>
+          </div>
 
+          {/* Image 1 */}
+          <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
+            <img
+              src="/api/placeholder/400/320"
+              alt="Supply chain tracking concept"
+              className="w-full h-full md:object-cover object-contain"
+            />
+          </div>
           {/* Text Content 2 */}
           <div className="bg-[#001123] shadow-lg rounded-lg p-6 flex flex-col justify-between">
             <h2 className="text-xl font-semibold mb-4">
@@ -1327,7 +1355,7 @@ const lesson1238: React.FC = () => {
             {videoOn && (
               <div className="relative bg-gray-800 rounded-lg overflow-hidden h-64">
                 <iframe
-                  src="https://www.youtube.com/embed/playlist"
+                  src="https://www.youtube.com/embed/znwOhOtm6go?si=Vx6M3k2fGEAGXnbj"
                   title="Blockchain Uses Video"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -1435,7 +1463,6 @@ const lesson1239: React.FC = () => {
               hidden changes or corruption.
             </p>
           </div>
-
           {/* Image 2 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
             <img
@@ -1493,7 +1520,7 @@ const lesson1239: React.FC = () => {
             {videoOn && (
               <div className="relative bg-gray-800 rounded-lg overflow-hidden h-64">
                 <iframe
-                  src="https://www.youtube.com/embed/playlist"
+                  src="https://www.youtube.com/embed/-Hbsq2FAlXU?si=obJ79DcUwyBD7uNJ"
                   title="Why Blockchain Video"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
