@@ -30,7 +30,7 @@ export async function POST(req: Request) {
 
 		return Response.json({
 			success: true,
-			message: "Course successfully enrolled.",
+			message: "Account created successfully.",
 			data: user,
 		});
 	} catch (err) {
