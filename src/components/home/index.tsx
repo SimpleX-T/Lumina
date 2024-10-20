@@ -76,7 +76,8 @@ const LuminaLandingPage: React.FC = () => {
 
 	// useEffect(
 	// 	function () {
-	// 		if (router && isConnected) router.push("/dashboard");
+
+	// 		async function creat
 	// 	},
 	// 	[isConnected]
 	// );
@@ -186,11 +187,12 @@ const LuminaLandingPage: React.FC = () => {
 							className={`p-6 rounded-lg text-white bg-[#334155]`}>
 							<h2 className='text-2xl mb-2'>{feature.title}</h2>
 							<p>{feature.description}</p>
-							<Link
-								href={feature.link}
-								className='bg-[#fdc10d] text-[#0f172a] border-none py-2 px-4 rounded-full mt-4 inline-block'>
-								Explore Skills
-							</Link>
+							<button
+								disabled
+								// href={feature.link}
+								className='bg-[#fdc10d50] cursor-not-allowed text-[#0f172a] border-none py-2 px-4 rounded-full mt-4 inline-block'>
+								Coming Soon
+							</button>
 						</div>
 					))}
 				</section>
@@ -228,19 +230,17 @@ const LuminaLandingPage: React.FC = () => {
 						web3 space has birthed this idea.
 					</p>
 
-					<section className='w-full bg-gray-900 py-16'>
-						<div className='container mx-auto px-4'>
-							<h2 className='font-semibold text-3xl mb-8 text-center text-[#60a5fa]'>
-								Meet the minds behind Lumina
-							</h2>
-							<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8'>
-								{teamMembers.map((member, index) => (
-									<TeamCard
-										key={index}
-										teamMember={member}
-									/>
-								))}
-							</div>
+					<section className='w-full bg-gray-900 md:px-6 py-16'>
+						<h2 className='font-semibold text-3xl mb-8 text-center text-[#60a5fa]'>
+							Meet the minds behind Lumina
+						</h2>
+						<div className='grid grid-cols-1 sm:grid-cols-2 w-full p-4 lg:grid-cols-4 gap-8'>
+							{teamMembers.map((member, index) => (
+								<TeamCard
+									key={index}
+									teamMember={member}
+								/>
+							))}
 						</div>
 					</section>
 				</section>
@@ -259,7 +259,7 @@ const LuminaLandingPage: React.FC = () => {
 							placeholder='Enter your email'
 							className='w-3/4 py-2 px-4 rounded-l-full bg-[#334155] text-white border-none'
 						/>
-						<button className='w-1/4 bg-[#fdc10d] text-[#0f172a] rounded-r-full p-2 font-semibold'>
+						<button className='w-1/4 bg-[#fdc10d] text-[#0f172a] rounded-r-full p-2 font-semibold text-sm'>
 							Subscribe
 						</button>
 					</div>
