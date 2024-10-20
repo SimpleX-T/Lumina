@@ -9,12 +9,15 @@ declare global {
 	}
 }
 
-const contractAddress = "0x09aa30b2014b7ed813c18564159919de06670867";
+const contractAddress = "0x09AA30B2014b7ED813c18564159919de06670867";
 const NFTContract = contract(nftABI);
 
 export async function nftContract() {
 	await loadWeb3();
-	NFTContract.setProvider(window.web3.eth.currentProvider);
+	// NFTContract.setProvider(window.web3.eth.currentProvider);
+	NFTContract.setProvider(
+		"https://mainnet.infura.io/v3/d62957f6dfa148479911baa98f51d59d"
+	);
 
 	return NFTContract;
 }
@@ -27,10 +30,13 @@ const loadAccount = async () => {
 
 export async function loginNFT(wallet_address: string) {
 	await loadWeb3();
-	NFTContract.setProvider(window.web3.eth.currentProvider);
+	NFTContract.setProvider(
+		"https://mainnet.infura.io/v3/d62957f6dfa148479911baa98f51d59d"
+	);
 
 	try {
-		const instance = await NFTContract.at(contractAddress);
+        const instance = await NFTContract.at(contractAddress);
+        console.log(instance)
 		const receipt = await instance.login({from: wallet_address});
 		console.log("Login successful, NFT minted:", receipt);
 	} catch (err) {

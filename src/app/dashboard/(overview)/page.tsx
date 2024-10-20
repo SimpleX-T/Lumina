@@ -28,10 +28,10 @@ import {
 import {ProductivityChart} from "@/components/dashboard/ProductivityChart";
 import Carousel from "@/components/dashboard/Carousel";
 import Link from "next/link";
-import {useAccount} from "wagmi";
+import {useAccount, useWriteContract} from "wagmi";
 import {Progress} from "@/components/UI/progress";
 import Loader from "@/components/loader";
-import {loginNFT} from "@/lib/contracts";
+import nftABI from "@/smart_contract/ContractABI.json";
 
 interface CourseProgress {
 	name: string;
@@ -123,7 +123,7 @@ const mockAchievements = [
 
 function Dashboard() {
 	const router = useRouter();
-	const [refresh, setRefresh] = useState(true);
+	const {writeContract: claim} = useWriteContract();
 
 	const {isConnected, address} = useAccount();
 	const [isLoading, setIsLoading] = useState(true);
@@ -159,10 +159,12 @@ function Dashboard() {
 
 	useEffect(() => {
 		if (isConnected) {
-			const load = async () => {
-				await loginNFT(address as string);
-			};
-			load();
+			claim({
+				abi: nftABI,
+				address: process.env
+					.NEXT_PUBLIC_CONTRACT_ADDRESS as `0x${string}`,
+				functionName: "login",
+			});
 		}
 	}, []);
 
