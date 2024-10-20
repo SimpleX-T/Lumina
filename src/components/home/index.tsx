@@ -47,20 +47,26 @@ const teamMembers: TeamMember[] = [
 	{
 		name: "Adzape Solomon",
 		role: "Frontend Developer/Video Animator",
-		imageUrl: "",
+		imageUrl: "/Images/teammates/_zappas99.jpg",
 		twitter: "_chiater99",
+	},
+	{
+		name: "Ndubuisi Tochukwu",
+		role: "Frontend Developer",
+		imageUrl: "/Images/teammates/devtochukwu.jpg",
+		twitter: "devtochukwu",
+	},
+	{
+		name: "Ani TheRock",
+		role: "Smart Contract Developer",
+		imageUrl: "/Images/teammates/therock.jpg",
+		twitter: "ani_therock",
 	},
 	{
 		name: "Azubike Samie",
 		role: "Backend Developer",
-		imageUrl: "",
+		imageUrl: "/Images/teammates/samieazubike.jpg",
 		twitter: "samieazubike",
-	},
-	{
-		name: "Ndubuisi Mark",
-		role: "Frontend Developer",
-		imageUrl: "",
-		twitter: "xcodes_tech",
 	},
 ];
 
@@ -227,7 +233,7 @@ const LuminaLandingPage: React.FC = () => {
 							<h2 className='font-semibold text-3xl mb-8 text-center text-[#60a5fa]'>
 								Meet the minds behind Lumina
 							</h2>
-							<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'>
+							<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8'>
 								{teamMembers.map((member, index) => (
 									<TeamCard
 										key={index}
@@ -295,24 +301,27 @@ interface TeamCardProps {
 
 function TeamCard({ teamMember }: TeamCardProps) {
 	return (
-		<div className='bg-gray-800 rounded-xl overflow-hidden shadow-lg'>
-			<img
-				src={teamMember.imageUrl}
-				alt={teamMember.name}
-				className='w-full h-48 object-cover'
-			/>
-			<div className='p-4'>
-				<h3 className='text-xl font-semibold text-white mb-1'>
+		<div className='bg-gray-800 rounded-xl overflow-hidden shadow-lg h-[350px] relative'>
+			<div className='w-full h-full'>
+				<Image
+					fill
+					src={teamMember.imageUrl}
+					alt={teamMember.name}
+					className='w-full h-full object-cover'
+				/>
+			</div>
+			<div className='p-4 pb-2 absolute bottom-0 left-0 w-full backdrop-blur-lg bg-gray-800/40 border-t border-gray-500'>
+				<h3 className='text-xl font-semibold text-[#60a5fa] mb-1'>
 					{teamMember.name}
 				</h3>
-				<p className='text-gray-400 mb-3'>{teamMember.role}</p>
+				<p className='text-[#eee] mb-3'>{teamMember.role}</p>
 				{teamMember.twitter && (
 					<Link
-						href={`https://twitter.com/${teamMember.twitter}`}
+						href={`https://x.com/${teamMember.twitter}`}
 						target='_blank'
 						rel='noopener noreferrer'
-						className='flex items-center text-white hover:text-blue-200 rounded-full bg-gray-900 gap-4 shadow-md p-1'>
-						<span className='rounded-full bg-gray-700 p-4 flex items-center justify-center'>
+						className='flex items-center text-white w-60 hover:text-blue-200 rounded-full bg-gray-900 gap-2 shadow-md p-1'>
+						<span className='rounded-full bg-white p-3 text-black flex items-center justify-center'>
 							<FaXTwitter size={18} />
 						</span>
 						<span className='text-lg'>@{teamMember.twitter}</span>
