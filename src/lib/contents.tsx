@@ -212,7 +212,7 @@ const lesson1232: React.FC = () => {
           {/* Image 1 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
             <img
-              src="/Images/blocks.png"
+              src="/Images/blokc.png"
               alt="Course visual 1"
               className="w-full h-full md:object-cover object-contain"
             />
@@ -582,11 +582,11 @@ const lesson1234: React.FC = () => {
             </p>
           </div>
           {/* Image 1 */}
-          <div className="bg-gray-200 rounded-lg overflow-hidden h-64">
+          <div className="bg-gray-200 rounded-lg overflow-hidden ">
             <img
               src="/Images/trust.svg"
               alt="Proof of Work concept"
-              className="w-full h-full md:object-cover object-contain"
+              className="w-full h-full lg:object-cover object-contain bg-left-top"
             />
           </div>
           {/* Proof of Work */}
@@ -624,11 +624,11 @@ const lesson1234: React.FC = () => {
             </p>
           </div>
           {/* Image 1 */}
-          <div className="bg-gray-200 rounded-lg overflow-hidden h-64">
+          <div className="bg-gray-200 rounded-lg overflow-hidden">
             <img
               src="/Images/pow.png"
               alt="Proof of Work concept"
-              className="w-full h-full md:object-cover object-contain"
+              className="w-full h-full object-cover"
             />
           </div>
           {/* Proof of Stake */}
@@ -649,7 +649,7 @@ const lesson1234: React.FC = () => {
             </p>
           </div>
           {/* Image 2 */}
-          <div className="bg-gray-200 rounded-lg overflow-hidden h-64">
+          <div className="bg-gray-200 rounded-lg overflow-hidden">
             <img
               src="/Images/pos.jpg"
               alt="Proof of Stake concept"
@@ -781,11 +781,11 @@ const lesson1235: React.FC = () => {
           </div>
 
           {/* Image 1 */}
-          <div className="bg-gray-200 rounded-lg overflow-hidden h-64">
+          <div className="bg-gray-200 rounded-lg overflow-hidden">
             <img
-              src="/Images/contract.gif"
+              src="/Images/agree.svg"
               alt="Smart Contract concept"
-              className="w-full h-full md:object-cover object-contain"
+              className="w-full h-full object-cover bg-left-top"
             />
           </div>
           <div className="bg-[#001123] shadow-lg rounded-lg p-6">
@@ -815,7 +815,7 @@ const lesson1235: React.FC = () => {
           </div>
 
           {/* Image 2 */}
-          <div className="bg-gray-200 rounded-lg overflow-hidden h-64">
+          <div className="bg-gray-200 rounded-lg overflow-hidden  ">
             <img
               src="/Images/contractworkings.jpg"
               alt="Smart Contract use cases"
@@ -935,9 +935,9 @@ const lesson1236: React.FC = () => {
           {/* Image 1 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
             <img
-              src="/Images/tokens.png"
+              src="/Images/token.svg"
               alt="Digital tokens reLesson"
-              className="w-full h-full md:object-cover object-contain"
+              className="w-full h-full object-contain"
             />
           </div>
 
@@ -959,7 +959,7 @@ const lesson1236: React.FC = () => {
           {/* Image 2 */}
           <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
             <img
-              src="/Images/"
+              src="/Images/tokens.png"
               alt="Utility vs. security tokens"
               className="w-full h-full md:object-cover object-contain"
             />

@@ -66,13 +66,6 @@ const CourseDetails: React.FC<CourseDetailProps> = ({
 											{formatDuration(duration)}
 										</span>
 									</div>
-
-									<div className='flex items-center'>
-										<IoIosStarOutline
-											size={20}
-											className='text-yellow-500 mr-1'
-										/>
-									</div>
 								</div>
 								<button
 									className='bg-purple-600 text-white px-6 py-2 rounded w-full'
@@ -118,7 +111,7 @@ const CourseDetails: React.FC<CourseDetailProps> = ({
 							{resources.audio && (
 								<div className='flex justify-between items-center py-2 border-b dark:border-gray-700'>
 									<span className='dark:text-white'>
-										1 Audio File
+										Audio Files
 									</span>
 									<div className='flex items-center'>
 										<MdOutlineAudiotrack
@@ -131,7 +124,7 @@ const CourseDetails: React.FC<CourseDetailProps> = ({
 							{resources.text && (
 								<div className='flex justify-between items-center py-2 border-b dark:border-gray-700'>
 									<span className='dark:text-white'>
-										1 Text File
+										Text Files
 									</span>
 									<div className='flex items-center'>
 										<IoDocumentTextOutline
@@ -144,7 +137,7 @@ const CourseDetails: React.FC<CourseDetailProps> = ({
 							{resources.video && (
 								<div className='flex justify-between items-center py-2 border-b dark:border-gray-700'>
 									<span className='dark:text-white'>
-										1 Video File
+										Video Files
 									</span>
 									<div className='flex items-center'>
 										<FaVideo

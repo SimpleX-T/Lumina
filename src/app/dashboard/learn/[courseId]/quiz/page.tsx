@@ -52,11 +52,11 @@ const QuizPage = () => {
   const params = useSearchParams();
   const lessonParams = params.get("from");
   const { courseId } = routerParams;
-  const course = courseData.find((c) => c.id === Number(courseId));
+  const course = courseData?.find((c) => c.id === Number(courseId));
   const lesson = course?.lessons.find((l) => l.id === Number(lessonParams));
   const quiz = lesson?.quiz;
   //   const [score, setScore] = useState(0);
-  //   if (!course) return <p>Course not found</p>;
+  if (!course) return <p>Course not found</p>;
   //   if (!lesson) return <p>Lesson not found</p>;
   const totalPossible = quiz?.reduce((acc, q) => acc + q.score, 0);
   useEffect(() => {
@@ -102,7 +102,10 @@ const QuizPage = () => {
   return (
     <div className="p-6 max-w-2xl mx-auto rounded-xl shadow-md">
       {!isQuizOn && (
-        <PreQuizModal lessonProgress={60} onStartQuiz={handleStart} />
+        <PreQuizModal
+          lessonProgress={Number(lessonParams) * 10}
+          onStartQuiz={handleStart}
+        />
       )}
 
       {quizOver && (

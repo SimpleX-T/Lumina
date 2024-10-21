@@ -16,7 +16,7 @@ function PrevNextButton({
 	return (
 		<Button
 			variant={variant as ButtonProps["variant"]}
-			className={`${className}`}
+			className={`${className} bg-blue-500 text-white w-[15ch]`}
 			onClick={onclick}>
 			{text}
 		</Button>
