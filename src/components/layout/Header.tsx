@@ -50,9 +50,7 @@ const Header = () => {
 				<div className='flex items-center'>
 					<div>
 						<p className='text-xl font-semibold text-custom-black'>
-							Welcome
-							{/* <Name address={address} /> */}
-							👋
+							Welcome Jesse 👋
 						</p>
 						<p className='text-xs text-custom-black/75'>
 							{new Date().toLocaleDateString("en-US", {
