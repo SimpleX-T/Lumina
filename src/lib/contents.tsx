@@ -40,7 +40,7 @@ const lesson1231: React.FC = () => {
 					{/* Image 1 */}
 					<div className='bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto'>
 						<img
-							src='/api/placeholder/400/320'
+							src='/Images/Notebook-pana.svg'
 							alt='Digital ledger concept'
 							className='w-full h-full md:object-cover object-contain'
 						/>
@@ -71,7 +71,7 @@ const lesson1231: React.FC = () => {
 					{/* Image 2 */}
 					<div className='bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto'>
 						<img
-							src='/api/placeholder/400/320'
+							src='/Images/blocksandchains.png'
 							alt='Blockchain concept'
 							className='w-full h-full object-cover'
 						/>
@@ -104,7 +104,7 @@ const lesson1231: React.FC = () => {
 					{/* Image 3 */}
 					<div className='bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto'>
 						<img
-							src='/api/placeholder/400/320'
+							src='/Images/token.svg'
 							alt='Blockchain applications'
 							className='w-full h-full object-cover'
 						/>
@@ -208,14 +208,14 @@ const lesson1232: React.FC = () => {
 						</p>
 					</div>
 
-          {/* Image 1 */}
-          <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
-            <img
-              src="/Images/blokc.png"
-              alt="Course visual 1"
-              className="w-full h-full md:object-cover object-contain"
-            />
-          </div>
+					{/* Image 1 */}
+					<div className='bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto'>
+						<img
+							src='/Images/blokc.png'
+							alt='Course visual 1'
+							className='w-full h-full md:object-cover object-contain'
+						/>
+					</div>
 
 					{/* Text Content 2 */}
 					<div className='bg-[#001123] shadow-lg rounded-lg p-6 flex flex-col justify-between'>
@@ -243,7 +243,7 @@ const lesson1232: React.FC = () => {
 					{/* Image 2 */}
 					<div className='bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto'>
 						<img
-							src='/Images/Safe-bro.svg'
+							src='/Images/blocksandchains.png'
 							alt='Course visual 2'
 							className='w-full h-full object-cover'
 						/>
@@ -273,7 +273,7 @@ const lesson1232: React.FC = () => {
 					</div>
 					<div className='bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto'>
 						<img
-							src='/Images/decent.svg'
+							src='/Images/password.svg'
 							alt='Course visual 1'
 							className='w-full h-full object-cover'
 						/>
@@ -296,13 +296,6 @@ const lesson1232: React.FC = () => {
 							it's been recorded, ensuring the data's integrity
 							and security.
 						</p>
-					</div>
-					<div className='bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto'>
-						<img
-							src='/Images/decent.svg'
-							alt='Course visual 1'
-							className='w-full h-full object-cover'
-						/>
 					</div>
 				</div>
 				<section className='col-span-1 space-y-6 '>
@@ -407,7 +400,7 @@ const lesson1233: React.FC = () => {
 					{/* Image 1 */}
 					<div className='bg-gray-200 rounded-lg overflow-hidden h-64'>
 						<img
-							src='/api/placeholder/400/320'
+							src='/Images/publicblk.png'
 							alt='Public blockchain concept'
 							className='w-full h-full object-cover'
 						/>
@@ -435,7 +428,7 @@ const lesson1233: React.FC = () => {
 					{/* Image 2 */}
 					<div className='bg-gray-200 rounded-lg overflow-hidden h-64'>
 						<img
-							src='/api/placeholder/400/320'
+							src='/Images/privateblk.png'
 							alt='Private blockchain concept'
 							className='w-full h-full object-cover'
 						/>
@@ -464,12 +457,47 @@ const lesson1233: React.FC = () => {
 					{/* Image 3 */}
 					<div className='bg-gray-200 rounded-lg overflow-hidden h-64'>
 						<img
-							src='/api/placeholder/400/320'
+							src='/Images/hybrid.png'
 							alt='Hybrid blockchain concept'
 							className='w-full h-full object-cover'
 						/>
 					</div>
+					{/* Hybrid Blockchain */}
+					<div className='bg-[#001123] shadow-lg rounded-lg p-6'>
+						<h2 className='text-xl font-semibold mb-4'>
+							Hybrid Blockchain ⚙️
+						</h2>
+						<p>
+							A consortium blockchain is a type of blockchain that
+							combines elements of both public and private
+							blockchains. It's like a middle ground between
+							completely open networks and totally closed ones.
+							Here's what makes it special: Imagine you have a
+							group of trusted friends who want to share
+							information securely. That's basically what a
+							consortium blockchain is - a network where only
+							certain approved organizations can join and
+							participate. These organizations work together to
+							manage the blockchain, sharing responsibilities for
+							things like verifying transactions and keeping the
+							network running smoothly. One key difference from
+							public blockchains is that anyone can't just join
+							in. Only the invited members get access. But unlike
+							a completely private blockchain, it still maintains
+							some level of decentralization because multiple
+							parties are involved, not just one central
+							authority. .
+						</p>
+					</div>
 
+					{/* Image 3 */}
+					<div className='bg-gray-200 rounded-lg overflow-hidden h-64'>
+						<img
+							src='/Images/consblk.png'
+							alt='Hybrid blockchain concept'
+							className='w-full h-full object-cover'
+						/>
+					</div>
 					{/* Summary */}
 					<div className='bg-[#001123] shadow-lg rounded-lg p-6'>
 						<h2 className='text-xl font-semibold mb-4'>
@@ -566,115 +594,129 @@ const lesson1234: React.FC = () => {
 				Lesson 4: Consensus Mechanisms 🫱🏾‍🫲🏾
 			</h1>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2 space-y-6 overflow-y-scroll md:max-h-[650px]">
-          {/* Proof of Work */}
-          <div className="bg-[#001123] shadow-lg rounded-lg p-6">
-            <h2 className="text-xl font-semibold mb-4">
-              What are they? Why do we need them ?
-            </h2>
-            <p>
-              In simple terms, a consensus mechanism is a method used by
-              blockchain networks{" "}
-              <i className="font-extralight text-[#8ea9e9]">
-                to agree on which transactions are valid and should be added to
-                the blockchain
-              </i>
-              . Blockchains are decentralized, meaning there isn't a central
-              authority like a bank to verify transactions. Instead, a group of
-              participants (often called nodes) must come to a common agreement,
-              or "consensus," about the state of the blockchain. This is crucial
-              for ensuring that the blockchain remains secure, accurate, and
-              resistant to fraud. Without consensus mechanisms, there would be
-              no way for everyone to trust the information on the blockchain.
-            </p>
-          </div>
-          {/* Image 1 */}
-          <div className="bg-gray-200 rounded-lg overflow-hidden ">
-            <img
-              src="/Images/trust.svg"
-              alt="Proof of Work concept"
-              className="w-full h-full lg:object-cover object-contain bg-left-top"
-            />
-          </div>
-          {/* Proof of Work */}
-          <div className="bg-[#001123] shadow-lg rounded-lg p-6">
-            <h2 className="text-xl font-semibold mb-4">
-              Proof of Work (PoW) 🛠️
-            </h2>
-            <p>
-              Proof of Work is one of the earliest and most widely used
-              consensus mechanisms,{" "}
-              <i className="font-extralight text-[#8ea9e9]">
-                particularly known for securing the Bitcoin network
-              </i>
-              . In PoW, participants (called miners) compete to solve complex
-              mathematical puzzles, similar to a race to solve a very difficult
-              riddle. Imagine a classroom where the teacher writes a very hard
-              math problem on the board, and the first student who solves it
-              correctly gets a reward, like a piece of candy. In this scenario,
-              the math problem represents the puzzle that miners solve, and the
-              candy is the reward they get for solving it first. , where the
-              security of the network comes from the computational power
-              invested.
-            </p>
-          </div>
-          <div className="bg-[#001123] shadow-lg rounded-lg p-6">
-            <p>
-              However, solving these puzzles requires a lot of computer power,
-              just like it would take a lot of time and energy for students to
-              solve extremely tough math problems repeatedly. This
-              energy-intensive process is what makes PoW secure because{" "}
-              <i className="font-extralight text-[#8ea9e9]">
-                it takes significant effort to solve the puzzles,
-              </i>{" "}
-              making it difficult for anyone to tamper with the blockchain.
-            </p>
-          </div>
-          {/* Image 1 */}
-          <div className="bg-gray-200 rounded-lg overflow-hidden">
-            <img
-              src="/Images/pow.png"
-              alt="Proof of Work concept"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          {/* Proof of Stake */}
-          <div className="bg-[#001123] shadow-lg rounded-lg p-6">
-            <h2 className="text-xl font-semibold mb-4">
-              Proof of Stake (PoS) 🎟️
-            </h2>
-            <p>
-              Proof of Stake works differently from PoW by selecting
-              participants to validate transactions
-              <i className="font-extralight text-[#8ea9e9]">
-                based on the amount of cryptocurrency they hold, or "stake."
-              </i>
-              Think of it like a lottery where the more tickets you have, the
-              higher your chances of being chosen to win. In PoS, owning more
-              cryptocurrency (more "tickets") increases the chances of being
-              selected to validate the next block of transactions. .
-            </p>
-          </div>
-          {/* Image 2 */}
-          <div className="bg-gray-200 rounded-lg overflow-hidden">
-            <img
-              src="/Images/pos.jpg"
-              alt="Proof of Stake concept"
-              className="w-full h-full md:object-cover object-contain"
-            />
-          </div>
-          <div className="bg-[#001123] shadow-lg rounded-lg p-6">
-            <p>
-              Instead of requiring participants to solve puzzles like in PoW,
-              PoS allows participants to "stake" their cryptocurrency to help
-              secure the network. If a participant is chosen to validate
-              transactions, they receive a reward, similar to how the winner of
-              a raffle might get a prize. Because PoS doesn't involve solving
-              complex problems, it uses much less energy than PoW, making it
-              more environmentally friendly.
-            </p>
-          </div>
+			<div className='grid grid-cols-1 lg:grid-cols-3 gap-6'>
+				<div className='lg:col-span-2 space-y-6 overflow-y-scroll md:max-h-[650px]'>
+					{/* Proof of Work */}
+					<div className='bg-[#001123] shadow-lg rounded-lg p-6'>
+						<h2 className='text-xl font-semibold mb-4'>
+							What are they? Why do we need them ?
+						</h2>
+						<p>
+							In simple terms, a consensus mechanism is a method
+							used by blockchain networks{" "}
+							<i className='font-extralight text-[#8ea9e9]'>
+								to agree on which transactions are valid and
+								should be added to the blockchain
+							</i>
+							. Blockchains are decentralized, meaning there isn't
+							a central authority like a bank to verify
+							transactions. Instead, a group of participants
+							(often called nodes) must come to a common
+							agreement, or "consensus," about the state of the
+							blockchain. This is crucial for ensuring that the
+							blockchain remains secure, accurate, and resistant
+							to fraud. Without consensus mechanisms, there would
+							be no way for everyone to trust the information on
+							the blockchain.
+						</p>
+					</div>
+					{/* Image 1 */}
+					<div className='bg-gray-200 rounded-lg overflow-hidden '>
+						<img
+							src='/Images/trust.svg'
+							alt='Proof of Work concept'
+							className='w-full h-full lg:object-cover object-contain bg-left-top'
+						/>
+					</div>
+					{/* Proof of Work */}
+					<div className='bg-[#001123] shadow-lg rounded-lg p-6'>
+						<h2 className='text-xl font-semibold mb-4'>
+							Proof of Work (PoW) 🛠️
+						</h2>
+						<p>
+							Proof of Work is one of the earliest and most widely
+							used consensus mechanisms,{" "}
+							<i className='font-extralight text-[#8ea9e9]'>
+								particularly known for securing the Bitcoin
+								network
+							</i>
+							. In PoW, participants (called miners) compete to
+							solve complex mathematical puzzles, similar to a
+							race to solve a very difficult riddle. Imagine a
+							classroom where the teacher writes a very hard math
+							problem on the board, and the first student who
+							solves it correctly gets a reward, like a piece of
+							candy. In this scenario, the math problem represents
+							the puzzle that miners solve, and the candy is the
+							reward they get for solving it first. , where the
+							security of the network comes from the computational
+							power invested.
+						</p>
+					</div>
+					<div className='bg-[#001123] shadow-lg rounded-lg p-6'>
+						<p>
+							However, solving these puzzles requires a lot of
+							computer power, just like it would take a lot of
+							time and energy for students to solve extremely
+							tough math problems repeatedly. This
+							energy-intensive process is what makes PoW secure
+							because{" "}
+							<i className='font-extralight text-[#8ea9e9]'>
+								it takes significant effort to solve the
+								puzzles,
+							</i>{" "}
+							making it difficult for anyone to tamper with the
+							blockchain.
+						</p>
+					</div>
+					{/* Image 1 */}
+					<div className='bg-gray-200 rounded-lg overflow-hidden'>
+						<img
+							src='/Images/pow.png'
+							alt='Proof of Work concept'
+							className='w-full h-full object-cover'
+						/>
+					</div>
+					{/* Proof of Stake */}
+					<div className='bg-[#001123] shadow-lg rounded-lg p-6'>
+						<h2 className='text-xl font-semibold mb-4'>
+							Proof of Stake (PoS) 🎟️
+						</h2>
+						<p>
+							Proof of Stake works differently from PoW by
+							selecting participants to validate transactions
+							<i className='font-extralight text-[#8ea9e9]'>
+								based on the amount of cryptocurrency they hold,
+								or "stake."
+							</i>
+							Think of it like a lottery where the more tickets
+							you have, the higher your chances of being chosen to
+							win. In PoS, owning more cryptocurrency (more
+							"tickets") increases the chances of being selected
+							to validate the next block of transactions. .
+						</p>
+					</div>
+					{/* Image 2 */}
+					<div className='bg-gray-200 rounded-lg overflow-hidden'>
+						<img
+							src='/Images/pos.jpg'
+							alt='Proof of Stake concept'
+							className='w-full h-full md:object-cover object-contain'
+						/>
+					</div>
+					<div className='bg-[#001123] shadow-lg rounded-lg p-6'>
+						<p>
+							Instead of requiring participants to solve puzzles
+							like in PoW, PoS allows participants to "stake"
+							their cryptocurrency to help secure the network. If
+							a participant is chosen to validate transactions,
+							they receive a reward, similar to how the winner of
+							a raffle might get a prize. Because PoS doesn't
+							involve solving complex problems, it uses much less
+							energy than PoW, making it more environmentally
+							friendly.
+						</p>
+					</div>
 
 					{/* Summary */}
 					<div className='bg-[#001123] shadow-lg rounded-lg p-6'>
@@ -791,48 +833,53 @@ const lesson1235: React.FC = () => {
 						</p>
 					</div>
 
-          {/* Image 1 */}
-          <div className="bg-gray-200 rounded-lg overflow-hidden">
-            <img
-              src="/Images/agree.svg"
-              alt="Smart Contract concept"
-              className="w-full h-full object-cover bg-left-top"
-            />
-          </div>
-          <div className="bg-[#001123] shadow-lg rounded-lg p-6">
-            <h2 className="text-xl font-semibold mb-4">How do they work?⚙️</h2>
-            <p>
-              Smart contracts are like vending machines. If you put in the right
-              amount of money (condition), the machine automatically gives you
-              the snack (result). There’s no need for a shopkeeper to intervene.
-              Similarly, on a blockchain, if the terms set in a smart contract
-              are met, it will automatically execute the agreed actions, such as
-              transferring ownership or releasing payment.
-            </p>
-          </div>
-          {/* Use Cases */}
-          <div className="bg-[#001123] shadow-lg rounded-lg p-6">
-            <h2 className="text-xl font-semibold mb-4">
-              Smart Contract Use Cases 💡
-            </h2>
-            <p>
-              Smart contracts are used in many areas, like finance, insurance,
-              and even real estate.{" "}
-              <i className="font-extralight text-[#8ea9e9]">
-                They reduce the need for middlemen
-              </i>{" "}
-              because everything is executed on the blockchain automatically.
-            </p>
-          </div>
+					{/* Image 1 */}
+					<div className='bg-gray-200 rounded-lg overflow-hidden'>
+						<img
+							src='/Images/agree.svg'
+							alt='Smart Contract concept'
+							className='w-full h-full object-cover bg-left-top'
+						/>
+					</div>
+					<div className='bg-[#001123] shadow-lg rounded-lg p-6'>
+						<h2 className='text-xl font-semibold mb-4'>
+							How do they work?⚙️
+						</h2>
+						<p>
+							Smart contracts are like vending machines. If you
+							put in the right amount of money (condition), the
+							machine automatically gives you the snack (result).
+							There’s no need for a shopkeeper to intervene.
+							Similarly, on a blockchain, if the terms set in a
+							smart contract are met, it will automatically
+							execute the agreed actions, such as transferring
+							ownership or releasing payment.
+						</p>
+					</div>
+					{/* Use Cases */}
+					<div className='bg-[#001123] shadow-lg rounded-lg p-6'>
+						<h2 className='text-xl font-semibold mb-4'>
+							Smart Contract Use Cases 💡
+						</h2>
+						<p>
+							Smart contracts are used in many areas, like
+							finance, insurance, and even real estate.{" "}
+							<i className='font-extralight text-[#8ea9e9]'>
+								They reduce the need for middlemen
+							</i>{" "}
+							because everything is executed on the blockchain
+							automatically.
+						</p>
+					</div>
 
-          {/* Image 2 */}
-          <div className="bg-gray-200 rounded-lg overflow-hidden  ">
-            <img
-              src="/Images/contractworkings.jpg"
-              alt="Smart Contract use cases"
-              className="w-full h-full md:object-cover object-contain"
-            />
-          </div>
+					{/* Image 2 */}
+					<div className='bg-gray-200 rounded-lg overflow-hidden  '>
+						<img
+							src='/Images/contractworkings.jpg'
+							alt='Smart Contract use cases'
+							className='w-full h-full md:object-cover object-contain'
+						/>
+					</div>
 
 					{/* Summary */}
 					<div className='bg-[#001123] shadow-lg rounded-lg p-6'>
@@ -945,14 +992,14 @@ const lesson1236: React.FC = () => {
 						</p>
 					</div>
 
-          {/* Image 1 */}
-          <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
-            <img
-              src="/Images/token.svg"
-              alt="Digital tokens reLesson"
-              className="w-full h-full object-contain"
-            />
-          </div>
+					{/* Image 1 */}
+					<div className='bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto'>
+						<img
+							src='/Images/token.svg'
+							alt='Digital tokens reLesson'
+							className='w-full h-full object-contain'
+						/>
+					</div>
 
 					{/* Text Content 2 */}
 					<div className='bg-[#001123] shadow-lg rounded-lg p-6 flex flex-col justify-between'>
@@ -970,14 +1017,14 @@ const lesson1236: React.FC = () => {
 						</p>
 					</div>
 
-          {/* Image 2 */}
-          <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto">
-            <img
-              src="/Images/tokens.png"
-              alt="Utility vs. security tokens"
-              className="w-full h-full md:object-cover object-contain"
-            />
-          </div>
+					{/* Image 2 */}
+					<div className='bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto'>
+						<img
+							src='/Images/tokens.png'
+							alt='Utility vs. security tokens'
+							className='w-full h-full md:object-cover object-contain'
+						/>
+					</div>
 
 					{/* Text Content 3 */}
 					<div className='bg-[#001123] shadow-lg rounded-lg p-6 flex flex-col justify-between'>
@@ -1522,9 +1569,7 @@ const lesson1239: React.FC = () => {
 					</div>
 
 					{/* Audio section */}
-					<AudioComponent
-						audioFileLocation='/Audios/why_we_need_blockchain.mp3'
-					/>
+					<AudioComponent audioFileLocation='/Audios/why_we_need_blockchain.mp3' />
 
 					{/* Slides section */}
 					<PDFDownloader pdfFileLocation='/pdfs/blockchain_fundamentals.pdf' />

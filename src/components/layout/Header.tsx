@@ -49,8 +49,19 @@ const Header = () => {
 			<div className='flex items-center justify-between'>
 				<div className='flex items-center'>
 					<div>
-						<p className='text-xl font-semibold text-custom-black'>
-							Welcome Jesse 👋
+						<p className='text-xl font-semibold text-custom-black flex items-center gap-1'>
+							<span>Welcome</span>
+							<span>
+								{address ? (
+									<Name
+										address={address}
+										className='inline-block ml-1'
+									/>
+								) : (
+									"Guest"
+								)}
+							</span>
+							👋
 						</p>
 						<p className='text-xs text-custom-black/75'>
 							{new Date().toLocaleDateString("en-US", {
