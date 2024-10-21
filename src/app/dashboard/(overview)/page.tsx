@@ -22,8 +22,6 @@ import {
   FaClock,
   FaCog,
   FaGraduationCap,
-  FaCheckCircle,
-  FaExclamationCircle,
 } from "react-icons/fa";
 import { ProductivityChart } from "@/components/dashboard/ProductivityChart";
 import Carousel from "@/components/dashboard/Carousel";
@@ -32,6 +30,8 @@ import { useAccount, useWriteContract } from "wagmi";
 import { Progress } from "@/components/UI/progress";
 import Loader from "@/components/loader";
 import nftABI from "@/smart_contract/ContractABI.json";
+import { Transaction, TransactionButton, TransactionSponsor, TransactionStatusLabel, TransactionStatusAction, TransactionStatus } from "@coinbase/onchainkit/transaction";
+import { baseSepolia } from "viem/chains";
 
 interface CourseProgress {
   name: string;
@@ -54,7 +54,6 @@ const mockCourseProgress: CourseProgress[] = [
   { name: "Blockchain Fundamentals", progress: 80 },
   { name: "Web3 Development", progress: 60 },
   { name: "Crypto Economics", progress: 75 },
-  { name: "Smart Contract Security", progress: 90 },
 ];
 
 const mockUpcomingAssignments: UpcomingAssignment[] = [
@@ -64,25 +63,9 @@ const mockUpcomingAssignments: UpcomingAssignment[] = [
     dueDate: "2024-10-20",
     course: "Blockchain Fundamentals",
   },
-  {
-    id: 2,
-    title: "DApp Development",
-    dueDate: "2024-10-25",
-    course: "Web3 Development",
-  },
-  {
-    id: 3,
-    title: "Tokenomics Essay",
-    dueDate: "2024-10-30",
-    course: "Crypto Economics",
-  },
 ];
 
-const mockGrades: Grade[] = [
-  { course: "Blockchain Fundamentals", grade: "A" },
-  { course: "Web3 Development", grade: "B+" },
-  { course: "Crypto Economics", grade: "A-" },
-];
+const mockGrades: Grade[] = [{ course: "Blockchain Fundamentals", grade: "A" }];
 
 const blockchainBasics = [
   {
@@ -100,47 +83,39 @@ const onchainBasics = [
     image: "/Images/base.png",
     url: "/dashboard/onchain",
   },
-  {
-    id: 2,
-    content: "Onchain Buildathon",
-    image: "/Images/based_africa.jpg",
-    url: "https://based-africa.devfolio.co/",
-  },
-  {
-    id: 3,
-    content: "Jesse Polak's visit to Africa",
-    image: "/Images/jesse.jpg",
-    url: "https://lu.ma/a45ev6ql?tk=CCk0tb",
-  },
 ];
 
 const mockUpcomingEvents = [
   { date: "2024-10-15", title: "Guest Lecture: Vitalik Buterin" },
-  { date: "2024-10-22", title: "Hackathon: DeFi Dapps" },
-  { date: "2024-10-29", title: "Workshop: Solidity Best Practices" },
 ];
 
 const mockAchievements = [
   { title: "Completed Blockchain Basics Quiz", date: "2024-09-10" },
-  { title: "Submitted DApp Project", date: "2024-09-25" },
-  { title: "Participated in Crypto Trading Competition", date: "2024-10-05" },
 ];
 
 function Dashboard() {
   const router = useRouter();
-  const { writeContract: claim } = useWriteContract();
 
   const { isConnected, address, isDisconnected } = useAccount();
+
   const [isLoading, setIsLoading] = useState(true);
+
   const [courseProgress, setCourseProgress] = useState<CourseProgress[]>([]);
+  const {
+    writeContractAsync,
+    isError,
+    isSuccess,
+    data: hash,
+  } = useWriteContract();
+
   const [upcomingAssignments, setUpcomingAssignments] = useState<
     UpcomingAssignment[]
   >([]);
+
   const [grades, setGrades] = useState<Grade[]>([]);
 
   useEffect(() => {
     if (!isConnected || isDisconnected) {
-      console.log(isConnected, isDisconnected);
       router.push("/");
     }
   }, [isConnected, isDisconnected, router]);
@@ -157,13 +132,26 @@ function Dashboard() {
 
   useEffect(() => {
     if (isConnected) {
-      claim({
-        abi: nftABI,
-        address: process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as `0x${string}`,
-        functionName: "login",
-      });
+      // Mint NFT when user connects their wallet
+      //   mintNFT();
     }
   }, [isConnected]);
+
+  const mintNFT = async () => {
+    try {
+      console.log(process.env.SMART_CONTRACT);
+      const receipt = await writeContractAsync({
+        abi: nftABI,
+        address: process.env.SMART_CONTRACT as `0x${string}`,
+        functionName: "login",
+      });
+      console.log("Minting successful:", receipt, hash);
+      //   alert("Welcome NFT minted successfully!"); // Display success message
+    } catch (error) {
+      console.error("Error minting NFT:", error);
+      alert("Failed to mint NFT. Please try again."); // Display error message
+    }
+  };
 
   if (!isConnected) {
     return (
@@ -175,6 +163,24 @@ function Dashboard() {
 
   return (
     <div className="w-full px-4 md:px-8 py-8">
+      <Transaction
+        chainId={baseSepolia.id}
+        contracts={[
+          {
+            address: "0x09AA30B2014b7ED813c18564159919de06670867",
+            abi: nftABI,
+            functionName: "login",
+            args: [],
+          },
+        ]}
+      >
+        <TransactionButton />
+        <TransactionSponsor />
+        <TransactionStatus>
+          <TransactionStatusLabel />
+          <TransactionStatusAction />
+        </TransactionStatus>
+      </Transaction>
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 rounded-lg overflow-hidden mb-6 shadow-md gap-8">
         <Carousel items={blockchainBasics} />
         <Carousel items={onchainBasics} interval={5000} />
@@ -191,6 +197,7 @@ function Dashboard() {
                 Achievements
               </CardTitle>
             </CardHeader>
+
             <CardContent>
               <ul className="space-y-2">
                 {mockAchievements.map((achievement, index) => (
