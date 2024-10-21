@@ -46,7 +46,7 @@ const LessonPage = () => {
 	const nextLesson = lesson.quiz
 		? `/dashboard/learn/${courseId}/quiz?from=${lessonId}`
 		: `/dashboard/learn/${courseId}/${Number(lessonId) + 1}`;
-	const prevLesson = `dashboard/learn/${courseId}/${Number(lessonId) - 1}`;
+	const prevLesson = `/dashboard/learn/${courseId}/${Number(lessonId) - 1}`;
 	return (
 		<div>
 			{Content && <Content />}
