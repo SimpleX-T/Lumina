@@ -94,24 +94,24 @@ const blockchainBasics = [
 ];
 
 const onchainBasics = [
-  {
-    id: 1,
-    content: "The Onchain Vision",
-    image: "/Images/base.png",
-    url: "/dashboard/onchain",
-  },
-  {
-    id: 2,
-    content: "Onchain Buildathon",
-    image: "/Images/based_africa.jpg",
-    url: "https://based-africa.devfolio.co/",
-  },
-  {
-    id: 3,
-    content: "Jesse Polak's visit to Africa",
-    image: "/Images/jesse.jpg",
-    url: "https://lu.ma/a45ev6ql?tk=CCk0tb",
-  },
+	{
+		id: 1,
+		content: "The Onchain Vision",
+		image: "/Images/base.png",
+		url: "/dashboard/onchain",
+	},
+	{
+		id: 2,
+		content: "Onchain Buildathon",
+		image: "/Images/based_africa.jpg",
+		url: "https://based-africa.devfolio.co/",
+	},
+	{
+		id: 3,
+		content: "Jesse Polak's visit to Africa",
+		image: "/Images/jesse.jpg",
+		url: "https://lu.ma/a45ev6ql?tk=CCk0tb",
+	},
 ];
 
 const mockUpcomingEvents = [
@@ -165,15 +165,16 @@ function Dashboard() {
 			});
 		}
 	}, []);
-  useEffect(() => {
-    if (isConnected) {
-      claim({
-        abi: nftABI,
-        address: process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as `0x${string}`,
-        functionName: "login",
-      });
-    }
-  }, [isConnected]);
+	useEffect(() => {
+		if (isConnected) {
+			claim({
+				abi: nftABI,
+				address: process.env
+					.NEXT_PUBLIC_CONTRACT_ADDRESS as `0x${string}`,
+				functionName: "login",
+			});
+		}
+	}, [isConnected]);
 
 	if (!isConnected) {
 		return (
@@ -188,14 +189,11 @@ function Dashboard() {
 		<div className='w-full px-4 md:px-8 py-8'>
 			<div className='w-full grid grid-cols-1 lg:grid-cols-2 rounded-lg overflow-hidden mb-6 shadow-md gap-8'>
 				<Carousel items={blockchainBasics} />
-				<Carousel items={onchainBasics} />
+				<Carousel
+					items={onchainBasics}
+					interval={5000}
+				/>
 			</div>
-  return (
-    <div className="w-full px-4 md:px-8 py-8">
-      <div className="w-full grid grid-cols-1 lg:grid-cols-2 rounded-lg overflow-hidden mb-6 shadow-md gap-8">
-        <Carousel items={blockchainBasics} />
-        <Carousel items={onchainBasics} interval={5000} />
-      </div>
 
 			<div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6'>
 				<div className='md:col-span-4 lg:col-span-3 grid grid-cols-1 rounded-lg overflow-hidden shadow-lg border-gray-800 overflow-x-scroll gap-4'>
