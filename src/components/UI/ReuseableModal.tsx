@@ -88,12 +88,14 @@ const ReuseableModal: React.FC<ReuseableModalProps> = ({
 					<Confetti
 						width={window.innerWidth}
 						height={window.innerHeight}
-						recycle={false}
+						recycle={true}
 					/>
 				)}
 				<div className='p-6'>
-					<h2 className='text-xl font-bold mb-4'>{title}</h2>
-					<div className='mb-6'>{content}</div>
+					<h2 className='text-xl font-bold mb-4 text-black'>
+						{title}
+					</h2>
+					<div className='mb-6 text-black'>{content}</div>
 					<div className='flex justify-end space-x-2'>
 						{buttons.map((button, index) => (
 							<button

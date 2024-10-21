@@ -19,9 +19,10 @@ const QuizResultsModal = ({
 			type={passed ? "success" : "warning"}
 			isOpen={true}
 			onClose={function onClose() {}}
+			showCloseButton={false}
 			title='Quiz Results'
 			content={
-				<div className='bg-white transform md:translate-x-[30%] rounded-lg p-3 md:p-6 max-w-md w-full text-stone-800'>
+				<div className='text-black'>
 					<Alert
 						className={`mb-4 ${passed ? "bg-green-100" : "bg-red-100"}`}>
 						<AlertTitle>
