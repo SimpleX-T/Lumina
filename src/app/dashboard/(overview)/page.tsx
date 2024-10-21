@@ -29,6 +29,7 @@ import { ProductivityChart } from "@/components/dashboard/ProductivityChart";
 import Carousel from "@/components/dashboard/Carousel";
 import Link from "next/link";
 import { useAccount, useWriteContract } from "wagmi";
+import { useAccount, useWriteContract } from "wagmi";
 import { Progress } from "@/components/UI/progress";
 import Loader from "@/components/loader";
 import nftABI from "@/smart_contract/ContractABI.json";
@@ -94,6 +95,24 @@ const blockchainBasics = [
 ];
 
 const onchainBasics = [
+	{
+		id: 1,
+		content: "Breaking News",
+		image: "",
+		url: "/learn",
+	},
+	{
+		id: 2,
+		content: "Onchain Buildathon",
+		image: "/Images/based_africa.jpg",
+		url: "/dashboard/onchain",
+	},
+	{
+		id: 3,
+		content: "Jesse Polak's visit to Africa",
+		image: "",
+		url: "/learn",
+	},
   {
     id: 1,
     content: "The Onchain Vision",
