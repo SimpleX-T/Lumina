@@ -364,11 +364,9 @@ const lesson1232: React.FC = () => {
 							/>
 							Download Audio
 						</button>
-          </div>
-          
-					<PDFDownloader
-						pdfFileLocation='/pdfs/blockchain_fundamentals.pdf'
-					/>
+					</div>
+
+					<PDFDownloader pdfFileLocation='/pdfs/blockchain_fundamentals.pdf' />
 				</section>
 			</div>
 		</div>
@@ -551,9 +549,7 @@ const lesson1233: React.FC = () => {
 					</div>
 
 					{/* Slides section */}
-					<PDFDownloader
-						pdfFileLocation='/pdfs/blockchain_fundamentals.pdf'
-					/>
+					<PDFDownloader pdfFileLocation='/pdfs/blockchain_fundamentals.pdf' />
 				</section>
 			</div>
 		</div>
@@ -772,7 +768,6 @@ const lesson1234: React.FC = () => {
 
 					{/* Slides section */}
 					<PDFDownloader pdfFileLocation='/pdfs/blockchain_fundamentals.pdf' />
-						
 				</section>
 			</div>
 		</div>
@@ -1244,33 +1239,7 @@ const lesson1237: React.FC = () => {
 					</div>
 
 					{/* Audio section */}
-					<div className='bg-indigo-100 rounded-lg p-6'>
-						<h3 className='text-lg font-semibold mb-4 text-indigo-800'>
-							Audio Lesson
-						</h3>
-						<div className='flex items-center justify-between mb-4'>
-							<button
-								onClick={() => setIsPlaying(!isPlaying)}
-								className='bg-indigo-500 text-white p-2 rounded-full hover:bg-indigo-600 transition-colors'>
-								{isPlaying ? (
-									<Pause size={24} />
-								) : (
-									<Play size={24} />
-								)}
-							</button>
-							<div className='flex-1 mx-4 h-2 bg-indigo-200 rounded-full'>
-								<div className='w-1/3 h-full bg-indigo-500 rounded-full'></div>
-							</div>
-							<span className='text-indigo-800'>2:30 / 7:15</span>
-						</div>
-						<button className='flex items-center text-indigo-700 hover:text-indigo-900 transition-colors'>
-							<Download
-								size={20}
-								className='mr-2'
-							/>
-							Download Audio
-						</button>
-					</div>
+					<AudioComponent audioFileLocation='/Audios/defi.mp3' />
 
 					{/* Slides section */}
 					<PDFDownloader pdfFileLocation='/pdfs/blockchain_fundamentals.pdf' />
@@ -1430,33 +1399,7 @@ const lesson1238: React.FC = () => {
 					</div>
 
 					{/* Audio section */}
-					<div className='bg-indigo-100 rounded-lg p-6'>
-						<h3 className='text-lg font-semibold mb-4 text-indigo-800'>
-							Audio Lesson
-						</h3>
-						<div className='flex items-center justify-between mb-4'>
-							<button
-								onClick={() => setIsPlaying(!isPlaying)}
-								className='bg-indigo-500 text-white p-2 rounded-full hover:bg-indigo-600 transition-colors'>
-								{isPlaying ? (
-									<Pause size={24} />
-								) : (
-									<Play size={24} />
-								)}
-							</button>
-							<div className='flex-1 mx-4 h-2 bg-indigo-200 rounded-full'>
-								<div className='w-1/3 h-full bg-indigo-500 rounded-full'></div>
-							</div>
-							<span className='text-indigo-800'>2:30 / 7:15</span>
-						</div>
-						<button className='flex items-center text-indigo-700 hover:text-indigo-900 transition-colors'>
-							<Download
-								size={20}
-								className='mr-2'
-							/>
-							Download Audio
-						</button>
-					</div>
+					<AudioComponent audioFileLocation='/Audios/uses_of_blockchain.mp3' />
 
 					{/* Slides section */}
 					<PDFDownloader pdfFileLocation='/pdfs/blockchain_fundamentals.pdf' />
@@ -1598,33 +1541,9 @@ const lesson1239: React.FC = () => {
 					</div>
 
 					{/* Audio section */}
-					<div className='bg-indigo-100 rounded-lg p-6'>
-						<h3 className='text-lg font-semibold mb-4 text-indigo-800'>
-							Audio Lesson
-						</h3>
-						<div className='flex items-center justify-between mb-4'>
-							<button
-								onClick={() => setIsPlaying(!isPlaying)}
-								className='bg-indigo-500 text-white p-2 rounded-full hover:bg-indigo-600 transition-colors'>
-								{isPlaying ? (
-									<Pause size={24} />
-								) : (
-									<Play size={24} />
-								)}
-							</button>
-							<div className='flex-1 mx-4 h-2 bg-indigo-200 rounded-full'>
-								<div className='w-1/3 h-full bg-indigo-500 rounded-full'></div>
-							</div>
-							<span className='text-indigo-800'>2:30 / 7:15</span>
-						</div>
-						<button className='flex items-center text-indigo-700 hover:text-indigo-900 transition-colors'>
-							<Download
-								size={20}
-								className='mr-2'
-							/>
-							Download Audio
-						</button>
-					</div>
+					<AudioComponent
+						audioFileLocation='/Audios/why_we_need_blockchain.mp3'
+					/>
 
 					{/* Slides section */}
 					<PDFDownloader pdfFileLocation='/pdfs/blockchain_fundamentals.pdf' />
