@@ -3,15 +3,6 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-import {
-	BarChart,
-	Bar,
-	XAxis,
-	YAxis,
-	CartesianGrid,
-	Tooltip,
-	ResponsiveContainer,
-} from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/UI/card";
 import { Button } from "@/components/UI/button";
 import { Skeleton } from "@/components/UI/skeleton";
@@ -30,10 +21,11 @@ import Carousel from "@/components/dashboard/Carousel";
 import Link from "next/link";
 import { useAccount, useWriteContract } from "wagmi";
 import { Progress } from "@/components/UI/progress";
-import Loader from "@/components/loader";
+
 import nftABI from "@/smart_contract/ContractABI.json";
 import { Transaction, TransactionButton, TransactionSponsor, TransactionStatusLabel, TransactionStatusAction, TransactionStatus } from "@coinbase/onchainkit/transaction";
 import { baseSepolia } from "viem/chains";
+import { Abi } from "viem";
 
 interface CourseProgress {
 	name: string;
@@ -205,7 +197,7 @@ function Dashboard() {
         contracts={[
           {
             address: "0x09AA30B2014b7ED813c18564159919de06670867",
-            abi: nftABI,
+            abi: nftABI as Abi,
             functionName: "login",
             args: [],
           },
