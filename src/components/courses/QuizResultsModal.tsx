@@ -16,7 +16,7 @@ const QuizResultsModal = ({
 
 	return (
 		<ReuseableModal
-			type={passed ? "success" : "error"}
+			type={passed ? "success" : "warning"}
 			isOpen={true}
 			onClose={function onClose() {}}
 			title='Quiz Results'
