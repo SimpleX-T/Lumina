@@ -59,7 +59,7 @@ const Carousel: React.FC<CarouselProps> = ({
 						backgroundSize: "cover",
 						backgroundPosition: "center",
 					}}>
-					<div className='w-full h-full flex items-center justify-center flex-col gap-4 bg-black/50'>
+					<div className='w-full h-full flex items-center justify-center flex-col gap-4 bg-black/5'>
 						<h2>{item.content}</h2>
 
 						<Link
