@@ -29,7 +29,6 @@ import { ProductivityChart } from "@/components/dashboard/ProductivityChart";
 import Carousel from "@/components/dashboard/Carousel";
 import Link from "next/link";
 import { useAccount, useWriteContract } from "wagmi";
-import { useAccount, useWriteContract } from "wagmi";
 import { Progress } from "@/components/UI/progress";
 import Loader from "@/components/loader";
 import nftABI from "@/smart_contract/ContractABI.json";
@@ -95,35 +94,22 @@ const blockchainBasics = [
 ];
 
 const onchainBasics = [
-	{
-		id: 1,
-		content: "Breaking News",
-		image: "",
-		url: "/learn",
-	},
-	{
-		id: 2,
-		content: "Onchain Buildathon",
-		image: "/Images/based_africa.jpg",
-		url: "/dashboard/onchain",
-	},
-	{
-		id: 3,
-		content: "Jesse Polak's visit to Africa",
-		image: "",
-		url: "/learn",
-	},
   {
     id: 1,
     content: "The Onchain Vision",
     image: "/Images/base.png",
     url: "/dashboard/onchain",
   },
-  { id: 2, content: "Onchain Buildathon", image: "", url: "/learn" },
+  {
+    id: 2,
+    content: "Onchain Buildathon",
+    image: "/Images/based_africa.jpg",
+    url: "https://based-africa.devfolio.co/",
+  },
   {
     id: 3,
     content: "Jesse Polak's visit to Africa",
-    image: "",
+    image: "/Images/jesse.jpg",
     url: "https://lu.ma/a45ev6ql?tk=CCk0tb",
   },
 ];
@@ -177,7 +163,7 @@ function Dashboard() {
         functionName: "login",
       });
     }
-  }, []);
+  }, [isConnected]);
 
   if (!isConnected) {
     return (
@@ -191,7 +177,7 @@ function Dashboard() {
     <div className="w-full px-4 md:px-8 py-8">
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 rounded-lg overflow-hidden mb-6 shadow-md gap-8">
         <Carousel items={blockchainBasics} />
-        <Carousel items={onchainBasics} />
+        <Carousel items={onchainBasics} interval={5000} />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6">
