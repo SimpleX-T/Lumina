@@ -18,17 +18,17 @@ export const navs = [
 	{
 		title: "Home",
 		route: "/dashboard",
-		icon: <GoHomeFill className='text-3xl' />,
+		icon: <GoHomeFill className='text-2xl' />,
 	},
 	{
 		title: "Learn",
 		route: "/dashboard/learn",
-		icon: <FaBookOpenReader className='text-3xl' />,
+		icon: <FaBookOpenReader className='text-2xl' />,
 	},
 	{
 		title: "Leaderboard",
 		route: "/leaderboard",
-		icon: <MdLeaderboard className='text-3xl' />,
+		icon: <MdLeaderboard className='text-2xl' />,
 	},
 ];
 

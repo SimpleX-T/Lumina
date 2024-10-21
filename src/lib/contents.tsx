@@ -166,11 +166,9 @@ const lesson1231: React.FC = () => {
 
 					{/* Audio section */}
 					<AudioComponent audioFileLocation='/Audios/blockchain_fundamentals.mp3' />
-			
 
 					{/* Slides section */}
 					<PDFDownloader pdfFileLocation='/pdfs/blockchain_fundamentals.pdf' />
-					
 				</section>
 			</div>
 		</div>
@@ -366,25 +364,11 @@ const lesson1232: React.FC = () => {
 							/>
 							Download Audio
 						</button>
-					</div>
-					<div className='bg-yellow-100 rounded-lg p-6'>
-						<h3 className='text-lg font-semibold mb-4 text-yellow-800'>
-							Lesson Slides
-						</h3>
-						<div className='flex justify-between items-center flex-col xl:flex-row'>
-							<ImageIcon
-								size={40}
-								className='text-yellow-600'
-							/>
-							<button className='flex items-center bg-yellow-500 text-white xl:px-4 xl:py-2 py-1 px-3 rounded hover:bg-yellow-600 transition-colors'>
-								<Download
-									size={20}
-									className='mr-2'
-								/>
-								Download PDF
-							</button>
-						</div>
-					</div>
+          </div>
+          
+					<PDFDownloader
+						pdfFileLocation='/pdfs/blockchain_fundamentals.pdf'
+					/>
 				</section>
 			</div>
 		</div>
@@ -567,24 +551,9 @@ const lesson1233: React.FC = () => {
 					</div>
 
 					{/* Slides section */}
-					<div className='bg-yellow-100 rounded-lg p-6'>
-						<h3 className='text-lg font-semibold mb-4 text-yellow-800'>
-							Lesson Slides
-						</h3>
-						<div className='flex justify-between items-center flex-col xl:flex-row'>
-							<ImageIcon
-								size={40}
-								className='text-yellow-600'
-							/>
-							<button className='flex items-center bg-yellow-500 text-white xl:px-4 xl:py-2 py-1 px-3 rounded hover:bg-yellow-600 transition-colors'>
-								<Download
-									size={20}
-									className='mr-2'
-								/>
-								Download PDF
-							</button>
-						</div>
-					</div>
+					<PDFDownloader
+						pdfFileLocation='/pdfs/blockchain_fundamentals.pdf'
+					/>
 				</section>
 			</div>
 		</div>
@@ -802,24 +771,8 @@ const lesson1234: React.FC = () => {
 					</div>
 
 					{/* Slides section */}
-					<div className='bg-yellow-100 rounded-lg p-6'>
-						<h3 className='text-lg font-semibold mb-4 text-yellow-800'>
-							Lesson Slides
-						</h3>
-						<div className='flex justify-between items-center flex-col xl:flex-row'>
-							<ImageIcon
-								size={40}
-								className='text-yellow-600'
-							/>
-							<button className='flex items-center bg-yellow-500 text-white xl:px-4 xl:py-2 py-1 px-3 rounded hover:bg-yellow-600 transition-colors'>
-								<Download
-									size={20}
-									className='mr-2'
-								/>
-								Download PDF
-							</button>
-						</div>
-					</div>
+					<PDFDownloader pdfFileLocation='/pdfs/blockchain_fundamentals.pdf' />
+						
 				</section>
 			</div>
 		</div>
@@ -980,24 +933,7 @@ const lesson1235: React.FC = () => {
 					</div>
 
 					{/* Slides section */}
-					<div className='bg-yellow-100 rounded-lg p-6'>
-						<h3 className='text-lg font-semibold mb-4 text-yellow-800'>
-							Lesson Slides
-						</h3>
-						<div className='flex justify-between items-center flex-col xl:flex-row'>
-							<ImageIcon
-								size={40}
-								className='text-yellow-600'
-							/>
-							<button className='flex items-center bg-yellow-500 text-white xl:px-4 xl:py-2 py-1 px-3 rounded hover:bg-yellow-600 transition-colors'>
-								<Download
-									size={20}
-									className='mr-2'
-								/>
-								Download PDF
-							</button>
-						</div>
-					</div>
+					<PDFDownloader pdfFileLocation='/pdfs/blockchain_fundamentals.pdf' />
 				</section>
 			</div>
 		</div>
@@ -1160,24 +1096,7 @@ const lesson1236: React.FC = () => {
 					</div>
 
 					{/* Slides section */}
-					<div className='bg-yellow-100 rounded-lg p-6'>
-						<h3 className='text-lg font-semibold mb-4 text-yellow-800'>
-							Lesson Slides
-						</h3>
-						<div className='flex justify-between items-center flex-col xl:flex-row'>
-							<ImageIcon
-								size={40}
-								className='text-yellow-600'
-							/>
-							<button className='flex items-center bg-yellow-500 text-white xl:px-4 xl:py-2 py-1 px-3 rounded hover:bg-yellow-600 transition-colors'>
-								<Download
-									size={20}
-									className='mr-2'
-								/>
-								Download PDF
-							</button>
-						</div>
-					</div>
+					<PDFDownloader pdfFileLocation='/pdfs/blockchain_fundamentals.pdf' />
 				</section>
 			</div>
 		</div>
@@ -1354,24 +1273,7 @@ const lesson1237: React.FC = () => {
 					</div>
 
 					{/* Slides section */}
-					<div className='bg-yellow-100 rounded-lg p-6'>
-						<h3 className='text-lg font-semibold mb-4 text-yellow-800'>
-							Lesson Slides
-						</h3>
-						<div className='flex justify-between items-center flex-col xl:flex-row'>
-							<ImageIcon
-								size={40}
-								className='text-yellow-600'
-							/>
-							<button className='flex items-center bg-yellow-500 text-white xl:px-4 xl:py-2 py-1 px-3 rounded hover:bg-yellow-600 transition-colors'>
-								<Download
-									size={20}
-									className='mr-2'
-								/>
-								Download PDF
-							</button>
-						</div>
-					</div>
+					<PDFDownloader pdfFileLocation='/pdfs/blockchain_fundamentals.pdf' />
 				</section>
 			</div>
 		</div>
@@ -1557,24 +1459,7 @@ const lesson1238: React.FC = () => {
 					</div>
 
 					{/* Slides section */}
-					<div className='bg-yellow-100 rounded-lg p-6'>
-						<h3 className='text-lg font-semibold mb-4 text-yellow-800'>
-							Lesson Slides
-						</h3>
-						<div className='flex justify-between items-center flex-col xl:flex-row'>
-							<ImageIcon
-								size={40}
-								className='text-yellow-600'
-							/>
-							<button className='flex items-center bg-yellow-500 text-white xl:px-4 xl:py-2 py-1 px-3 rounded hover:bg-yellow-600 transition-colors'>
-								<Download
-									size={20}
-									className='mr-2'
-								/>
-								Download PDF
-							</button>
-						</div>
-					</div>
+					<PDFDownloader pdfFileLocation='/pdfs/blockchain_fundamentals.pdf' />
 				</section>
 			</div>
 		</div>
@@ -1742,24 +1627,7 @@ const lesson1239: React.FC = () => {
 					</div>
 
 					{/* Slides section */}
-					<div className='bg-yellow-100 rounded-lg p-6'>
-						<h3 className='text-lg font-semibold mb-4 text-yellow-800'>
-							Lesson Slides
-						</h3>
-						<div className='flex justify-between items-center flex-col xl:flex-row'>
-							<ImageIcon
-								size={40}
-								className='text-yellow-600'
-							/>
-							<button className='flex items-center bg-yellow-500 text-white xl:px-4 xl:py-2 py-1 px-3 rounded hover:bg-yellow-600 transition-colors'>
-								<Download
-									size={20}
-									className='mr-2'
-								/>
-								Download PDF
-							</button>
-						</div>
-					</div>
+					<PDFDownloader pdfFileLocation='/pdfs/blockchain_fundamentals.pdf' />
 				</section>
 			</div>
 		</div>

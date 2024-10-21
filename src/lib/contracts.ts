@@ -71,7 +71,10 @@ declare global {
 	}
 }
 
-export async function load() {
+const contractAddress = "0x09AA30B2014b7ED813c18564159919de06670867";
+const NFTContract = contract(nftABI);
+
+export async function nftContract() {
 	await loadWeb3();
 	const addressAccount = await loadAccount();
 	await loadContract(addressAccount);
@@ -88,6 +91,22 @@ async function loadAccount() {
 	const addressAccount = await window.web3.eth.getCoinbase();
 	console.log(addressAccount);
 	return addressAccount;
+}
+
+export async function loginNFT(wallet_address: string) {
+	await loadWeb3();
+	NFTContract.setProvider(
+		"https://mainnet.infura.io/v3/d62957f6dfa148479911baa98f51d59d"
+	);
+
+	try {
+        const instance = await NFTContract.at(contractAddress);
+        console.log(instance)
+		const receipt = await instance.login({from: wallet_address});
+		console.log("Login successful, NFT minted:", receipt);
+	} catch (err) {
+		console.error("Error during login:", err);
+	}
 }
 
 async function loadWeb3() {
