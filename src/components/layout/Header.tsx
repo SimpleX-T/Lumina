@@ -1,3 +1,5 @@
+"use client";
+
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { FaRegBell } from "react-icons/fa6";
 import { GoDotFill } from "react-icons/go";
@@ -15,6 +17,8 @@ import {
 } from "@/components/UI/dropdown-menu";
 
 import WalletWrapper from "../WalletWrapper";
+import { Name, Identity } from "@coinbase/onchainkit/identity";
+import { useAccount } from "wagmi";
 
 interface Notification {
 	title: string;
@@ -37,13 +41,27 @@ const mockNotifications: Notification[] = [
 ];
 
 const Header = () => {
+	const { address } = useAccount();
+
+	console.log(address);
 	return (
 		<header className='sticky top-0 z-30 w-full py-4 px-4 sm:px-6 lg:px-8 bg-slate-900 border-b border-slate-600'>
 			<div className='flex items-center justify-between'>
 				<div className='flex items-center'>
 					<div>
-						<p className='text-xl font-semibold text-custom-black'>
-							Welcome👋
+						<p className='text-xl font-semibold text-custom-black flex items-center gap-1'>
+							<span>Welcome</span>
+							<span>
+								{address ? (
+									<Name
+										address={address}
+										className='inline-block ml-1'
+									/>
+								) : (
+									"Guest"
+								)}
+							</span>
+							👋
 						</p>
 						<p className='text-xs text-custom-black/75'>
 							{new Date().toLocaleDateString("en-US", {

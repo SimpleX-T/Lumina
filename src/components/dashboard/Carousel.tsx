@@ -59,11 +59,11 @@ const Carousel: React.FC<CarouselProps> = ({
 						backgroundSize: "cover",
 						backgroundPosition: "center",
 					}}>
-					<div className='w-full h-full flex items-center justify-center flex-col gap-4 bg-black/75'>
+					<div className='w-full h-full flex items-center justify-center flex-col gap-4 transition-colors duration-200 bg-black/80 hover:bg-black/50'>
 						<h2>{item.content}</h2>
 
 						<Link
-							href={item.url}
+							href={items[currentIndex].url}
 							className='text-md block text-center underline'>
 							Learn More
 						</Link>
