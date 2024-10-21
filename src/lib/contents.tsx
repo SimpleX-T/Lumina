@@ -1160,7 +1160,7 @@ const lesson1237: React.FC = () => {
 					{/* Image 1 */}
 					<div className='bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto'>
 						<img
-							src='/api/placeholder/400/320'
+							src='/Images/finance.svg'
 							alt='DeFi concept'
 							className='w-full h-full md:object-cover object-contain'
 						/>
@@ -1191,7 +1191,7 @@ const lesson1237: React.FC = () => {
 					{/* Image 2 */}
 					<div className='bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto'>
 						<img
-							src='/api/placeholder/400/320'
+							src='/Images/earning.svg'
 							alt='Liquidity pools in DeFi'
 							className='w-full h-full object-cover'
 						/>
@@ -1219,6 +1219,13 @@ const lesson1237: React.FC = () => {
 								crypto wallet!
 							</i>
 						</p>
+					</div>
+					<div className='bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto'>
+						<img
+							src='/Images/aave.png'
+							alt='Liquidity pools in DeFi'
+							className='w-full h-full object-cover'
+						/>
 					</div>
 
 					{/* Summary */}
@@ -1309,7 +1316,7 @@ const lesson1238: React.FC = () => {
 					{/* Image 1 */}
 					<div className='bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto'>
 						<img
-							src='/api/placeholder/400/320'
+							src='/Images/delivery.svg'
 							alt='Supply chain tracking concept'
 							className='w-full h-full md:object-cover object-contain'
 						/>
@@ -1332,7 +1339,7 @@ const lesson1238: React.FC = () => {
 					{/* Image 1 */}
 					<div className='bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto'>
 						<img
-							src='/api/placeholder/400/320'
+							src='/Images/transfer.svg'
 							alt='Supply chain tracking concept'
 							className='w-full h-full md:object-cover object-contain'
 						/>
@@ -1358,7 +1365,7 @@ const lesson1238: React.FC = () => {
 					{/* Image 2 */}
 					<div className='bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto'>
 						<img
-							src='/api/placeholder/400/320'
+							src='/Images/medical.svg'
 							alt='Healthcare on blockchain'
 							className='w-full h-full object-cover'
 						/>
@@ -1379,6 +1386,13 @@ const lesson1238: React.FC = () => {
 							. This can help prevent fraud and increase public
 							trust in election outcomes.
 						</p>
+					</div>
+					<div className='bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto'>
+						<img
+							src='/Images/voting.svg'
+							alt='Healthcare on blockchain'
+							className='w-full h-full object-cover'
+						/>
 					</div>
 
 					{/* Summary */}
@@ -1475,7 +1489,7 @@ const lesson1239: React.FC = () => {
 					{/* Image 1 */}
 					<div className='bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto'>
 						<img
-							src='/api/placeholder/400/320'
+							src='/Images/trust.svg'
 							alt='Decentralized trust concept'
 							className='w-full h-full md:object-cover object-contain'
 						/>
@@ -1500,7 +1514,7 @@ const lesson1239: React.FC = () => {
 					{/* Image 2 */}
 					<div className='bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto'>
 						<img
-							src='/api/placeholder/400/320'
+							src='/Images/Safe-bro.svg'
 							alt='Security and transparency'
 							className='w-full h-full object-cover'
 						/>
@@ -1521,6 +1535,13 @@ const lesson1239: React.FC = () => {
 							. This makes global transactions easier and faster,
 							without the high fees of traditional systems.
 						</p>
+					</div>
+					<div className='bg-gray-200 rounded-lg overflow-hidden h-64 md:h-auto'>
+						<img
+							src='/Images/boundaries.svg'
+							alt='Security and transparency'
+							className='w-full h-full object-cover'
+						/>
 					</div>
 
 					{/* Summary */}
