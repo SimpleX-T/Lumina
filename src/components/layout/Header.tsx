@@ -43,7 +43,7 @@ const Header = () => {
 				<div className='flex items-center'>
 					<div>
 						<p className='text-xl font-semibold text-custom-black'>
-							Welcome Jesse👋
+							Welcome👋
 						</p>
 						<p className='text-xs text-custom-black/75'>
 							{new Date().toLocaleDateString("en-US", {
