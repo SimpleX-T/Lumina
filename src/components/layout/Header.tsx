@@ -17,7 +17,7 @@ import {
 } from "@/components/UI/dropdown-menu";
 
 import WalletWrapper from "../WalletWrapper";
-import { Name } from "@coinbase/onchainkit/identity";
+import { Name, Identity } from "@coinbase/onchainkit/identity";
 import { useAccount } from "wagmi";
 
 interface Notification {
