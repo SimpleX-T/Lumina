@@ -138,9 +138,9 @@ const getBadgeIcon = (badge: BadgeType): JSX.Element => {
 };
 
 const LeaderboardStats: React.FC<LeaderboardStatsProps> = ({ stats }) => (
-	<div className='grid grid-cols-4 gap-4 mb-6 w-full border'>
+	<div className='grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6 w-full'>
 		<Card className='bg-gradient-to-br border-none from-purple-500 to-indigo-600 text-white'>
-			<CardContent className='pt-4 px-2 lg:px-4'>
+			<CardContent className='pt-4 px-4'>
 				<div className='text-sm opacity-80'>Total Learners</div>
 				<div className='text-sm lg:text-2xl font-bold'>
 					{stats.totalLearners.toLocaleString()}
@@ -149,7 +149,7 @@ const LeaderboardStats: React.FC<LeaderboardStatsProps> = ({ stats }) => (
 		</Card>
 
 		<Card className='bg-gradient-to-br border-none from-blue-500 to-cyan-600 text-white'>
-			<CardContent className='pt-4 px-2 lg:px-4'>
+			<CardContent className='pt-4 px-4'>
 				<div className='text-sm opacity-80'>Points Earned</div>
 				<div className='text-sm lg:text-2xl font-bold'>
 					{(stats.totalPoints / 1000).toFixed(1)}K
@@ -158,7 +158,7 @@ const LeaderboardStats: React.FC<LeaderboardStatsProps> = ({ stats }) => (
 		</Card>
 
 		<Card className='bg-gradient-to-br border-none from-emerald-500 to-teal-600 text-white'>
-			<CardContent className='pt-4 px-2 lg:px-4'>
+			<CardContent className='pt-4 px-4'>
 				<div className='text-sm opacity-80'>Courses Completed</div>
 				<div className='text-2xl font-bold'>
 					{stats.completedCourses}
@@ -167,7 +167,7 @@ const LeaderboardStats: React.FC<LeaderboardStatsProps> = ({ stats }) => (
 		</Card>
 
 		<Card className='bg-gradient-to-br border-none from-orange-500 to-red-600 text-white'>
-			<CardContent className='pt-4 px-2 lg:px-4'>
+			<CardContent className='pt-4 px-4'>
 				<div className='text-sm opacity-80'>Active Streaks</div>
 				<div className='text-2xl font-bold'>{stats.activeStreaks}</div>
 			</CardContent>

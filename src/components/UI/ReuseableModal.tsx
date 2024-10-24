@@ -36,13 +36,34 @@ const ReuseableModal: React.FC<ReuseableModalProps> = ({
 	width = "400px",
 	height = "auto",
 }) => {
-	const [showConfetti, setShowConfetti] = useState(true);
+	const [showConfetti, setShowConfetti] = useState(false);
+	const [windowSize, setWindowSize] = useState({
+		width: typeof window !== "undefined" ? window.innerWidth : 0,
+		height: typeof window !== "undefined" ? window.innerHeight : 0,
+	});
+
+	useEffect(() => {
+		const handleResize = () => {
+			setWindowSize({
+				width: window.innerWidth,
+				height: window.innerHeight,
+			});
+		};
+
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
 
 	useEffect(() => {
 		if (isOpen && type === "success") {
 			setShowConfetti(true);
-			const timer = setTimeout(() => setShowConfetti(false), 2000);
-			return () => clearTimeout(timer);
+			const timer = setTimeout(() => setShowConfetti(false), 5000);
+			return () => {
+				clearTimeout(timer);
+				setShowConfetti(false);
+			};
+		} else {
+			setShowConfetti(false);
 		}
 	}, [isOpen, type]);
 
@@ -80,16 +101,17 @@ const ReuseableModal: React.FC<ReuseableModalProps> = ({
 				className='absolute inset-0 bg-black/50 backdrop-blur-sm'
 				onClick={closeOnOverlayClick ? onClose : undefined}
 			/>
-			{showConfetti && (
+			{showConfetti && type === "success" && (
 				<Confetti
-					width={window.innerWidth}
-					height={window.innerHeight}
-					className='z-50 absolute top-0 left-0'
-					recycle={true}
+					width={windowSize.width}
+					height={windowSize.height}
+					className='fixed inset-0 pointer-events-none'
+					recycle={false}
+					numberOfPieces={200}
 				/>
 			)}
 			<div
-				className={`relative ${getBackgroundColor()} rounded-lg shadow-lg transform translate-x-[33%]`}
+				className={`relative ${getBackgroundColor()} rounded-lg shadow-lg transform lg:translate-x-[33%]`}
 				style={{ width, height, ...customStyles }}>
 				<div className='p-6'>
 					<h2 className='text-xl font-bold mb-4 text-black'>
