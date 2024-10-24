@@ -60,16 +60,19 @@ const Carousel: React.FC<CarouselProps> = ({
 						backgroundPosition: "center",
 					}}>
 					<div className='w-full h-full flex items-center justify-center flex-col gap-4 transition-colors duration-200 bg-black/80 hover:bg-black/50'>
-						<h2>{item.content}</h2>
+						<h2 className='text-center'>{item.content}</h2>
 
 						<Link
 							href={items[currentIndex].url}
+							target='_blank'
+							rel='noopener noreferrer'
 							className='text-md block text-center underline'>
 							Learn More
 						</Link>
 					</div>
 				</div>
 			))}
+
 			{withButtons && (
 				<>
 					<button

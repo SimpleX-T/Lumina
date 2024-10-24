@@ -16,7 +16,7 @@ const DashboardLayout = ({
 			<div className='w-full bg-slate-800 min-h-screen flex flex-row'>
 				<Navigation />
 
-				<main className='w-full pb-28 md:pb-4 relative z-0 pl-0 lg:pl-[260px] sm:pl-[250px]'>
+				<main className='w-full pb-28 md:pb-10 relative z-0 pl-0 lg:pl-[260px] sm:pl-[250px]'>
 					<Header />
 					{children}
 				</main>

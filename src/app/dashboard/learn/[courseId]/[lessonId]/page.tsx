@@ -1,4 +1,5 @@
 "use client";
+
 import { useParams, useRouter } from "next/navigation";
 import { courseData } from "@/lib/courses";
 import { contents } from "../../../../../lib/contents";
@@ -10,9 +11,12 @@ const LessonPage = () => {
 	const { courseId, lessonId } = params;
 	const course = courseData.find((c) => c.id === Number(courseId));
 	const lesson = course?.lessons.find((l) => l.id === Number(lessonId));
+
 	if (!lesson) return <p>Lesson not found</p>;
 	if (!course) return <p>Course not found</p>;
+
 	let Content: React.FC = contents[1];
+
 	switch (Number(lessonId)) {
 		case 1:
 			Content = contents[1];
@@ -42,15 +46,19 @@ const LessonPage = () => {
 			Content = contents[9];
 			break;
 	}
+
 	const prev = course?.lessons.find((l) => l.id === Number(lessonId) - 1);
+
 	const nextLesson = lesson.quiz
 		? `/dashboard/learn/${courseId}/quiz?from=${lessonId}`
 		: `/dashboard/learn/${courseId}/${Number(lessonId) + 1}`;
+
 	const prevLesson = `/dashboard/learn/${courseId}/${Number(lessonId) - 1}`;
+
 	return (
-		<div>
+		<div className='relative'>
 			{Content && <Content />}
-			<div className='flex items-center gap-4 pl-8'>
+			<div className='flex items-center gap-4 pl-8 absolute bottom-0 transform translate-y-6 left-0 w-full'>
 				{(!prev?.quiz || Number(lessonId) === 1) && (
 					<PrevNextButton
 						text='Previous'
@@ -66,4 +74,5 @@ const LessonPage = () => {
 		</div>
 	);
 };
+
 export default LessonPage;

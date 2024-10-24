@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Confetti from "react-confetti";
-// import ConfettiExplosion from "react-confetti-explosion";
 
 type ReuseableModalType = "success" | "failure" | "casual" | "info" | "warning";
 
@@ -37,7 +36,7 @@ const ReuseableModal: React.FC<ReuseableModalProps> = ({
 	width = "400px",
 	height = "auto",
 }) => {
-	const [showConfetti, setShowConfetti] = useState(false);
+	const [showConfetti, setShowConfetti] = useState(true);
 
 	useEffect(() => {
 		if (isOpen && type === "success") {
@@ -78,19 +77,20 @@ const ReuseableModal: React.FC<ReuseableModalProps> = ({
 	return (
 		<div className='fixed inset-0 z-50 flex items-center justify-center'>
 			<div
-				className='absolute inset-0 bg-black opacity-50'
+				className='absolute inset-0 bg-black/50 backdrop-blur-sm'
 				onClick={closeOnOverlayClick ? onClose : undefined}
 			/>
+			{showConfetti && (
+				<Confetti
+					width={window.innerWidth}
+					height={window.innerHeight}
+					className='z-50 absolute top-0 left-0'
+					recycle={true}
+				/>
+			)}
 			<div
-				className={`relative ${getBackgroundColor()} rounded-lg shadow-lg`}
+				className={`relative ${getBackgroundColor()} rounded-lg shadow-lg transform translate-x-[33%]`}
 				style={{ width, height, ...customStyles }}>
-				{showConfetti && (
-					<Confetti
-						width={window.innerWidth}
-						height={window.innerHeight}
-						recycle={true}
-					/>
-				)}
 				<div className='p-6'>
 					<h2 className='text-xl font-bold mb-4 text-black'>
 						{title}

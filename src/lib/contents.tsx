@@ -130,6 +130,7 @@ const lesson1231: React.FC = () => {
 						</p>
 					</div>
 				</div>
+
 				<section className='col-span-1 space-y-6 '>
 					{/* Video section */}
 					<div>
@@ -164,10 +165,8 @@ const lesson1231: React.FC = () => {
 						)}
 					</div>
 
-					{/* Audio section */}
 					<AudioComponent audioFileLocation='/Audios/blockchain_fundamentals.mp3' />
 
-					{/* Slides section */}
 					<PDFDownloader pdfFileLocation='/pdfs/blockchain_fundamentals.pdf' />
 				</section>
 			</div>
@@ -298,6 +297,7 @@ const lesson1232: React.FC = () => {
 						</p>
 					</div>
 				</div>
+
 				<section className='col-span-1 space-y-6 '>
 					<div>
 						{!videoOn && (
@@ -331,33 +331,7 @@ const lesson1232: React.FC = () => {
 						)}
 					</div>
 
-					<div className='bg-indigo-100 rounded-lg p-6'>
-						<h3 className='text-lg font-semibold mb-4 text-indigo-800'>
-							Audio Lesson
-						</h3>
-						<div className='flex items-center justify-between mb-4'>
-							<button
-								onClick={() => setIsPlaying(!isPlaying)}
-								className='bg-indigo-500 text-white p-2 rounded-full hover:bg-indigo-600 transition-colors'>
-								{isPlaying ? (
-									<Pause size={24} />
-								) : (
-									<Play size={24} />
-								)}
-							</button>
-							<div className='flex-1 mx-4 h-2 bg-indigo-200 rounded-full'>
-								<div className='w-1/3 h-full bg-indigo-500 rounded-full'></div>
-							</div>
-							<span className='text-indigo-800'>2:30 / 7:15</span>
-						</div>
-						<button className='flex items-center text-indigo-700 hover:text-indigo-900 transition-colors'>
-							<Download
-								size={20}
-								className='mr-2'
-							/>
-							Download Audio
-						</button>
-					</div>
+					<AudioComponent audioFileLocation='' />
 
 					<PDFDownloader pdfFileLocation='/pdfs/blockchain_fundamentals.pdf' />
 				</section>
@@ -548,33 +522,7 @@ const lesson1233: React.FC = () => {
 					</div>
 
 					{/* Audio section */}
-					<div className='bg-indigo-100 rounded-lg p-6'>
-						<h3 className='text-lg font-semibold mb-4 text-indigo-800'>
-							Audio Lesson
-						</h3>
-						<div className='flex items-center justify-between mb-4'>
-							<button
-								onClick={() => setIsPlaying(!isPlaying)}
-								className='bg-indigo-500 text-white p-2 rounded-full hover:bg-indigo-600 transition-colors'>
-								{isPlaying ? (
-									<Pause size={24} />
-								) : (
-									<Play size={24} />
-								)}
-							</button>
-							<div className='flex-1 mx-4 h-2 bg-indigo-200 rounded-full'>
-								<div className='w-1/3 h-full bg-indigo-500 rounded-full'></div>
-							</div>
-							<span className='text-indigo-800'>2:30 / 7:15</span>
-						</div>
-						<button className='flex items-center text-indigo-700 hover:text-indigo-900 transition-colors'>
-							<Download
-								size={20}
-								className='mr-2'
-							/>
-							Download Audio
-						</button>
-					</div>
+					<AudioComponent audioFileLocation='' />
 
 					{/* Slides section */}
 					<PDFDownloader pdfFileLocation='/pdfs/blockchain_fundamentals.pdf' />
@@ -591,7 +539,7 @@ const lesson1234: React.FC = () => {
 	return (
 		<div className='max-w-7xl mx-auto p-4 md:p-6 lg:p-8 space-y-4'>
 			<h1 className='text-3xl font-bold mb-8'>
-				Lesson 4: Consensus Mechanisms 🫱🏾‍🫲🏾
+				Lesson 4: Consensus Mechanisms 🛠️🛠️🛠️
 			</h1>
 
 			<div className='grid grid-cols-1 lg:grid-cols-3 gap-6'>
@@ -766,33 +714,7 @@ const lesson1234: React.FC = () => {
 					</div>
 
 					{/* Audio section */}
-					<div className='bg-indigo-100 rounded-lg p-6'>
-						<h3 className='text-lg font-semibold mb-4 text-indigo-800'>
-							Audio Lesson
-						</h3>
-						<div className='flex items-center justify-between mb-4'>
-							<button
-								onClick={() => setIsPlaying(!isPlaying)}
-								className='bg-indigo-500 text-white p-2 rounded-full hover:bg-indigo-600 transition-colors'>
-								{isPlaying ? (
-									<Pause size={24} />
-								) : (
-									<Play size={24} />
-								)}
-							</button>
-							<div className='flex-1 mx-4 h-2 bg-indigo-200 rounded-full'>
-								<div className='w-1/3 h-full bg-indigo-500 rounded-full'></div>
-							</div>
-							<span className='text-indigo-800'>2:30 / 7:15</span>
-						</div>
-						<button className='flex items-center text-indigo-700 hover:text-indigo-900 transition-colors'>
-							<Download
-								size={20}
-								className='mr-2'
-							/>
-							Download Audio
-						</button>
-					</div>
+					<AudioComponent audioFileLocation='' />
 
 					{/* Slides section */}
 					<PDFDownloader pdfFileLocation='/pdfs/blockchain_fundamentals.pdf' />
@@ -927,33 +849,7 @@ const lesson1235: React.FC = () => {
 					</div>
 
 					{/* Audio section */}
-					<div className='bg-indigo-100 rounded-lg p-6'>
-						<h3 className='text-lg font-semibold mb-4 text-indigo-800'>
-							Audio Lesson
-						</h3>
-						<div className='flex items-center justify-between mb-4'>
-							<button
-								onClick={() => setIsPlaying(!isPlaying)}
-								className='bg-indigo-500 text-white p-2 rounded-full hover:bg-indigo-600 transition-colors'>
-								{isPlaying ? (
-									<Pause size={24} />
-								) : (
-									<Play size={24} />
-								)}
-							</button>
-							<div className='flex-1 mx-4 h-2 bg-indigo-200 rounded-full'>
-								<div className='w-1/3 h-full bg-indigo-500 rounded-full'></div>
-							</div>
-							<span className='text-indigo-800'>2:30 / 7:15</span>
-						</div>
-						<button className='flex items-center text-indigo-700 hover:text-indigo-900 transition-colors'>
-							<Download
-								size={20}
-								className='mr-2'
-							/>
-							Download Audio
-						</button>
-					</div>
+					<AudioComponent audioFileLocation='' />
 
 					{/* Slides section */}
 					<PDFDownloader pdfFileLocation='/pdfs/blockchain_fundamentals.pdf' />
@@ -1090,33 +986,7 @@ const lesson1236: React.FC = () => {
 					</div>
 
 					{/* Audio section */}
-					<div className='bg-indigo-100 rounded-lg p-6'>
-						<h3 className='text-lg font-semibold mb-4 text-indigo-800'>
-							Audio Lesson
-						</h3>
-						<div className='flex items-center justify-between mb-4'>
-							<button
-								onClick={() => setIsPlaying(!isPlaying)}
-								className='bg-indigo-500 text-white p-2 rounded-full hover:bg-indigo-600 transition-colors'>
-								{isPlaying ? (
-									<Pause size={24} />
-								) : (
-									<Play size={24} />
-								)}
-							</button>
-							<div className='flex-1 mx-4 h-2 bg-indigo-200 rounded-full'>
-								<div className='w-1/3 h-full bg-indigo-500 rounded-full'></div>
-							</div>
-							<span className='text-indigo-800'>2:30 / 7:15</span>
-						</div>
-						<button className='flex items-center text-indigo-700 hover:text-indigo-900 transition-colors'>
-							<Download
-								size={20}
-								className='mr-2'
-							/>
-							Download Audio
-						</button>
-					</div>
+					<AudioComponent audioFileLocation='' />
 
 					{/* Slides section */}
 					<PDFDownloader pdfFileLocation='/pdfs/blockchain_fundamentals.pdf' />
