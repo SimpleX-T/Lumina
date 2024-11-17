@@ -42,6 +42,8 @@ const ReuseableModal: React.FC<ReuseableModalProps> = ({
 		height: typeof window !== "undefined" ? window.innerHeight : 0,
 	});
 
+	// code like your life depends on it, because it may depend on it one day
+
 	useEffect(() => {
 		const handleResize = () => {
 			setWindowSize({
