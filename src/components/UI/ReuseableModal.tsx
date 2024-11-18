@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Confetti from "react-confetti";
-// import ConfettiExplosion from "react-confetti-explosion";
 
 type ReuseableModalType = "success" | "failure" | "casual" | "info" | "warning";
 
@@ -38,12 +37,35 @@ const ReuseableModal: React.FC<ReuseableModalProps> = ({
 	height = "auto",
 }) => {
 	const [showConfetti, setShowConfetti] = useState(false);
+	const [windowSize, setWindowSize] = useState({
+		width: typeof window !== "undefined" ? window.innerWidth : 0,
+		height: typeof window !== "undefined" ? window.innerHeight : 0,
+	});
+
+	// code like your life depends on it, because it may depend on it one day
+
+	useEffect(() => {
+		const handleResize = () => {
+			setWindowSize({
+				width: window.innerWidth,
+				height: window.innerHeight,
+			});
+		};
+
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
 
 	useEffect(() => {
 		if (isOpen && type === "success") {
 			setShowConfetti(true);
-			const timer = setTimeout(() => setShowConfetti(false), 2000);
-			return () => clearTimeout(timer);
+			const timer = setTimeout(() => setShowConfetti(false), 5000);
+			return () => {
+				clearTimeout(timer);
+				setShowConfetti(false);
+			};
+		} else {
+			setShowConfetti(false);
 		}
 	}, [isOpen, type]);
 
@@ -78,22 +100,26 @@ const ReuseableModal: React.FC<ReuseableModalProps> = ({
 	return (
 		<div className='fixed inset-0 z-50 flex items-center justify-center'>
 			<div
-				className='absolute inset-0 bg-black opacity-50'
+				className='absolute inset-0 bg-black/50 backdrop-blur-sm'
 				onClick={closeOnOverlayClick ? onClose : undefined}
 			/>
+			{showConfetti && type === "success" && (
+				<Confetti
+					width={windowSize.width}
+					height={windowSize.height}
+					className='fixed inset-0 pointer-events-none'
+					recycle={false}
+					numberOfPieces={200}
+				/>
+			)}
 			<div
-				className={`relative ${getBackgroundColor()} rounded-lg shadow-lg`}
+				className={`relative ${getBackgroundColor()} rounded-lg shadow-lg transform lg:translate-x-[33%]`}
 				style={{ width, height, ...customStyles }}>
-				{showConfetti && (
-					<Confetti
-						width={window.innerWidth}
-						height={window.innerHeight}
-						recycle={false}
-					/>
-				)}
 				<div className='p-6'>
-					<h2 className='text-xl font-bold mb-4'>{title}</h2>
-					<div className='mb-6'>{content}</div>
+					<h2 className='text-xl font-bold mb-4 text-black'>
+						{title}
+					</h2>
+					<div className='mb-6 text-black'>{content}</div>
 					<div className='flex justify-end space-x-2'>
 						{buttons.map((button, index) => (
 							<button

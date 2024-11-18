@@ -36,6 +36,7 @@ import { Abi } from "viem";
 import { prisma } from "@/lib/prisma";
 import type { LifecycleStatus } from "@coinbase/onchainkit/transaction";
 import ReuseableModal from "@/components/UI/ReuseableModal";
+
 // ommited for brevity
 
 interface CourseProgress {
@@ -130,36 +131,28 @@ const mockAchievements = [
 	{ title: "Submitted DApp Project", date: "2024-09-25" },
 	{ title: "Participated in Crypto Trading Competition", date: "2024-10-05" },
 ];
+
 function Dashboard() {
+	const [courseProgress, setCourseProgress] = useState<CourseProgress[]>([]);
+	const { isConnected, address, isDisconnected } = useAccount();
+	const [isLoading, setIsLoading] = useState(true);
+	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 	const router = useRouter();
 	const { writeContract: claim } = useWriteContract();
-
-	const { isConnected, address, isDisconnected } = useAccount();
 	const [msg, setMsg] = useState<string>("");
 
-	const [isLoading, setIsLoading] = useState(true);
-
-	const [courseProgress, setCourseProgress] = useState<CourseProgress[]>([]);
 	const {
 		writeContractAsync,
 		isError,
 		isSuccess,
 		data: hash,
 	} = useWriteContract();
-	//   const handleOnStatus = useCallback((err : TransactionError) => {
-	//     if(err)
-	//   }, []);
+
 	const [upcomingAssignments, setUpcomingAssignments] = useState<
 		UpcomingAssignment[]
 	>([]);
 
 	const [grades, setGrades] = useState<Grade[]>([]);
-
-	useEffect(() => {
-		if (!isConnected || isDisconnected) {
-			router.push("/");
-		}
-	}, [isConnected, isDisconnected, router]);
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -169,6 +162,8 @@ function Dashboard() {
 			setIsLoading(false);
 		}, 1500);
 	}, []);
+
+	//Open the modal after 2secs
 
 	if (!isConnected) {
 		return (
@@ -180,21 +175,14 @@ function Dashboard() {
 	}
 
 	return (
-		<div className='w-full px-4 md:px-8 py-8'>
-			<ReuseableModal
+		<div className='w-full px-4 md:px-8 py-8 relative'>
+			{/* <ReuseableModal
 				isOpen={true}
 				onClose={() => {}}
-				title='Hey! You look like a new user'
-				content="You also seem like you know what you're doing, so why not go ahead and check that by clicking the button below?"
-				type='info'
-				buttons={[
-					{
-						text: "Claim NFT",
-						onClick: () => {},
-						variant: "primary",
-					},
-				]}
-			/>
+				title='Welcome to the Onchain Academy'
+				content='Welcome to the Onchain Academy, where we teach you about blockchain technology and how to build on it. We are glad to have you here and we hope you enjoy your time with us.'
+				type='success'
+			/> */}
 			<Transaction
 				chainId={baseSepolia.id}
 				// onError={() =>handleOnStatus}

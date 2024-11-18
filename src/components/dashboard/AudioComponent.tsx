@@ -86,8 +86,9 @@ export function AudioComponent({ audioFileLocation }: AudioComponentProps) {
 			</h3>
 			<div className='flex items-center justify-between mb-4'>
 				<button
+					disabled={audioFileLocation.length < 1}
 					onClick={togglePlayPause}
-					className='bg-indigo-500 text-white p-2 rounded-full hover:bg-indigo-600 transition-colors'>
+					className='bg-indigo-500 text-white p-2 rounded-full hover:bg-indigo-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed'>
 					{isPlaying ? <Pause size={24} /> : <Play size={24} />}
 				</button>
 				<div className='flex-1 mx-4 h-2 bg-indigo-200 rounded-full'>
@@ -96,7 +97,7 @@ export function AudioComponent({ audioFileLocation }: AudioComponentProps) {
 							width:
 								duration > 0
 									? `${(currentTime / duration) * 100}%`
-									: "0%", // Ensure duration is greater than 0
+									: "0%",
 						}}
 						className='h-full bg-indigo-500 rounded-full'></div>
 				</div>
@@ -105,8 +106,9 @@ export function AudioComponent({ audioFileLocation }: AudioComponentProps) {
 				</span>
 			</div>
 			<button
-				className='flex items-center text-indigo-700 hover:text-indigo-900 transition-colors'
-				onClick={handleDownload}>
+				className='flex items-center text-indigo-700 hover:text-indigo-900 transition-colors disabled:opacity-50 disabled:cursor-not-allowed'
+				onClick={handleDownload}
+				disabled={audioFileLocation.length < 1}>
 				<Download
 					size={20}
 					className='mr-2'

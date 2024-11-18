@@ -15,9 +15,9 @@ const PreQuizModal = ({
 			isOpen={true}
 			onClose={() => {}}
 			title='Quiz Time!'
+			showCloseButton={false}
 			content={
-				<div className='bg-white rounded-lg transform md:translate-x-[30%] p-6 max-w-md w-full text-stone-900'>
-					<h2 className='text-2xl font-bold mb-4'>Quiz Time!</h2>
+				<div className='text-black'>
 					<p className='mb-4'>
 						You've completed {lessonProgress}% of the lesson. It's
 						time for a quiz to test what you've learned!
@@ -55,7 +55,8 @@ const PreQuizModal = ({
 						Start Quiz
 					</button>
 				</div>
-			}></ReuseableModal>
+			}
+		/>
 	);
 };
 

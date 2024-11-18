@@ -13,6 +13,7 @@ import NavigationItem from "@/components/layout/NavItem";
 import { GoHomeFill } from "react-icons/go";
 import { FaBookOpenReader } from "react-icons/fa6";
 import { MdLeaderboard } from "react-icons/md";
+import NavLink from "../UI/NavLink";
 
 export const navs = [
 	{
@@ -27,7 +28,7 @@ export const navs = [
 	},
 	{
 		title: "Leaderboard",
-		route: "/leaderboard",
+		route: "/dashboard/leaderboard",
 		icon: <MdLeaderboard className='text-2xl' />,
 	},
 ];
@@ -37,13 +38,13 @@ export default function MobileNavigation() {
 		<div className='block sm:hidden mr-3 w-full fixed bottom-0 z-50 bg-slate-900'>
 			<div className='grid grid-cols-3 items-center'>
 				{navs.map((nav, index) => (
-					<Link
+					<NavLink
 						key={index}
-						href={nav.route}
-						className='text-center text-xs p-3 flex gap-2 flex-col items-center'>
+						to={nav.route}
+						className='text-center text-xs p-3 flex gap-2 flex-col items-center dashboard_link'>
 						{nav.icon}
 						{nav.title}
-					</Link>
+					</NavLink>
 				))}
 			</div>
 		</div>
